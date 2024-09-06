@@ -14,8 +14,7 @@ form {
   display: grid;
   background-color: #8186f9;
   border: 5px solid blue;
-  grid-template-columns: repeat(2, 1fr);
-  /* Deux colonnes pour les écrans plus grands */
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les écrans plus grands */
   gap: 20px;
   padding: 10px;
   border-radius: 10px;
@@ -52,32 +51,26 @@ button {
 
 /* Ajout de styles pour les boutons */
 .button-container {
-  margin-top: 20px;
-  /* Espacement au-dessus des boutons */
+  margin-top: 20px; /* Espacement au-dessus des boutons */
 }
 
 .button-container button {
-  margin-right: 30px;
-  /* Espacement entre les boutons */
+  margin-right: 30px; /* Espacement entre les boutons */
 }
 
 #ajouterBtn {
-  margin-bottom: 30px;
-  /* Espacement sous le bouton "Ajouter" */
+  margin-bottom: 30px; /* Espacement sous le bouton "Ajouter" */
 }
 
 table {
-  width: 95%;
-  /* Réduit la largeur du tableau à 95% */
+  width: 95%; /* Réduit la largeur du tableau à 95% */
   border-collapse: collapse;
   margin-top: 20px;
-  margin-left: auto;
-  /* Centre le tableau horizontalement */
+  margin-left: auto; /* Centre le tableau horizontalement */
   margin-right: 20px;
 }
 
-th,
-td {
+th, td {
   border: 2px solid black;
   padding: 8px;
   text-align: left;
@@ -108,8 +101,7 @@ th {
 /* Media Queries pour les smartphones */
 @media (max-width: 600px) {
   form {
-    grid-template-columns: 1fr;
-    /* Une seule colonne pour les smartphones */
+    grid-template-columns: 1fr; /* Une seule colonne pour les smartphones */
     gap: 15px;
   }
 
@@ -117,41 +109,33 @@ th {
   input[type="number"],
   select,
   input[type="date"] {
-    padding: 18px;
-    /* Augmentation significative du padding */
+    padding: 18px; /* Augmentation significative du padding */
     font-size: 16px;
     height: 35px;
   }
 
   /* Assurer que le champ de type "date" est suffisamment grand */
   input[type="date"] {
-    -webkit-appearance: none;
-    /* Supprimer l'apparence par défaut */
+    -webkit-appearance: none; /* Supprimer l'apparence par défaut */
     -moz-appearance: none;
     appearance: none;
-    height: 35px;
-    /* Hauteur fixe pour le champ de date */
+    height: 35px; /* Hauteur fixe pour le champ de date */
   }
 
   .button-container button {
-    padding: 12px 24px;
-    /* Augmentation du padding des boutons */
+    padding: 12px 24px; /* Augmentation du padding des boutons */
     font-size: 18px;
     margin-bottom: 10px;
     width: 100%;
   }
 
   table {
-    font-size: 14px;
-    /* Réduire la taille de la police du tableau */
-    width: 100%;
-    /* Ajustement de la largeur du tableau pour les smartphones */
+    font-size: 14px; /* Réduire la taille de la police du tableau */
+    width: 100%; /* Ajustement de la largeur du tableau pour les smartphones */
   }
 
-  th,
-  td {
-    padding: 6px;
-    /* Réduire le padding des cellules du tableau */
+  th, td {
+    padding: 6px; /* Réduire le padding des cellules du tableau */
   }
 }
 
@@ -163,21 +147,17 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Style pour le numéro de téléphone en rouge si RAP > 0 */
-#produitTable td:nth-child(21) {
-  /* Sélectionne la 21ème colonne (Numéro de Téléphone) */
-  color: black;
-  /* Couleur de base en noir */
+#produitTable td:nth-child(21) { /* Sélectionne la 21ème colonne (Numéro de Téléphone) */
+  color: black; /* Couleur de base en noir */
 }
 
-#produitTable tbody tr td:nth-child(21) {
-  /* Sélectionne la 21ème colonne dans le corps du tableau */
-  color: red;
-  /* Couleur rouge si RAP > 0 */
+#produitTable tbody tr td:nth-child(21) { /* Sélectionne la 21ème colonne dans le corps du tableau */
+  color: red; /* Couleur rouge si RAP > 0 */
 }
 
 /* Style pour le numéro de téléphone en noir si RAP = 0 */
 #produitTable tbody tr td:nth-child(21):not([data-rap-status="red"]) {
-  color: black;
+  color: black; 
 }
 
 /* Style pour les boutons de navigation */
@@ -193,7 +173,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .button-navigation button {
   background-color: blue;
-  width: 100%;
+  width: 100%; 
   color: white;
   padding: 10px 20px;
   border: none;
@@ -204,23 +184,19 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Style pour les lignes séparatrices des mois */
-#produitTable tbody tr.separateur-mois {
-  /* Sélectionne les lignes avec la classe "separateur-mois" */
-  border-top: 5px solid green;
-  /* Ajoute une barre verte épaisse en haut de la ligne */
+#produitTable tbody tr.separateur-mois { /* Sélectionne les lignes avec la classe "separateur-mois" */
+  border-top: 5px solid green; /* Ajoute une barre verte épaisse en haut de la ligne */
 }
 
 /* Styles pour les icônes de suppression et de modification */
 .icon-container {
   display: flex;
-  gap: 15px;
-  /* Augmentation de l'espace entre les icônes */
+  gap: 15px; /* Augmentation de l'espace entre les icônes */
 }
 
 .icon {
   cursor: pointer;
-  font-size: 1.5em;
-  /* Ajustez la taille de l'icône si nécessaire */
+  font-size: 1.5em; /* Ajustez la taille de l'icône si nécessaire */
 }
 
 .icon-delete {
@@ -233,32 +209,23 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Style pour la fenêtre flottante */
 .modal {
-  display: none;
-  /* Caché par défaut */
-  position: fixed;
-  /* Reste en place */
-  z-index: 1;
-  /* S'affiche au-dessus des autres éléments */
+  display: none; /* Caché par défaut */
+  position: fixed; /* Reste en place */
+  z-index: 1; /* S'affiche au-dessus des autres éléments */
   left: 0;
   top: 0;
-  width: 100%;
-  /* Pleine largeur */
-  height: 100%;
-  /* Pleine hauteur */
-  overflow: auto;
-  /* Active la barre de défilement si nécessaire */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Fond noir avec opacité */
+  width: 100%; /* Pleine largeur */
+  height: 100%; /* Pleine hauteur */
+  overflow: auto; /* Active la barre de défilement si nécessaire */
+  background-color: rgba(0,0,0,0.4); /* Fond noir avec opacité */
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
-  /* Centre la fenêtre */
+  margin: 15% auto; /* Centre la fenêtre */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
-  /* Pourrait être plus petit, adaptez si besoin */
+  width: 80%; /* Pourrait être plus petit, adaptez si besoin */
 }
 
 .close {
@@ -305,31 +272,17 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-left: 10px;
 }
 
-/* Style pour le bouton de réinitialisation */
-.reset-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #f0ad4e;
-  /* Orange */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 /* Style pour les sélecteurs de période */
 #anneeSelect,
 #moisSelect,
 #semaineSelect {
-  display: none;
-  /* Masquer par défaut */
+  display: none; /* Masquer par défaut */
   margin-left: 10px;
 }
 
 /* Style pour l'affichage de la période sélectionnée */
 #periodeSelectionnee {
-  background-color: #4cae4c;
-  /* Vert */
+  background-color: #4cae4c; /* Vert */
   color: white;
   padding: 10px;
   margin-bottom: 20px;
@@ -343,32 +296,23 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* Style pour la fenêtre flottante de modification des stocks */
 #editStockModal {
-  display: none;
-  /* Caché par défaut */
-  position: fixed;
-  /* Reste en place */
-  z-index: 1;
-  /* S'affiche au-dessus des autres éléments */
+  display: none; /* Caché par défaut */
+  position: fixed; /* Reste en place */
+  z-index: 1; /* S'affiche au-dessus des autres éléments */
   left: 0;
   top: 0;
-  width: 100%;
-  /* Pleine largeur */
-  height: 100%;
-  /* Pleine hauteur */
-  overflow: auto;
-  /* Active la barre de défilement si nécessaire */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Fond noir avec opacité */
+  width: 100%; /* Pleine largeur */
+  height: 100%; /* Pleine hauteur */
+  overflow: auto; /* Active la barre de défilement si nécessaire */
+  background-color: rgba(0,0,0,0.4); /* Fond noir avec opacité */
 }
 
 #editStockModal .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
-  /* Centre la fenêtre */
+  margin: 15% auto; /* Centre la fenêtre */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
-  /* Pourrait être plus petit, adaptez si besoin */
+  width: 80%; /* Pourrait être plus petit, adaptez si besoin */
 }
 
 /* Espacement des boutons */

@@ -69,7 +69,7 @@ function ajouterProduit() {
 
         // Vérifier si RAP > 0 pour ajouter un debiteur
         if (parseFloat(productData.RAP) > 0) {
-        // Ajouter le debiteur à la liste des debiteurs après l'ajout du produit
+          // Ajouter le debiteur à la liste des debiteurs après l'ajout du produit
           debiteursRef.push({
             date: productData.date,
             designation: productData.designation,
@@ -101,10 +101,18 @@ function remplirTableau() {
 
   var moisPrecedent = null; // Variable pour suivre le mois précédent
 
-  database.ref('produits').orderByChild('date').limitToLast(100).once('value')
+  database.ref('produits').orderByChild('date').once('value') // Supprimer la limite limitToLast(100)
     .then(function (snapshot) {
+      var produits = []; // Tableau pour stocker les produits
       snapshot.forEach(function (childSnapshot) {
-        var product = childSnapshot.val();
+        produits.push(childSnapshot.val());
+      });
+
+      // Inverser l'ordre des produits
+      produits.reverse();
+
+      // Parcourir les produits inversés
+      produits.forEach(function (product) {
         var date = new Date(product.date);
         var moisActuel = date.getMonth(); // 0 pour janvier, 1 pour février, etc.
 
@@ -327,40 +335,40 @@ function creerGraphique() {
         data: {
           labels: labels,
           datasets: [{
-            label: 'Quantité',
-            data: quantiteData,
-            borderColor: 'rgba(54, 162, 235, 1)',
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderWidth: 1
-          },
-          {
-            label: 'Commande',
-            data: commandeData,
-            borderColor: 'rgba(255, 99, 132, 1)',
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderWidth: 1
-          },
-          {
-            label: 'Coût de Reviens',
-            data: coutReviensData,
-            borderColor: 'rgba(255, 206, 86, 1)',
-            backgroundColor: 'rgba(255, 206, 86, 0.2)',
-            borderWidth: 1
-          },
-          {
-            label: 'Marge Bénéfice',
-            data: margeBeneficeData,
-            borderColor: 'rgba(75, 192, 192, 1)',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderWidth: 1
-          },
-          // {
-          //   label: 'Taux de croissance',
-          //   data: tauxCroissanceData,
-          //   borderColor: 'rgba(153, 102, 255, 1)',
-          //   backgroundColor: 'rgba(153, 102, 255, 0.2)',
-          //   borderWidth: 1
-          // }
+              label: 'Quantité',
+              data: quantiteData,
+              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderWidth: 1
+            },
+            {
+              label: 'Commande',
+              data: commandeData,
+              borderColor: 'rgba(255, 99, 132, 1)',
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderWidth: 1
+            },
+            {
+              label: 'Coût de Reviens',
+              data: coutReviensData,
+              borderColor: 'rgba(255, 206, 86, 1)',
+              backgroundColor: 'rgba(255, 206, 86, 0.2)',
+              borderWidth: 1
+            },
+            {
+              label: 'Marge Bénéfice',
+              data: margeBeneficeData,
+              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              borderWidth: 1
+            },
+            // {
+            //   label: 'Taux de croissance',
+            //   data: tauxCroissanceData,
+            //   borderColor: 'rgba(153, 102, 255, 1)',
+            //   backgroundColor: 'rgba(153, 102, 255, 0.2)',
+            //   borderWidth: 1
+            // }
           ]
         },
         options: {
@@ -651,12 +659,20 @@ function remplirTableauDebiteurs() {
   var debiteurTable = document.getElementById("debiteurTable").getElementsByTagName('tbody')[0];
   debiteurTable.innerHTML = ''; // Effacer le contenu du tableau
 
-  debiteursRef.orderByChild('date').limitToLast(100).once('value') // Trier par date (les plus récents en haut)
+  debiteursRef.orderByChild('date').once('value') // Trier par date (les plus récents en haut) et supprimer la limite
     .then(function (snapshot) {
+      var debiteurs = [];
       snapshot.forEach(function (childSnapshot) {
-        var debiteur = childSnapshot.val();
+        debiteurs.push(childSnapshot.val());
+      });
+
+      // Inverser l'ordre des débiteurs
+      debiteurs.reverse();
+
+      // Parcourir les débiteurs inversés
+      debiteurs.forEach(function (debiteur, index) { // Ajouter index pour accéder à childSnapshot.key
         var row = debiteurTable.insertRow();
-        var key = childSnapshot.key; // Récupérer la clé du débiteur
+        var key = snapshot.child(index).key; // Accéder à la clé en utilisant l'index
 
         // Date 
         var dateCell = row.insertCell();
@@ -1353,20 +1369,22 @@ function colonneIndex(tableId, colonne) {
   return -1; // Retourner -1 si la colonne n'est pas trouvée
 }
 
-// Fonction pour rechercher dans le tableau des produits
+// Fonction pour rechercher dans le tableau des produits (modifiée pour afficher tous les produits si le champ de recherche est vide)
 function rechercherProduits() {
   var searchTerm = document.getElementById("searchInputProduits").value.toLowerCase();
   var table = document.getElementById("produitTable");
   var rows = table.getElementsByTagName("tr");
 
   for (var i = 1; i < rows.length; i++) { // Commencer à partir de 1 pour ignorer l'en-tête
-    var shouldShow = false;
-    var cells = rows[i].getElementsByTagName("td");
-    for (var j = 0; j < cells.length; j++) {
-      var cellText = cells[j].textContent.toLowerCase();
-      if (cellText.indexOf(searchTerm) > -1) {
-        shouldShow = true;
-        break;
+    var shouldShow = searchTerm === ""; // Afficher la ligne si le champ de recherche est vide
+    if (!shouldShow) {
+      var cells = rows[i].getElementsByTagName("td");
+      for (var j = 0; j < cells.length; j++) {
+        var cellText = cells[j].textContent.toLowerCase();
+        if (cellText.indexOf(searchTerm) > -1) {
+          shouldShow = true;
+          break;
+        }
       }
     }
     rows[i].style.display = shouldShow ? "" : "none";
@@ -1380,13 +1398,15 @@ function rechercherStocks() {
   var rows = table.getElementsByTagName("tr");
 
   for (var i = 1; i < rows.length; i++) { // Commencer à partir de 1 pour ignorer l'en-tête
-    var shouldShow = false;
-    var cells = rows[i].getElementsByTagName("td");
-    for (var j = 0; j < cells.length; j++) {
-      var cellText = cells[j].textContent.toLowerCase();
-      if (cellText.indexOf(searchTerm) > -1) {
-        shouldShow = true;
-        break;
+    var shouldShow = searchTerm === ""; // Afficher la ligne si le champ de recherche est vide
+    if (!shouldShow) {
+      var cells = rows[i].getElementsByTagName("td");
+      for (var j = 0; j < cells.length; j++) {
+        var cellText = cells[j].textContent.toLowerCase();
+        if (cellText.indexOf(searchTerm) > -1) {
+          shouldShow = true;
+          break;
+        }
       }
     }
     rows[i].style.display = shouldShow ? "" : "none";
@@ -1400,13 +1420,15 @@ function rechercherDebiteurs() {
   var rows = table.getElementsByTagName("tr");
 
   for (var i = 1; i < rows.length; i++) { // Commencer à partir de 1 pour ignorer l'en-tête
-    var shouldShow = false;
-    var cells = rows[i].getElementsByTagName("td");
-    for (var j = 0; j < cells.length; j++) {
-      var cellText = cells[j].textContent.toLowerCase();
-      if (cellText.indexOf(searchTerm) > -1) {
-        shouldShow = true;
-        break;
+    var shouldShow = searchTerm === ""; // Afficher la ligne si le champ de recherche est vide
+    if (!shouldShow) {
+      var cells = rows[i].getElementsByTagName("td");
+      for (var j = 0; j < cells.length; j++) {
+        var cellText = cells[j].textContent.toLowerCase();
+        if (cellText.indexOf(searchTerm) > -1) {
+          shouldShow = true;
+          break;
+        }
       }
     }
     rows[i].style.display = shouldShow ? "" : "none";

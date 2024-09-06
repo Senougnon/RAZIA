@@ -130,8 +130,8 @@
 
     <!-- Barre de recherche pour le tableau des produits -->
     <div class="search-bar">
-      <input type="text" id="searchInputProduits" placeholder="Rechercher dans le tableau des produits...">
-      <button onclick="rechercherProduits()">Rechercher</button>
+      <input type="text" id="searchInputProduits" placeholder="Rechercher dans le tableau des produits..." onkeyup="rechercherProduits()">
+      <!-- Appel de la fonction de recherche à chaque saisie -->
     </div>
 
     <table id="produitTable">
@@ -179,9 +179,6 @@
         <!-- Les lignes de produits seront ajoutées ici -->
       </tbody>
     </table>
-
-    <!-- Bouton de réinitialisation pour le tableau des produits -->
-    <button class="reset-button" onclick="remplirTableau()">Réinitialiser</button>
 
     <!-- Fenêtre flottante (modal) pour la modification des produits -->
     <div id="editProductModal" class="modal">
@@ -323,8 +320,8 @@
 
     <!-- Barre de recherche pour le tableau des debiteurs -->
     <div class="search-bar">
-      <input type="text" id="searchInputDebiteurs" placeholder="Rechercher dans le tableau des débiteurs...">
-      <button onclick="rechercherDebiteurs()">Rechercher</button>
+      <input type="text" id="searchInputDebiteurs" placeholder="Rechercher dans le tableau des débiteurs..." onkeyup="rechercherDebiteurs()">
+      <!-- Appel de la fonction de recherche à chaque saisie -->
     </div>
 
     <table id="debiteurTable">
@@ -346,9 +343,6 @@
         <!-- Les lignes des débiteurs seront ajoutées ici -->
       </tbody>
     </table>
-
-    <!-- Bouton de réinitialisation pour le tableau des debiteurs -->
-    <button class="reset-button" onclick="remplirTableauDebiteurs()">Réinitialiser</button>
 
   </div>
 
@@ -373,8 +367,8 @@
 
     <!-- Barre de recherche pour le tableau des stocks -->
     <div class="search-bar">
-      <input type="text" id="searchInputStocks" placeholder="Rechercher dans le tableau des stocks...">
-      <button onclick="rechercherStocks()">Rechercher</button>
+      <input type="text" id="searchInputStocks" placeholder="Rechercher dans le tableau des stocks..." onkeyup="rechercherStocks()">
+      <!-- Appel de la fonction de recherche à chaque saisie -->
     </div>
 
     <table id="stockTable">
@@ -420,9 +414,6 @@
         </form>
       </div>
     </div>
-
-    <!-- Bouton de réinitialisation pour le tableau des stocks -->
-    <button class="reset-button" onclick="remplirTableauStocks()">Réinitialiser</button>
 
   </div>
 
