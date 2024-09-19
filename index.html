@@ -1,428 +1,497 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Gestionnaire de Données RAZIA SARL</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>Gestionnaire de Données RAZIA SARL</h1>
-  <h2>Ajouter un nouveau produit</h2>
-
-  <form id="productForm">
-    <!-- Chaque champ occupe maintenant sa propre ligne -->
-    <div>
-      <label for="date">Date:</label>
-      <input type="date" id="date" name="date" required>
-    </div>
-    <div>
-      <label for="quantite">Quantité:</label>
-      <input type="number" id="quantite" name="quantite" required oninput="calculerTauxCroissance()">
-    </div>
-    <div>
-      <label for="designation">Désignation:</label>
-      <select id="designation" name="designation">
-        <!-- Les options seront ajoutées ici -->
-      </select>
-    </div>
-    <div>
-      <label for="typeArticle">Type d'Article:</label>
-      <select id="typeArticle" name="typeArticle">
-        <option value="Ancien">Ancien</option>
-        <option value="Nouveau">Nouveau</option>
-      </select>
-    </div>
-    <div>
-      <label for="categorie">Catégorie:</label>
-      <input type="text" id="categorie" name="categorie">
-    </div>
-    <div>
-      <label for="prixVente">Prix de vente:</label>
-      <input type="number" id="prixVente" name="prixVente" oninput="calculerMargeBenefice()">
-    </div>
-    <div>
-      <label for="RAP">RAP:</label>
-      <input type="number" id="RAP" name="RAP" oninput="changerCouleurTelephone()">
-    </div>
-    <div>
-      <label for="prixBrut">Prix brut:</label>
-      <input type="number" id="prixBrut" name="prixBrut" oninput="calculerPrixNet()">
-    </div>
-    <div>
-      <label for="taux">Taux:</label>
-      <input type="number" id="taux" name="taux" oninput="calculerPrixNet()" step="0.01">
-    </div>
-    <div>
-      <label for="netBrut">Prix Net :</label>
-      <input type="number" id="netBrut" name="netBrut" readonly>
-    </div>
-    <div>
-      <label for="freight">Freight:</label>
-      <input type="number" id="freight" name="freight" oninput="calculerCoutReviens()">
-    </div>
-    <div>
-      <label for="douaneTransport">Douane et Transport:</label>
-      <input type="number" id="douaneTransport" name="douaneTransport" oninput="calculerCoutReviens()">
-    </div>
-    <div>
-      <label for="fraisTransfert">Frais de transfert et Tenue de Compte:</label>
-      <input type="number" id="fraisTransfert" name="fraisTransfert" oninput="calculerCoutReviens()">
-    </div>
-    <div>
-      <label for="impotDocument">Impôt et Document:</label>
-      <input type="number" id="impotDocument" name="impotDocument" oninput="calculerCoutReviens()">
-    </div>
-    <div>
-      <label for="reparation">Réparation:</label>
-      <input type="number" id="reparation" name="reparation" oninput="calculerCoutReviens()">
-    </div>
-    <div>
-      <label for="typeClient">Type de Client:</label>
-      <select id="typeClient" name="typeClient">
-        <option value="Ancien">Ancien</option>
-        <option value="Nouveau">Nouveau</option>
-      </select>
-    </div>
-    <div>
-      <label for="ville">Ville:</label>
-      <input type="text" id="ville" name="ville">
-    </div>
-    <div>
-      <label for="numeroTelephone">Numéro de Téléphone:</label>
-      <input type="text" id="numeroTelephone" name="numeroTelephone">
-    </div>
-    <div>
-      <label for="commande">Commande:</label>
-      <input type="text" id="commande" name="commande">
-    </div>
-    <div>
-      <label for="coutReviens">Coût de Reviens du Produit:</label>
-      <input type="number" id="coutReviens" name="coutReviens" readonly>
-    </div>
-    <div>
-      <label for="margeBenefice">Marge Bénéfice:</label>
-      <input type="number" id="margeBenefice" name="margeBenefice" readonly>
-    </div>
-  </form>
-
-  <div class="button-container">
-    <button id="ajouterBtn" onclick="ajouterProduit()">Ajouter</button>
-  </div>
-
-  <!-- Bloc des boutons de navigation -->
-  <div class="button-navigation">
-    <button onclick="afficherDetails()">Détails des Données</button>
-    <button onclick="afficherAnalyses()">Analyses des Données</button>
-    <button onclick="afficherTendances()">Tendances des Données</button>
-    <button onclick="afficherDebiteurs()">Débiteurs</button>
-    <button onclick="afficherStocks()">Gestion de Stocks</button>
-  </div>
-
-  <!-- Barre de chargement -->
-  <div id="loadingBar"></div>
-
-  <!-- Section des détails avec le tableau -->
-  <div id="detailsSection">
-    <h2>Tableau des Données</h2>
-
-    <!-- Barre de recherche pour le tableau des produits -->
-    <div class="search-bar">
-      <input type="text" id="searchInputProduits" placeholder="Rechercher dans le tableau des produits..." onkeyup="rechercherProduits()">
-      <!-- Appel de la fonction de recherche à chaque saisie -->
-    </div>
-
-    <table id="produitTable">
-      <thead>
-        <tr>
-          <th colspan="1">Données de base</th>
-          <th colspan="6">Informations du produit</th>
-          <th colspan="3">Prix d'achat</th>
-          <th colspan="5">Autre Dépense</th>
-          <th rowspan="2">Total des Dépenses</th>
-          <th colspan="2">Informations Financières</th>
-          <th colspan="4">Marketing et Clients</th>
-          <th colspan="1">Actions</th>
-        </tr>
-        <tr>
-          <th>Date
-            <i class="fas fa-sort sort-icon" onclick="trierTableau('produitTable', 'date')"></i>
-          </th>
-          <th>Quantité</th>
-          <th>Désignation
-            <i class="fas fa-sort sort-icon" onclick="trierTableau('produitTable', 'designation')"></i>
-          </th>
-          <th>Type d'Article</th>
-          <th>Catégorie</th>
-          <th>Prix de vente</th>
-          <th>RAP</th>
-          <th>Prix Brut</th>
-          <th>Taux</th>
-          <th>Prix Net</th>
-          <th>Freight</th>
-          <th>Douane et Transport</th>
-          <th>Frais de Transfert et Tenue de Compte</th>
-          <th>Impôt et Document</th>
-          <th>Réparation</th>
-          <th>Coût de Reviens du Produit</th>
-          <th>Marge Bénéfice</th>
-          <th>Type de Client</th>
-          <th>Ville</th>
-          <th>Commande</th>
-          <th>Numéro de Téléphone</th>
-          <th>Supp / Modif</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Les lignes de produits seront ajoutées ici -->
-      </tbody>
-    </table>
-
-    <!-- Fenêtre flottante (modal) pour la modification des produits -->
-    <div id="editProductModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="fermerModalProduit()">×</span>
-        <h2>Modifier Produit</h2>
-        <form id="editProductForm">
-          <input type="hidden" id="editProductKey">
-          <!-- Champs du formulaire de modification du produit -->
-          <div>
-            <label for="editDate">Date:</label>
-            <input type="date" id="editDate" name="editDate" required>
-          </div>
-          <div>
-            <label for="editQuantite">Quantité:</label>
-            <input type="number" id="editQuantite" name="editQuantite" required oninput="calculerTauxCroissance()">
-          </div>
-          <div>
-            <label for="editDesignation">Désignation:</label>
-            <select id="editDesignation" name="editDesignation">
-              <!-- Les options seront ajoutées ici -->
-            </select>
-          </div>
-          <div>
-            <label for="editTypeArticle">Type d'Article:</label>
-            <select id="editTypeArticle" name="editTypeArticle">
-              <option value="Ancien">Ancien</option>
-              <option value="Nouveau">Nouveau</option>
-            </select>
-          </div>
-          <div>
-            <label for="editCategorie">Catégorie:</label>
-            <input type="text" id="editCategorie" name="editCategorie">
-          </div>
-          <div>
-            <label for="editPrixVente">Prix de vente:</label>
-            <input type="number" id="editPrixVente" name="editPrixVente" oninput="calculerMargeBenefice()">
-          </div>
-          <div>
-            <label for="editRAP">RAP:</label>
-            <input type="number" id="editRAP" name="editRAP" oninput="changerCouleurTelephone()">
-          </div>
-          <div>
-            <label for="editPrixBrut">Prix brut:</label>
-            <input type="number" id="editPrixBrut" name="editPrixBrut" oninput="calculerPrixNet()">
-          </div>
-          <div>
-            <label for="editTaux">Taux:</label>
-            <input type="number" id="editTaux" name="editTaux" oninput="calculerPrixNet()" step="0.01">
-          </div>
-          <div>
-            <label for="editNetBrut">Prix Net :</label>
-            <input type="number" id="editNetBrut" name="editNetBrut" readonly>
-          </div>
-          <div>
-            <label for="editFreight">Freight:</label>
-            <input type="number" id="editFreight" name="editFreight" oninput="calculerCoutReviens()">
-          </div>
-          <div>
-            <label for="editDouaneTransport">Douane et Transport:</label>
-            <input type="number" id="editDouaneTransport" name="editDouaneTransport" oninput="calculerCoutReviens()">
-          </div>
-          <div>
-            <label for="editFraisTransfert">Frais de transfert et Tenue de Compte:</label>
-            <input type="number" id="editFraisTransfert" name="editFraisTransfert" oninput="calculerCoutReviens()">
-          </div>
-          <div>
-            <label for="editImpotDocument">Impôt et Document:</label>
-            <input type="number" id="editImpotDocument" name="editImpotDocument" oninput="calculerCoutReviens()">
-          </div>
-          <div>
-            <label for="editReparation">Réparation:</label>
-            <input type="number" id="editReparation" name="editReparation" oninput="calculerCoutReviens()">
-          </div>
-          <div>
-            <label for="editTypeClient">Type de Client:</label>
-            <select id="editTypeClient" name="editTypeClient">
-              <option value="Ancien">Ancien</option>
-              <option value="Nouveau">Nouveau</option>
-            </select>
-          </div>
-          <div>
-            <label for="editVille">Ville:</label>
-            <input type="text" id="editVille" name="editVille">
-          </div>
-          <div>
-            <label for="editNumeroTelephone">Numéro de Téléphone:</label>
-            <input type="text" id="editNumeroTelephone" name="editNumeroTelephone">
-          </div>
-          <div>
-            <label for="editCommande">Commande:</label>
-            <input type="text" id="editCommande" name="editCommande">
-          </div>
-          <div>
-            <label for="editCoutReviens">Coût de Reviens du Produit:</label>
-            <input type="number" id="editCoutReviens" name="editCoutReviens" readonly>
-          </div>
-          <div>
-            <label for="editMargeBenefice">Marge Bénéfice:</label>
-            <input type="number" id="editMargeBenefice" name="editMargeBenefice" readonly>
-          </div>
-          <button type="submit">Enregistrer les modifications</button>
-        </form>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Section des tendances avec le graphique -->
-  <div id="tendancesSection">
-    <h2>Tendances des Produits</h2>
-    <canvas id="tendanceChart"></canvas>
-  </div>
-
-  <!-- Section des analyses -->
-  <div id="analysesSection">
-    <h2>Analyses des Produits</h2>
-    <div>
-      <label for="analysePeriode">Période d'analyse:</label>
-      <select id="analysePeriode">
-        <option value="hebdomadaire">Hebdomadaire</option>
-        <option value="mensuelle">Mensuelle</option>
-        <option value="annuelle">Annuelle</option>
-      </select>
-      <select id="anneeSelect"></select>
-      <select id="moisSelect"></select>
-      <select id="semaineSelect"></select>
-    </div>
-    <!-- Affichage de la période sélectionnée -->
-    <div id="periodeSelectionnee"></div>
-    <div id="resultatsAnalyse">
-      <!-- Les résultats de l'analyse seront affichés ici -->
-    </div>
-  </div>
-
-  <!-- Section des débiteurs -->
-  <div id="debiteursSection">
-    <h2>Liste des Débiteurs</h2>
-
-    <!-- Barre de recherche pour le tableau des debiteurs -->
-    <div class="search-bar">
-      <input type="text" id="searchInputDebiteurs" placeholder="Rechercher dans le tableau des débiteurs..." onkeyup="rechercherDebiteurs()">
-      <!-- Appel de la fonction de recherche à chaque saisie -->
-    </div>
-
-    <table id="debiteurTable">
-      <thead>
-        <tr>
-          <th>Date
-            <i class="fas fa-sort sort-icon" onclick="trierTableau('debiteurTable', 'date')"></i>
-          </th>
-          <th>Désignation
-            <i class="fas fa-sort sort-icon" onclick="trierTableau('debiteurTable', 'designation')"></i>
-          </th>
-          <th>Numéro de Téléphone</th>
-          <th>Montant RAP</th>
-          <th>Statut</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Les lignes des débiteurs seront ajoutées ici -->
-      </tbody>
-    </table>
-
-  </div>
-
-  <!-- Section de l'inventaire de stocks -->
-  <div id="stocksSection">
-    <h2>Inventaires de Stocks</h2>
-    <form id="stockForm">
+  <!-- Page de connexion -->
+  <div id="loginPage">
+    <h2>Connexion</h2>
+    <form id="loginForm">
       <div>
-        <label for="dateStock">Date:</label>
-        <input type="date" id="dateStock" name="dateStock" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
       </div>
       <div>
-        <label for="designationStock">Désignation:</label>
-        <input type="text" id="designationStock" name="designationStock" required>
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Se connecter</button>
+    </form>
+    <p>Pas encore inscrit ? <a href="#" id="afficherInscription">S'inscrire</a></p>
+  </div>
+
+  <!-- Page d'inscription -->
+  <div id="signupPage" style="display: none;">
+    <h2>Inscription</h2>
+    <form id="signupForm">
+      <div>
+        <label for="signupUsername">Nom d'utilisateur:</label>
+        <input type="text" id="signupUsername" name="signupUsername" required>
       </div>
       <div>
-        <label for="quantiteInitialeStock">Quantité à Stocker:</label>
-        <input type="number" id="quantiteInitialeStock" name="quantiteInitialeStock" required>
+        <label for="signupEmail">Email:</label>
+        <input type="email" id="signupEmail" name="signupEmail" required>
       </div>
-      <button type="submit">Ajouter Stock</button> <br>
+      <div>
+        <label for="signupPassword">Mot de passe:</label>
+        <input type="password" id="signupPassword" name="signupPassword" required>
+      </div>
+      <button type="submit">S'inscrire</button>
+    </form>
+    <p>Déjà inscrit ? <a href="#" id="afficherConnexion">Se connecter</a></p>
+  </div>
+
+  <!-- Contenu principal (masqué par défaut) -->
+  <div id="mainContent" style="display: none;">
+
+    <h1>Gestionnaire de Données RAZIA SARL</h1>
+    <h2>Ajouter un nouveau produit</h2>
+
+    <form id="productForm">
+      <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div>
+        <label for="quantite">Quantité:</label>
+        <input type="number" id="quantite" name="quantite" required oninput="calculerTauxCroissance()">
+      </div>
+      <div>
+        <label for="designation">Désignation:</label>
+        <select id="designation" name="designation">
+          <!-- Les options seront ajoutées ici -->
+        </select>
+      </div>
+      <div>
+        <label for="typeArticle">Type d'Article:</label>
+        <select id="typeArticle" name="typeArticle">
+          <option value="Ancien">Ancien</option>
+          <option value="Nouveau">Nouveau</option>
+        </select>
+      </div>
+      <div>
+        <label for="categorie">Catégorie:</label>
+        <input type="text" id="categorie" name="categorie">
+      </div>
+      <div>
+        <label for="prixVente">Prix de vente:</label>
+        <input type="text" id="prixVente" name="prixVente" inputmode="numeric"
+          oninput="calculerMargeBenefice(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="RAP">RAP:</label>
+        <input type="text" id="RAP" name="RAP" inputmode="numeric"
+          oninput="changerCouleurTelephone(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="prixBrut">Prix brut:</label>
+        <input type="text" id="prixBrut" name="prixBrut" inputmode="numeric"
+          oninput="calculerPrixNet(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="taux">Taux:</label>
+        <input type="text" id="taux" name="taux" inputmode="numeric" oninput="calculerPrixNet()" step="0.01">
+      </div>
+      <div>
+        <label for="netBrut">Prix Net :</label>
+        <input type="text" id="netBrut" name="netBrut" inputmode="numeric" readonly>
+      </div>
+      <div>
+        <label for="freight">Freight:</label>
+        <input type="text" id="freight" name="freight" inputmode="numeric"
+          oninput="calculerCoutReviens(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="douaneTransport">Douane et Transport:</label>
+        <input type="text" id="douaneTransport" name="douaneTransport" inputmode="numeric"
+          oninput="calculerCoutReviens(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="fraisTransfert">Frais de transfert et Tenue de Compte:</label>
+        <input type="text" id="fraisTransfert" name="fraisTransfert" inputmode="numeric"
+          oninput="calculerCoutReviens(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="impotDocument">Impôt et Document:</label>
+        <input type="text" id="impotDocument" name="impotDocument" inputmode="numeric"
+          oninput="calculerCoutReviens(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="reparation">Réparation:</label>
+        <input type="text" id="reparation" name="reparation" inputmode="numeric"
+          oninput="calculerCoutReviens(); formaterMontant(this)">
+      </div>
+      <div>
+        <label for="typeClient">Type de Client:</label>
+        <select id="typeClient" name="typeClient">
+          <option value="Ancien">Ancien</option>
+          <option value="Nouveau">Nouveau</option>
+        </select>
+      </div>
+      <div>
+        <label for="ville">Ville:</label>
+        <input type="text" id="ville" name="ville">
+      </div>
+      <div>
+        <label for="numeroTelephone">Numéro de Téléphone:</label>
+        <input type="text" id="numeroTelephone" name="numeroTelephone">
+      </div>
+      <div>
+        <label for="commande">Commande:</label>
+        <input type="text" id="commande" name="commande">
+      </div>
+      <div>
+        <label for="coutReviens">Coût de Reviens du Produit:</label>
+        <input type="text" id="coutReviens" name="coutReviens" inputmode="numeric" readonly>
+      </div>
+      <div>
+        <label for="margeBenefice">Marge Bénéfice:</label>
+        <input type="text" id="margeBenefice" name="margeBenefice" inputmode="numeric" readonly>
+      </div>
     </form>
 
-    <!-- Barre de recherche pour le tableau des stocks -->
-    <div class="search-bar">
-      <input type="text" id="searchInputStocks" placeholder="Rechercher dans le tableau des stocks..." onkeyup="rechercherStocks()">
-      <!-- Appel de la fonction de recherche à chaque saisie -->
+    <div class="button-container">
+      <button id="ajouterBtn" onclick="ajouterProduit()">Ajouter</button>
     </div>
 
-    <table id="stockTable">
-      <thead>
-        <tr>
-          <th>Date
-            <i class="fas fa-sort sort-icon" onclick="trierTableau('stockTable', 'dateStock')"></i>
-          </th>
-          <th>Désignation
-            <i class="fas fa-sort sort-icon" onclick="trierTableau('stockTable', 'designation')"></i>
-          </th>
-          <th>Quantité Initiale</th>
-          <th>Quantité Vendues</th>
-          <th>Quantité Restante</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Les lignes de stocks seront ajoutées ici -->
-      </tbody>
-    </table>
+    <!-- Bloc des boutons de navigation -->
+    <div class="button-navigation">
+      <button onclick="afficherDetails(); scrollToDetails()">Détails des Données</button>
+      <button onclick="afficherAnalyses(); scrollToAnalyses()">Analyses des Données</button>
+      <button onclick="afficherTendances(); scrollToTendances()">Tendances des Données</button>
+      <button onclick="afficherDebiteurs(); scrollToDebiteurs()">Débiteurs</button>
+      <button onclick="afficherStocks(); scrollToStocks()">Gestion de Stocks</button>
+    </div>
 
-    <!-- Fenêtre flottante (modal) pour la modification des stocks -->
-    <div id="editStockModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="fermerModalStock()">×</span>
-        <h2>Modifier Stock</h2>
-        <form id="editStockForm">
-          <input type="hidden" id="editStockKey">
-          <div>
-            <label for="editDateStock">Date:</label>
-            <input type="date" id="editDateStock" name="editDateStock" required>
-          </div>
-          <div>
-            <label for="editDesignationStock">Désignation:</label>
-            <input type="text" id="editDesignationStock" name="editDesignationStock" required>
-          </div>
-          <div>
-            <label for="editQuantiteInitialeStock">Quantité Initiale:</label>
-            <input type="number" id="editQuantiteInitialeStock" name="editQuantiteInitialeStock" required>
-          </div>
-          <button type="submit">Enregistrer les modifications</button>
-        </form>
+    <!-- Barre de chargement -->
+    <div id="loadingBar"></div>
+
+    <!-- Section des détails avec le tableau -->
+    <div id="detailsSection">
+      <h2 id="details-header">Tableau des Données</h2>
+      <button onclick="exporterProduitsVersExcel()">Exporter vers Excel</button>
+
+      <!-- Barre de recherche pour le tableau des produits -->
+      <div class="search-bar">
+        <input type="text" id="searchInputProduits" placeholder="Rechercher dans le tableau des produits..."
+          onkeyup="rechercherProduits()">
+      </div>
+
+      <table id="produitTable">
+        <thead>
+          <tr>
+            <th colspan="1">Données de base</th>
+            <th colspan="6">Informations du produit</th>
+            <th colspan="3">Prix d'achat</th>
+            <th colspan="5">Autre Dépense</th>
+            <th rowspan="2">Total des Dépenses</th>
+            <th colspan="2">Informations Financières</th>
+            <th colspan="4">Marketing et Clients</th>
+            <th colspan="1">Actions</th>
+          </tr>
+          <tr>
+            <th>Date
+              <i class="fas fa-sort sort-icon" onclick="trierTableau('produitTable', 'date')"></i>
+            </th>
+            <th>Quantité</th>
+            <th>Désignation
+              <i class="fas fa-sort sort-icon" onclick="trierTableau('produitTable', 'designation')"></i>
+            </th>
+            <th>Type d'Article</th>
+            <th>Catégorie</th>
+            <th>Prix de vente</th>
+            <th>RAP</th>
+            <th>Prix Brut</th>
+            <th>Taux</th>
+            <th>Prix Net</th>
+            <th>Freight</th>
+            <th>Douane et Transport</th>
+            <th>Frais de Transfert et Tenue de Compte</th>
+            <th>Impôt et Document</th>
+            <th>Réparation</th>
+            <th>Coût de Reviens du Produit</th>
+            <th>Marge Bénéfice</th>
+            <th>Type de Client</th>
+            <th>Ville</th>
+            <th>Commande</th>
+            <th>Numéro de Téléphone</th>
+            <th>Supp / Modif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les lignes de produits seront ajoutées ici -->
+        </tbody>
+      </table>
+
+      <!-- Fenêtre flottante (modal) pour la modification des produits -->
+      <div id="editProductModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fermerModalProduit()">×</span>
+          <h2>Modifier Produit</h2>
+          <form id="editProductForm">
+            <input type="hidden" id="editProductKey">
+            <!-- Champs du formulaire de modification du produit -->
+            <div>
+              <label for="editDate">Date:</label>
+              <input type="date" id="editDate" name="editDate" required>
+            </div>
+            <div>
+              <label for="editQuantite">Quantité:</label>
+              <input type="number" id="editQuantite" name="editQuantite" required oninput="calculerTauxCroissance()">
+            </div>
+            <div>
+              <label for="editDesignation">Désignation:</label>
+              <select id="editDesignation" name="editDesignation">
+                <!-- Les options seront ajoutées ici -->
+              </select>
+            </div>
+            <div>
+              <label for="editTypeArticle">Type d'Article:</label>
+              <select id="editTypeArticle" name="editTypeArticle">
+                <option value="Ancien">Ancien</option>
+                <option value="Nouveau">Nouveau</option>
+              </select>
+            </div>
+            <div>
+              <label for="editCategorie">Catégorie:</label>
+              <input type="text" id="editCategorie" name="editCategorie">
+            </div>
+            <div>
+              <label for="editPrixVente">Prix de vente:</label>
+              <input type="text" id="editPrixVente" name="editPrixVente" inputmode="numeric"
+                oninput="calculerMargeBenefice(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editRAP">RAP:</label>
+              <input type="text" id="editRAP" name="editRAP" inputmode="numeric"
+                oninput="changerCouleurTelephone(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editPrixBrut">Prix brut:</label>
+              <input type="text" id="editPrixBrut" name="editPrixBrut" inputmode="numeric"
+                oninput="calculerPrixNet(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editTaux">Taux:</label>
+              <input type="text" id="editTaux" name="editTaux" inputmode="numeric" oninput="calculerPrixNet()"
+                step="0.01">
+            </div>
+            <div>
+              <label for="editNetBrut">Prix Net :</label>
+              <input type="text" id="editNetBrut" name="editNetBrut" inputmode="numeric" readonly>
+            </div>
+            <div>
+              <label for="editFreight">Freight:</label>
+              <input type="text" id="editFreight" name="editFreight" inputmode="numeric"
+                oninput="calculerCoutReviens(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editDouaneTransport">Douane et Transport:</label>
+              <input type="text" id="editDouaneTransport" name="editDouaneTransport" inputmode="numeric"
+                oninput="calculerCoutReviens(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editFraisTransfert">Frais de transfert et Tenue de Compte:</label>
+              <input type="text" id="editFraisTransfert" name="editFraisTransfert" inputmode="numeric"
+                oninput="calculerCoutReviens(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editImpotDocument">Impôt et Document:</label>
+              <input type="text" id="editImpotDocument" name="editImpotDocument" inputmode="numeric"
+                oninput="calculerCoutReviens(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editReparation">Réparation:</label>
+              <input type="text" id="editReparation" name="editReparation" inputmode="numeric"
+                oninput="calculerCoutReviens(); formaterMontant(this)">
+            </div>
+            <div>
+              <label for="editTypeClient">Type de Client:</label>
+              <select id="editTypeClient" name="editTypeClient">
+                <option value="Ancien">Ancien</option>
+                <option value="Nouveau">Nouveau</option>
+              </select>
+            </div>
+            <div>
+              <label for="editVille">Ville:</label>
+              <input type="text" id="editVille" name="editVille">
+            </div>
+            <div>
+              <label for="editNumeroTelephone">Numéro de Téléphone:</label>
+              <input type="text" id="editNumeroTelephone" name="editNumeroTelephone">
+            </div>
+            <div>
+              <label for="editCommande">Commande:</label>
+              <input type="text" id="editCommande" name="editCommande">
+            </div>
+            <div>
+              <label for="editCoutReviens">Coût de Reviens du Produit:</label>
+              <input type="text" id="editCoutReviens" name="editCoutReviens" inputmode="numeric" readonly>
+            </div>
+            <div>
+              <label for="editMargeBenefice">Marge Bénéfice:</label>
+              <input type="text" id="editMargeBenefice" name="editMargeBenefice" inputmode="numeric" readonly>
+            </div>
+            <button type="submit">Enregistrer les modifications</button>
+          </form>
+        </div>
       </div>
     </div>
 
-  </div>
+    <!-- Section des tendances avec le graphique -->
+    <div id="tendancesSection">
+      <h2 id="tendances-header">Tendances des Produits</h2>
+      <button onclick="exporterTendancesVersExcel()">Exporter vers Excel</button>
+      <canvas id="tendanceChart"></canvas>
+    </div>
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Section des analyses -->
+    <div id="analysesSection">
+      <h2 id="analyses-header">Analyses des Produits</h2>
+      <button onclick="exporterAnalysesVersExcel()">Exporter vers Excel</button>
 
-  <script src="script.js"></script> 
+      <div>
+        <label for="analysePeriode">Période d'analyse:</label>
+        <select id="analysePeriode">
+          <option value="hebdomadaire">Hebdomadaire</option>
+          <option value="mensuelle">Mensuelle</option>
+          <option value="annuelle">Annuelle</option>
+        </select>
+        <select id="anneeSelect"></select>
+        <select id="moisSelect"></select>
+        <select id="semaineSelect"></select>
+      </div>
+
+      <!-- Affichage de la période sélectionnée -->
+      <div id="periodeSelectionnee"></div>
+
+      <div id="resultatsAnalyse">
+        <!-- Les résultats de l'analyse seront affichés ici -->
+      </div>
+    </div>
+
+    <!-- Section des débiteurs -->
+    <div id="debiteursSection">
+      <h2 id="debiteurs-header">Liste des Débiteurs</h2>
+      <button onclick="exporterDebiteursVersExcel()">Exporter vers Excel</button>
+
+      <!-- Barre de recherche pour le tableau des debiteurs -->
+      <div class="search-bar">
+        <input type="text" id="searchInputDebiteurs" placeholder="Rechercher dans le tableau des débiteurs..."
+          onkeyup="rechercherDebiteurs()">
+      </div>
+
+      <table id="debiteurTable">
+        <thead>
+          <tr>
+            <th>Date
+              <i class="fas fa-sort sort-icon" onclick="trierTableau('debiteurTable', 'date')"></i>
+            </th>
+            <th>Désignation
+              <i class="fas fa-sort sort-icon" onclick="trierTableau('debiteurTable', 'designation')"></i>
+            </th>
+            <th>Numéro de Téléphone</th>
+            <th>Montant RAP</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les lignes des débiteurs seront ajoutées ici -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section de l'inventaire de stocks -->
+    <div id="stocksSection">
+      <h2 id="stocks-header">Inventaires de Stocks</h2>
+      <button onclick="exporterStocksVersExcel()">Exporter vers Excel</button>
+
+      <form id="stockForm">
+        <div>
+          <label for="dateStock">Date:</label>
+          <input type="date" id="dateStock" name="dateStock" required>
+        </div>
+        <div>
+          <label for="designationStock">Désignation:</label>
+          <input type="text" id="designationStock" name="designationStock" required>
+        </div>
+        <div>
+          <label for="quantiteInitialeStock">Quantité à Stocker:</label>
+          <input type="number" id="quantiteInitialeStock" name="quantiteInitialeStock" required>
+        </div>
+        <button type="submit">Ajouter Stock</button> <br>
+      </form>
+
+      <!-- Barre de recherche pour le tableau des stocks -->
+      <div class="search-bar">
+        <input type="text" id="searchInputStocks" placeholder="Rechercher dans le tableau des stocks..."
+          onkeyup="rechercherStocks()">
+      </div>
+
+      <table id="stockTable">
+        <thead>
+          <tr>
+            <th>Date
+              <i class="fas fa-sort sort-icon" onclick="trierTableau('stockTable', 'dateStock')"></i>
+            </th>
+            <th>Désignation
+              <i class="fas fa-sort sort-icon" onclick="trierTableau('stockTable', 'designation')"></i>
+            </th>
+            <th>Quantité Initiale</th>
+            <th>Quantité Vendues</th>
+            <th>Quantité Restante</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les lignes de stocks seront ajoutées ici -->
+        </tbody>
+      </table>
+
+      <!-- Fenêtre flottante (modal) pour la modification des stocks -->
+      <div id="editStockModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fermerModalStock()">×</span>
+          <h2>Modifier Stock</h2>
+          <form id="editStockForm">
+            <input type="hidden" id="editStockKey">
+            <div>
+              <label for="editDateStock">Date:</label>
+              <input type="date" id="editDateStock" name="editDateStock" required>
+            </div>
+            <div>
+              <label for="editDesignationStock">Désignation:</label>
+              <input type="text" id="editDesignationStock" name="editDesignationStock" required>
+            </div>
+            <div>
+              <label for="editQuantiteInitialeStock">Quantité Initiale:</label>
+              <input type="number" id="editQuantiteInitialeStock" name="editQuantiteInitialeStock" required>
+            </div>
+            <button type="submit">Enregistrer les modifications</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
