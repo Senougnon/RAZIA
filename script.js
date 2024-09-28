@@ -1,1 +1,1838 @@
-var _0x54120b=_0x3da0;(function(_0x557f49,_0x2c36e1){var _0x462a63=_0x3da0,_0x10547d=_0x557f49();while(!![]){try{var _0x5bcb1a=-parseInt(_0x462a63(0x18f))/0x1*(parseInt(_0x462a63(0x193))/0x2)+parseInt(_0x462a63(0x194))/0x3*(-parseInt(_0x462a63(0xc3))/0x4)+-parseInt(_0x462a63(0x139))/0x5*(parseInt(_0x462a63(0x106))/0x6)+-parseInt(_0x462a63(0x170))/0x7+parseInt(_0x462a63(0x1d2))/0x8+parseInt(_0x462a63(0x17d))/0x9+parseInt(_0x462a63(0xe4))/0xa;if(_0x5bcb1a===_0x2c36e1)break;else _0x10547d['push'](_0x10547d['shift']());}catch(_0x53d9bf){_0x10547d['push'](_0x10547d['shift']());}}}(_0x4a2d,0xcd0e5));var firebaseConfig={'apiKey':'AIzaSyDTxa2nD-EVgmSRrHWciqs7xdOkp12t5yA','authDomain':_0x54120b(0x181),'databaseURL':'https://razia-sarl-default-rtdb.firebaseio.com','projectId':_0x54120b(0x19f),'storageBucket':_0x54120b(0x107),'messagingSenderId':'490482635351','appId':_0x54120b(0x122),'measurementId':_0x54120b(0x1c2)};firebase[_0x54120b(0x1a9)](firebaseConfig);var database=firebase[_0x54120b(0x1ad)](),produitsRef=database[_0x54120b(0xc2)]('produits'),debiteursRef=database[_0x54120b(0xc2)](_0x54120b(0xcb)),stocksRef=database['ref']('stocks'),usersRef=database[_0x54120b(0xc2)](_0x54120b(0x183));function afficherPageConnexion(){var _0x1cbf4c=_0x54120b;document[_0x1cbf4c(0xda)](_0x1cbf4c(0x16a))[_0x1cbf4c(0x10d)]['display']=_0x1cbf4c(0x190),document[_0x1cbf4c(0xda)]('signupPage')['style']['display']=_0x1cbf4c(0x10e);}function afficherPageInscription(){var _0x4bd366=_0x54120b;document[_0x4bd366(0xda)](_0x4bd366(0x16a))['style']['display']=_0x4bd366(0x10e),document[_0x4bd366(0xda)](_0x4bd366(0x18b))[_0x4bd366(0x10d)][_0x4bd366(0x109)]=_0x4bd366(0x190);}document[_0x54120b(0xda)](_0x54120b(0xfe))[_0x54120b(0xcc)]('click',afficherPageInscription),document[_0x54120b(0xda)](_0x54120b(0x160))['addEventListener']('click',afficherPageConnexion),document[_0x54120b(0xda)](_0x54120b(0x102))[_0x54120b(0xcc)]('submit',function(_0x56f803){var _0x10520f=_0x54120b;_0x56f803['preventDefault']();var _0x5ad2ba=document['getElementById'](_0x10520f(0xd3))[_0x10520f(0x132)],_0x5e6ac9=document[_0x10520f(0xda)](_0x10520f(0xc4))[_0x10520f(0x132)];firebase[_0x10520f(0xeb)]()[_0x10520f(0x1c9)](_0x5ad2ba,_0x5e6ac9)[_0x10520f(0x134)](function(_0x1051c8){var _0x1a955d=_0x10520f;console['log'](_0x1a955d(0x1d6),_0x1051c8['user']),document[_0x1a955d(0xda)](_0x1a955d(0xcd))['style']['display']=_0x1a955d(0x190),document[_0x1a955d(0xda)](_0x1a955d(0x16a))['style'][_0x1a955d(0x109)]=_0x1a955d(0x10e);})['catch'](function(_0x25087b){var _0xce395a=_0x10520f,_0x1a4b50=_0x25087b[_0xce395a(0x16b)],_0x163c20=_0x25087b['message'];alert(_0xce395a(0xf9)+_0x163c20),console[_0xce395a(0x1e2)]('Erreur\x20de\x20connexion:\x20',_0x25087b);});}),document['getElementById'](_0x54120b(0x159))['addEventListener']('submit',function(_0x5907f8){var _0x4fa83b=_0x54120b;_0x5907f8[_0x4fa83b(0x114)]();var _0x191848=document['getElementById']('signupUsername')[_0x4fa83b(0x132)],_0x55bf4a=document[_0x4fa83b(0xda)](_0x4fa83b(0xf0))[_0x4fa83b(0x132)],_0x1ab16b=document['getElementById'](_0x4fa83b(0x10c))[_0x4fa83b(0x132)];firebase['auth']()[_0x4fa83b(0x1b8)](_0x55bf4a,_0x1ab16b)[_0x4fa83b(0x134)](function(_0x526420){var _0x2e152a=_0x4fa83b;return console[_0x2e152a(0x1df)](_0x2e152a(0x19a),_0x526420[_0x2e152a(0x1ba)]),usersRef['child'](_0x526420[_0x2e152a(0x1ba)][_0x2e152a(0x1d1)])[_0x2e152a(0xe7)]({'username':_0x191848,'email':_0x55bf4a});})[_0x4fa83b(0x134)](function(){var _0x13bffd=_0x4fa83b;document[_0x13bffd(0xda)](_0x13bffd(0xcd))[_0x13bffd(0x10d)][_0x13bffd(0x109)]=_0x13bffd(0x190),document[_0x13bffd(0xda)](_0x13bffd(0x18b))[_0x13bffd(0x10d)][_0x13bffd(0x109)]=_0x13bffd(0x10e);})[_0x4fa83b(0x17c)](function(_0x4b3d6e){var _0x2a85eb=_0x4fa83b,_0x93c29c=_0x4b3d6e[_0x2a85eb(0x16b)],_0x4ec2ce=_0x4b3d6e[_0x2a85eb(0x111)];alert(_0x2a85eb(0xe1)+_0x4ec2ce),console['error'](_0x2a85eb(0x1ca),_0x4b3d6e);});});function formaterMontant(_0x18be07){var _0x19a784=_0x54120b;_0x18be07[_0x19a784(0x132)]=_0x18be07[_0x19a784(0x132)][_0x19a784(0x158)](/[^0-9.-]+/g,'');var _0x41e999=parseFloat(_0x18be07[_0x19a784(0x132)])[_0x19a784(0x1d9)](_0x19a784(0xf8),{'style':_0x19a784(0x1b9),'currency':_0x19a784(0x163)});_0x18be07[_0x19a784(0x132)]=_0x41e999;}function ajouterProduit(){var _0x372666=_0x54120b,_0x11afab=document[_0x372666(0xda)](_0x372666(0xf2))[_0x372666(0x11a)](_0x372666(0x12a));for(var _0x373022=0x0;_0x373022<_0x11afab[_0x372666(0xfa)];_0x373022++){if(_0x11afab[_0x373022]['value']===''){alert(_0x372666(0xd4)+_0x11afab[_0x373022][_0x372666(0x174)]+'.'),_0x11afab[_0x373022][_0x372666(0x19d)]();return;}}document[_0x372666(0xda)]('loadingBar')[_0x372666(0x10d)][_0x372666(0x176)]='0%';var _0x4b51b1=parseFloat(document[_0x372666(0xda)](_0x372666(0x195))[_0x372666(0x132)]['replace'](/[^0-9.-]+/g,'')),_0x2787c9=parseFloat(document['getElementById'](_0x372666(0x12f))[_0x372666(0x132)][_0x372666(0x158)](/[^0-9.-]+/g,'')),_0x38465d=parseFloat(document['getElementById'](_0x372666(0x182))['value']['replace'](/[^0-9.-]+/g,'')),_0x59c5c6=parseFloat(document['getElementById'](_0x372666(0x1bc))[_0x372666(0x132)][_0x372666(0x158)](/[^0-9.-]+/g,'')),_0x3f8fa5=parseFloat(document[_0x372666(0xda)](_0x372666(0xc5))['value']['replace'](/[^0-9.-]+/g,'')),_0x24cebe=parseFloat(document[_0x372666(0xda)](_0x372666(0x154))[_0x372666(0x132)][_0x372666(0x158)](/[^0-9.-]+/g,'')),_0x4ffe56=parseFloat(document['getElementById']('impotDocument')[_0x372666(0x132)][_0x372666(0x158)](/[^0-9.-]+/g,'')),_0x58e4e7=parseFloat(document['getElementById'](_0x372666(0x19e))[_0x372666(0x132)][_0x372666(0x158)](/[^0-9.-]+/g,'')),_0x550beb={'date':document[_0x372666(0xda)]('date')[_0x372666(0x132)],'quantite':document[_0x372666(0xda)](_0x372666(0x118))[_0x372666(0x132)],'designation':document[_0x372666(0xda)](_0x372666(0x11c))[_0x372666(0x132)],'typeArticle':document[_0x372666(0xda)](_0x372666(0x11b))['value'],'categorie':document[_0x372666(0xda)](_0x372666(0x17b))['value'],'prixVente':_0x4b51b1,'RAP':_0x2787c9,'netBrut':document[_0x372666(0xda)](_0x372666(0x171))[_0x372666(0x132)]['replace'](/[^0-9.-]+/g,''),'prixBrut':_0x38465d,'taux':document[_0x372666(0xda)](_0x372666(0xf6))[_0x372666(0x132)],'freight':_0x59c5c6,'douaneTransport':_0x3f8fa5,'fraisTransfert':_0x24cebe,'impotDocument':_0x4ffe56,'reparation':_0x58e4e7,'typeClient':document[_0x372666(0xda)]('typeClient')['value'],'ville':document['getElementById'](_0x372666(0x144))[_0x372666(0x132)],'numeroTelephone':document[_0x372666(0xda)]('numeroTelephone')[_0x372666(0x132)],'commande':document['getElementById'](_0x372666(0x166))[_0x372666(0x132)],'coutReviens':parseFloat(document[_0x372666(0xda)](_0x372666(0xc6))[_0x372666(0x132)][_0x372666(0x158)](/[^0-9.-]+/g,''))||0x0,'margeBenefice':parseFloat(document[_0x372666(0xda)](_0x372666(0x136))[_0x372666(0x132)][_0x372666(0x158)](/[^0-9.-]+/g,''))||0x0};produitsRef['push'](_0x550beb)[_0x372666(0x134)](function(){var _0x3417f5=_0x372666;document[_0x3417f5(0xda)](_0x3417f5(0x13f))[_0x3417f5(0x10d)][_0x3417f5(0x176)]=_0x3417f5(0x100),setTimeout(function(){var _0x27c533=_0x3417f5;alert(_0x27c533(0x12c)),document['getElementById'](_0x27c533(0xf2))[_0x27c533(0x1cb)](),document[_0x27c533(0xda)](_0x27c533(0x13f))[_0x27c533(0x10d)]['width']='0%',mettreAJourStocks(_0x550beb[_0x27c533(0x11c)],_0x550beb[_0x27c533(0x118)]),parseFloat(_0x550beb[_0x27c533(0x12f)])>0x0&&debiteursRef[_0x27c533(0x127)]({'date':_0x550beb[_0x27c533(0x147)],'designation':_0x550beb['designation'],'numeroTelephone':_0x550beb['numeroTelephone'],'RAP':_0x550beb['RAP']}),analyserProduits(),document[_0x27c533(0xda)](_0x27c533(0x147))[_0x27c533(0x19d)]();},0x1f4);})[_0x372666(0x17c)](function(_0xd5807){var _0x5f0d4b=_0x372666;console[_0x5f0d4b(0x1e2)]('Erreur\x20lors\x20de\x20l\x27ajout\x20du\x20produit:',_0xd5807),alert('Une\x20erreur\x20est\x20survenue.'),document[_0x5f0d4b(0xda)]('loadingBar')['style']['width']='0%';});}function afficherDetails(){var _0x56f6a4=_0x54120b;masquerToutesSections(),document[_0x56f6a4(0xda)]('detailsSection')[_0x56f6a4(0x10d)][_0x56f6a4(0x109)]=_0x56f6a4(0x190),remplirTableau();}function remplirTableau(){var _0x15b3cb=_0x54120b,_0x40e5dc=document[_0x15b3cb(0xda)](_0x15b3cb(0x146))[_0x15b3cb(0x15d)]('tbody')[0x0];_0x40e5dc['innerHTML']='';var _0x7d3cb8=null,_0x24e50c=0x0,_0x485d7c=0x0,_0x2e4e99=0x0,_0x5b6cab=0x0,_0x45c9c4=0x0,_0x5da1ee=0x0,_0x2db9c9=0x0,_0x224912=0x0,_0x562e85=0x0,_0x4131a7=0x0,_0x332927=0x0,_0x4e651c=0x0,_0x52de0d=0x0,_0x3cb462=0x0;database['ref'](_0x15b3cb(0xe6))[_0x15b3cb(0x14a)](_0x15b3cb(0x147))[_0x15b3cb(0x1c6)]('value')[_0x15b3cb(0x134)](function(_0x27faff){var _0x4869dc=_0x15b3cb,_0x4e375c=[];_0x27faff[_0x4869dc(0x186)](function(_0x52b868){var _0x59a2e9=_0x4869dc;_0x4e375c[_0x59a2e9(0x127)](_0x52b868[_0x59a2e9(0x1d0)]());}),_0x4e375c[_0x4869dc(0x15e)](),_0x4e375c[_0x4869dc(0x186)](function(_0xc8f289,_0x310bf1){var _0x3866aa=_0x4869dc,_0xc8b630=new Date(_0xc8f289[_0x3866aa(0x147)]),_0x227eed=_0xc8b630[_0x3866aa(0x1d8)]();if(_0x7d3cb8!==null&&_0x227eed!==_0x7d3cb8){var _0x2d1aaa=_0x40e5dc[_0x3866aa(0x17e)]();_0x2d1aaa[_0x3866aa(0x1b1)]['add'](_0x3866aa(0x101));var _0x2cf661=_0x2d1aaa['insertCell']();_0x2cf661[_0x3866aa(0x1af)](_0x3866aa(0x173),0x16);}var _0x29c18f=_0x40e5dc['insertRow'](),_0x2dcbbc=_0x27faff[_0x3866aa(0x157)](_0x310bf1)['key'],_0x45804e=_0x29c18f[_0x3866aa(0xed)]();_0x45804e['textContent']=_0xc8f289['date'];var _0x4e8f79=_0x29c18f[_0x3866aa(0xed)]();_0x4e8f79[_0x3866aa(0x1e3)]=_0xc8f289[_0x3866aa(0x118)],_0x24e50c+=parseFloat(_0xc8f289['quantite'])||0x0;var _0xfc45d4=_0x29c18f[_0x3866aa(0xed)]();_0xfc45d4[_0x3866aa(0x1e3)]=_0xc8f289['designation'];var _0x50501a=_0x29c18f['insertCell']();_0x50501a[_0x3866aa(0x1e3)]=_0xc8f289['typeArticle'];var _0x1adbd9=_0x29c18f[_0x3866aa(0xed)]();_0x1adbd9[_0x3866aa(0x1e3)]=_0xc8f289['categorie'];var _0x59b709=_0x29c18f[_0x3866aa(0xed)]();_0x59b709['textContent']=formaterMontantAffichage(_0xc8f289[_0x3866aa(0x195)]),_0x485d7c+=parseFloat(_0xc8f289['prixVente'])||0x0;var _0x5afc07=_0x29c18f['insertCell']();_0x5afc07[_0x3866aa(0x1e3)]=formaterMontantAffichage(_0xc8f289[_0x3866aa(0x12f)]),_0x2e4e99+=parseFloat(_0xc8f289[_0x3866aa(0x12f)])||0x0;var _0x472630=_0x29c18f[_0x3866aa(0xed)]();_0x472630['textContent']=formaterMontantAffichage(_0xc8f289['prixBrut']),_0x5b6cab+=parseFloat(_0xc8f289[_0x3866aa(0x182)])||0x0;var _0x504255=_0x29c18f[_0x3866aa(0xed)]();_0x504255['textContent']=_0xc8f289[_0x3866aa(0xf6)],_0x45c9c4+=parseFloat(_0xc8f289[_0x3866aa(0xf6)])||0x0;var _0x250701=_0x29c18f[_0x3866aa(0xed)]();_0x250701[_0x3866aa(0x1e3)]=formaterMontantAffichage(_0xc8f289[_0x3866aa(0x171)]),_0x5da1ee+=parseFloat(_0xc8f289[_0x3866aa(0x171)])||0x0;var _0x3b18fe=_0x29c18f[_0x3866aa(0xed)]();_0x3b18fe['textContent']=formaterMontantAffichage(_0xc8f289[_0x3866aa(0x1bc)]),_0x2db9c9+=parseFloat(_0xc8f289[_0x3866aa(0x1bc)])||0x0;var _0x3bc5e7=_0x29c18f[_0x3866aa(0xed)]();_0x3bc5e7['textContent']=formaterMontantAffichage(_0xc8f289[_0x3866aa(0xc5)]),_0x224912+=parseFloat(_0xc8f289['douaneTransport'])||0x0;var _0x5899a9=_0x29c18f[_0x3866aa(0xed)]();_0x5899a9['textContent']=formaterMontantAffichage(_0xc8f289['fraisTransfert']),_0x562e85+=parseFloat(_0xc8f289[_0x3866aa(0x154)])||0x0;var _0xd094d7=_0x29c18f[_0x3866aa(0xed)]();_0xd094d7[_0x3866aa(0x1e3)]=formaterMontantAffichage(_0xc8f289['impotDocument']),_0x4131a7+=parseFloat(_0xc8f289[_0x3866aa(0x11f)])||0x0;var _0xa20cd5=_0x29c18f[_0x3866aa(0xed)]();_0xa20cd5[_0x3866aa(0x1e3)]=formaterMontantAffichage(_0xc8f289[_0x3866aa(0x19e)]),_0x332927+=parseFloat(_0xc8f289[_0x3866aa(0x19e)])||0x0;var _0x25b2cd=parseFloat(_0xc8f289[_0x3866aa(0x1bc)])+parseFloat(_0xc8f289[_0x3866aa(0xc5)])+parseFloat(_0xc8f289[_0x3866aa(0x154)])+parseFloat(_0xc8f289[_0x3866aa(0x11f)])+parseFloat(_0xc8f289[_0x3866aa(0x19e)]),_0x3e7951=_0x29c18f[_0x3866aa(0xed)]();_0x3e7951[_0x3866aa(0x1e3)]=formaterMontantAffichage(_0x25b2cd),_0x4e651c+=_0x25b2cd;var _0x3a97c0=_0x29c18f['insertCell']();_0x3a97c0[_0x3866aa(0x1e3)]=formaterMontantAffichage(_0xc8f289[_0x3866aa(0xc6)]),_0x52de0d+=parseFloat(_0xc8f289['coutReviens'])||0x0;var _0x2005d8=_0x29c18f[_0x3866aa(0xed)]();_0x2005d8[_0x3866aa(0x1e3)]=formaterMontantAffichage(_0xc8f289['margeBenefice']),_0x3cb462+=parseFloat(_0xc8f289[_0x3866aa(0x136)])||0x0;var _0x5635f7=_0x29c18f[_0x3866aa(0xed)]();_0x5635f7['textContent']=_0xc8f289[_0x3866aa(0x189)];var _0x4d1363=_0x29c18f['insertCell']();_0x4d1363[_0x3866aa(0x1e3)]=_0xc8f289[_0x3866aa(0x144)];var _0x115482=_0x29c18f[_0x3866aa(0xed)]();_0x115482['textContent']=_0xc8f289[_0x3866aa(0x166)];var _0x3744ad=_0x29c18f['insertCell']();_0x3744ad[_0x3866aa(0x1e3)]=_0xc8f289['numeroTelephone'],_0x3744ad['setAttribute'](_0x3866aa(0x130),_0xc8f289['RAP']>0x0?_0x3866aa(0x1a7):'black');var _0x2a3a55=_0x29c18f[_0x3866aa(0xed)](),_0x24fe6a=document[_0x3866aa(0x1b5)](_0x3866aa(0x196));_0x24fe6a['classList'][_0x3866aa(0xf7)](_0x3866aa(0x1c3));var _0x460f9c=document[_0x3866aa(0x1b5)]('i');_0x460f9c[_0x3866aa(0x1b1)][_0x3866aa(0xf7)](_0x3866aa(0x115),_0x3866aa(0x164),'icon-delete'),_0x460f9c['onclick']=function(){var _0x5a7f0f=_0x3866aa;confirm(_0x5a7f0f(0x1b6))&&produitsRef[_0x5a7f0f(0x157)](_0x2dcbbc)[_0x5a7f0f(0x1ac)]()[_0x5a7f0f(0x134)](function(){var _0x20dd36=_0x5a7f0f;remplirTableau(),parseFloat(_0xc8f289[_0x20dd36(0x12f)])>0x0&&debiteursRef['orderByChild'](_0x20dd36(0xe0))['equalTo'](_0xc8f289[_0x20dd36(0xe0)])['once'](_0x20dd36(0x132),function(_0x455718){var _0x2fb81f=_0x20dd36;_0x455718[_0x2fb81f(0xd6)]()&&_0x455718[_0x2fb81f(0x186)](function(_0x123709){var _0x4d5e11=_0x2fb81f;debiteursRef[_0x4d5e11(0x157)](_0x123709[_0x4d5e11(0x10b)])[_0x4d5e11(0x1ac)]();});}),remplirTableauDebiteurs(),mettreAJourStocks(_0xc8f289[_0x20dd36(0x11c)],-_0xc8f289['quantite']),remplirTableauStocks(),analyserProduits(),alert(_0x20dd36(0xd1));})[_0x5a7f0f(0x17c)](function(_0x3933ce){var _0x4cb334=_0x5a7f0f;console[_0x4cb334(0x1e2)](_0x4cb334(0xf5),_0x3933ce),alert(_0x4cb334(0x150));});},_0x24fe6a[_0x3866aa(0x191)](_0x460f9c);var _0x470d25=document[_0x3866aa(0x1b5)]('i');_0x470d25[_0x3866aa(0x1b1)][_0x3866aa(0xf7)](_0x3866aa(0x115),_0x3866aa(0xdf),'icon-edit'),_0x470d25['onclick']=function(){ouvrirModalProduit(_0x2dcbbc,_0xc8f289);},_0x24fe6a[_0x3866aa(0x191)](_0x470d25),_0x2a3a55['appendChild'](_0x24fe6a),_0x7d3cb8=_0x227eed;}),ajouterLigneTotalProduits(_0x40e5dc,_0x4e375c[_0x4869dc(0xfa)],_0x24e50c,_0x485d7c,_0x2e4e99,_0x5b6cab,_0x45c9c4,_0x5da1ee,_0x2db9c9,_0x224912,_0x562e85,_0x4131a7,_0x332927,_0x4e651c,_0x52de0d,_0x3cb462);})['catch'](function(_0x1d7d31){var _0x10cf18=_0x15b3cb;console[_0x10cf18(0x1e2)](_0x10cf18(0x187),_0x1d7d31),alert('Une\x20erreur\x20est\x20survenue.');});}function formaterMontantAffichage(_0x261197){var _0x1f91b5=_0x54120b;return parseFloat(_0x261197)[_0x1f91b5(0x1d9)](_0x1f91b5(0xf8),{'style':_0x1f91b5(0x1b9),'currency':_0x1f91b5(0x163)});}function ajouterLigneTotalProduits(_0x208ea9,_0x3b525c,_0x3a4373,_0x41ede5,_0xa62b59,_0x260eb5,_0x7809f3,_0x529573,_0x1d5690,_0x3f0bdd,_0x38702d,_0x407e93,_0x510d51,_0x3d50dc,_0x4a96c6,_0x16d860){var _0x4daa9=_0x54120b,_0x1d0e7b=_0x208ea9['insertRow']();_0x1d0e7b['classList'][_0x4daa9(0xf7)](_0x4daa9(0x1cd)),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]='Total',_0x1d0e7b[_0x4daa9(0xed)]()['textContent']=_0x3a4373,_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=_0x3b525c,_0x1d0e7b['insertCell']()[_0x4daa9(0x1e3)]='',_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]='',_0x1d0e7b['insertCell']()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x41ede5),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0xa62b59),_0x1d0e7b['insertCell']()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x260eb5),_0x1d0e7b[_0x4daa9(0xed)]()['textContent']=_0x7809f3,_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x529573),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x1d5690),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x3f0bdd),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x38702d),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x407e93),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x510d51),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x3d50dc),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x4a96c6),_0x1d0e7b['insertCell']()[_0x4daa9(0x1e3)]=formaterMontantAffichage(_0x16d860),_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]='',_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]='',_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]='',_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]='',_0x1d0e7b[_0x4daa9(0xed)]()[_0x4daa9(0x1e3)]='';}var tendanceChart=null;function afficherTendances(){var _0x16fee1=_0x54120b;masquerToutesSections(),document[_0x16fee1(0xda)](_0x16fee1(0xdc))[_0x16fee1(0x10d)]['display']='block',creerGraphique();}function creerGraphique(){produitsRef['on']('value',function(_0x10aada){var _0x2f2ae2=_0x3da0,_0x47389f=[],_0x40d1d4=[],_0x160d78=[],_0x5bb9fb=[],_0x27d6f4=[];_0x10aada[_0x2f2ae2(0x186)](function(_0x15d2cc){var _0x53806d=_0x2f2ae2,_0x1a3ea6=_0x15d2cc[_0x53806d(0x1d0)]();_0x47389f[_0x53806d(0x127)](_0x1a3ea6[_0x53806d(0x147)]),_0x40d1d4['push'](parseFloat(_0x1a3ea6['quantite'])||0x0),_0x160d78['push'](parseFloat(_0x1a3ea6[_0x53806d(0x166)])||0x0),_0x5bb9fb[_0x53806d(0x127)](parseFloat(_0x1a3ea6[_0x53806d(0xc6)])||0x0),_0x27d6f4[_0x53806d(0x127)](parseFloat(_0x1a3ea6[_0x53806d(0x136)])||0x0);});if(tendanceChart)tendanceChart['data'][_0x2f2ae2(0x13a)]=_0x47389f,tendanceChart['data'][_0x2f2ae2(0xfb)][0x0][_0x2f2ae2(0x153)]=_0x40d1d4,tendanceChart['data'][_0x2f2ae2(0xfb)][0x1][_0x2f2ae2(0x153)]=_0x160d78,tendanceChart[_0x2f2ae2(0x153)][_0x2f2ae2(0xfb)][0x2][_0x2f2ae2(0x153)]=_0x5bb9fb,tendanceChart[_0x2f2ae2(0x153)]['datasets'][0x3][_0x2f2ae2(0x153)]=_0x27d6f4,tendanceChart[_0x2f2ae2(0x180)]();else{var _0x25d986=document[_0x2f2ae2(0xda)](_0x2f2ae2(0x16c))[_0x2f2ae2(0x1dd)]('2d');tendanceChart=new Chart(_0x25d986,{'type':_0x2f2ae2(0x155),'data':{'labels':_0x47389f,'datasets':[{'label':_0x2f2ae2(0x165),'data':_0x40d1d4,'borderColor':_0x2f2ae2(0x13c),'backgroundColor':_0x2f2ae2(0x198),'borderWidth':0x1},{'label':_0x2f2ae2(0xff),'data':_0x160d78,'borderColor':_0x2f2ae2(0x18e),'backgroundColor':_0x2f2ae2(0x167),'borderWidth':0x1},{'label':_0x2f2ae2(0x197),'data':_0x5bb9fb,'borderColor':_0x2f2ae2(0x1c0),'backgroundColor':_0x2f2ae2(0x19b),'borderWidth':0x1},{'label':'Marge\x20Bénéfice','data':_0x27d6f4,'borderColor':_0x2f2ae2(0x1b4),'backgroundColor':_0x2f2ae2(0x1d4),'borderWidth':0x1}]},'options':{'scales':{'y':{'beginAtZero':!![]}}}});}});}function calculerTauxCroissance(){var _0xc89ff4=_0x54120b,_0x338814=parseFloat(document[_0xc89ff4(0xda)]('quantite')[_0xc89ff4(0x132)])||0x0,_0x4c801b=new Date(document['getElementById'](_0xc89ff4(0x147))[_0xc89ff4(0x132)]);database['ref'](_0xc89ff4(0xe6))[_0xc89ff4(0x14a)](_0xc89ff4(0x147))['endAt'](_0x4c801b[_0xc89ff4(0xfd)]()+'-'+_0x4c801b['getMonth']()+'-01')[_0xc89ff4(0x169)](0x1)[_0xc89ff4(0x1c6)](_0xc89ff4(0x132))[_0xc89ff4(0x134)](function(_0x28780a){var _0x1ae807=_0xc89ff4,_0x1dcb3c=0x0;_0x28780a['forEach'](function(_0x35d21e){var _0x546de1=_0x3da0;_0x1dcb3c=parseFloat(_0x35d21e[_0x546de1(0x1d0)]()[_0x546de1(0x118)])||0x0;});var _0x313f1f=0x0;_0x1dcb3c!==0x0&&(_0x313f1f=(_0x338814-_0x1dcb3c)/_0x1dcb3c*0x64),document['getElementById']('tauxCroissance')[_0x1ae807(0x132)]=_0x313f1f[_0x1ae807(0x13b)](0x2);})[_0xc89ff4(0x17c)](function(_0x458dd8){var _0x585d2c=_0xc89ff4;console['error'](_0x585d2c(0x177),_0x458dd8);});}function calculerPrixNet(){var _0x22646c=_0x54120b,_0x195628=parseFloat(document[_0x22646c(0xda)]('prixBrut')[_0x22646c(0x132)][_0x22646c(0x158)](/[^0-9.-]+/g,''))||0x0,_0x57cb7f=parseFloat(document['getElementById']('taux')[_0x22646c(0x132)])||0x0,_0x63159a=_0x195628*_0x57cb7f;document['getElementById'](_0x22646c(0x171))['value']=formaterMontantAffichage(_0x63159a);}function calculerCoutReviens(){var _0x5d30db=_0x54120b,_0xd5cfd=parseFloat(document[_0x5d30db(0xda)]('netBrut')['value'][_0x5d30db(0x158)](/[^0-9.-]+/g,''))||0x0,_0x454a9a=parseFloat(document['getElementById'](_0x5d30db(0x1bc))[_0x5d30db(0x132)][_0x5d30db(0x158)](/[^0-9.-]+/g,''))||0x0,_0x57ae35=parseFloat(document[_0x5d30db(0xda)](_0x5d30db(0xc5))[_0x5d30db(0x132)]['replace'](/[^0-9.-]+/g,''))||0x0,_0x39b9c4=parseFloat(document['getElementById']('fraisTransfert')[_0x5d30db(0x132)][_0x5d30db(0x158)](/[^0-9.-]+/g,''))||0x0,_0x1eabdc=parseFloat(document['getElementById'](_0x5d30db(0x11f))[_0x5d30db(0x132)][_0x5d30db(0x158)](/[^0-9.-]+/g,''))||0x0,_0x406a7=parseFloat(document[_0x5d30db(0xda)]('reparation')[_0x5d30db(0x132)][_0x5d30db(0x158)](/[^0-9.-]+/g,''))||0x0,_0x146c74=_0xd5cfd+_0x454a9a+_0x57ae35+_0x39b9c4+_0x1eabdc+_0x406a7;document['getElementById'](_0x5d30db(0xc6))[_0x5d30db(0x132)]=formaterMontantAffichage(_0x146c74),calculerMargeBenefice();}function calculerMargeBenefice(){var _0x576a44=_0x54120b,_0x16babb=parseFloat(document['getElementById'](_0x576a44(0x195))[_0x576a44(0x132)][_0x576a44(0x158)](/[^0-9.-]+/g,''))||0x0,_0x472eaa=parseFloat(document['getElementById'](_0x576a44(0xc6))[_0x576a44(0x132)]['replace'](/[^0-9.-]+/g,''))||0x0,_0x2272ae=_0x16babb-_0x472eaa;document[_0x576a44(0xda)](_0x576a44(0x136))[_0x576a44(0x132)]=formaterMontantAffichage(_0x2272ae);}function analyserProduits(){var _0x2af65e=_0x54120b,_0x261063=document[_0x2af65e(0xda)]('resultatsAnalyse');_0x261063['innerHTML']='';var _0x500fe2=document[_0x2af65e(0xda)](_0x2af65e(0x131))[_0x2af65e(0x132)],_0x279b03=document[_0x2af65e(0xda)](_0x2af65e(0xef))[_0x2af65e(0x132)],_0x3f0bd8=document[_0x2af65e(0xda)](_0x2af65e(0x1b2))[_0x2af65e(0x132)],_0x3ad385=document[_0x2af65e(0xda)](_0x2af65e(0x1e0))['value'],_0x23d6e5='';if(_0x500fe2===_0x2af65e(0xc9)&&_0x3ad385&&_0x3f0bd8&&_0x279b03){var _0x19f337=getStartDateOfWeek(_0x3ad385,_0x3f0bd8,_0x279b03),_0x5e7236=new Date(_0x19f337);_0x5e7236['setDate'](_0x5e7236[_0x2af65e(0x172)]()+0x6),_0x23d6e5='Semaine\x20'+_0x3ad385+',\x20'+getMonthName(_0x3f0bd8)+'\x20'+_0x279b03+'\x20('+_0x19f337['toLocaleDateString']()+_0x2af65e(0x199)+_0x5e7236[_0x2af65e(0x128)]()+')';}document[_0x2af65e(0xda)](_0x2af65e(0xee))[_0x2af65e(0x149)]=_0x23d6e5?_0x2af65e(0x1ce)+_0x23d6e5+'</span>':'',produitsRef['on'](_0x2af65e(0x132),function(_0x5e13ae){var _0x55a559=_0x2af65e,_0x22d098=0x0,_0xa2a2c2=0x0,_0x1f07c3=0x0,_0x59264d=0x0,_0x233556=0x0,_0x2d4a65=0x0,_0x179490=0x0;_0x5e13ae['forEach'](function(_0xb28224){var _0x49d625=_0x3da0,_0x4653fc=_0xb28224[_0x49d625(0x1d0)](),_0x299b28=new Date(_0x4653fc[_0x49d625(0x147)]);(_0x500fe2==='annuelle'&&_0x299b28['getFullYear']()==_0x279b03||_0x500fe2===_0x49d625(0xe5)&&_0x299b28['getFullYear']()==_0x279b03&&_0x299b28[_0x49d625(0x1d8)]()+0x1==_0x3f0bd8||_0x500fe2===_0x49d625(0xc9)&&_0x299b28>=getStartDateOfWeek(_0x3ad385,_0x3f0bd8,_0x279b03)&&_0x299b28<=new Date(getStartDateOfWeek(_0x3ad385,_0x3f0bd8,_0x279b03))['setDate'](new Date(getStartDateOfWeek(_0x3ad385,_0x3f0bd8,_0x279b03))[_0x49d625(0x172)]()+0x6))&&(_0x22d098+=parseFloat(_0x4653fc[_0x49d625(0x118)])||0x0,_0xa2a2c2+=parseFloat(_0x4653fc['commande'])||0x0,_0x1f07c3+=parseFloat(_0x4653fc[_0x49d625(0xc6)])||0x0,_0x59264d+=parseFloat(_0x4653fc['margeBenefice'])||0x0,_0x233556+=parseFloat(_0x4653fc[_0x49d625(0x195)])||0x0,_0x2d4a65+=parseFloat(_0x4653fc[_0x49d625(0x171)])||0x0,_0x179490+=(parseFloat(_0x4653fc[_0x49d625(0x1bc)])||0x0)+(parseFloat(_0x4653fc[_0x49d625(0xc5)])||0x0)+(parseFloat(_0x4653fc['fraisTransfert'])||0x0)+(parseFloat(_0x4653fc[_0x49d625(0x11f)])||0x0)+(parseFloat(_0x4653fc[_0x49d625(0x19e)])||0x0));}),_0x261063[_0x55a559(0x149)]+='\x0a\x20\x20\x20\x20\x20\x20<h3>Totaux\x20pour\x20la\x20période\x20sélectionnée</h3>\x0a\x20\x20\x20\x20\x20\x20<p>Quantité\x20totale:\x20'+_0x22d098+_0x55a559(0x15a)+_0xa2a2c2+'</p>\x0a\x20\x20\x20\x20\x20\x20<p>Coût\x20de\x20revient\x20total:\x20'+formaterMontantAffichage(_0x1f07c3)+_0x55a559(0x17f)+formaterMontantAffichage(_0x233556)+'</p>\x0a\x20\x20\x20\x20\x20\x20<p>Total\x20des\x20prix\x20nets:\x20'+formaterMontantAffichage(_0x2d4a65)+_0x55a559(0x1bb)+formaterMontantAffichage(_0x179490)+_0x55a559(0x116)+formaterMontantAffichage(_0x59264d)+_0x55a559(0x14b);});}function getStartDateOfWeek(_0x5a0145,_0x20a846,_0xf788f4){var _0x592837=_0x54120b,_0x151816=new Date(_0xf788f4,_0x20a846-0x1,0x1),_0x3169b1=_0x151816['getDay'](),_0x53746c=_0x151816[_0x592837(0x172)]()-_0x3169b1+(_0x3169b1===0x0?-0x6:0x1);return _0x151816[_0x592837(0x108)](_0x53746c),_0x151816[_0x592837(0x108)](_0x151816['getDate']()+(_0x5a0145-0x1)*0x7),_0x151816;}function getMonthName(_0x435c3c){var _0x21ef7f=_0x54120b,_0x465552=[_0x21ef7f(0xe9),_0x21ef7f(0x135),_0x21ef7f(0x192),_0x21ef7f(0x1e1),'Mai',_0x21ef7f(0x1a0),_0x21ef7f(0x18c),_0x21ef7f(0x124),_0x21ef7f(0x16e),'Octobre',_0x21ef7f(0x19c),'Décembre'];return _0x465552[_0x435c3c-0x1];}function afficherAnalyses(){var _0x29d240=_0x54120b;masquerToutesSections(),document[_0x29d240(0xda)]('analysesSection')[_0x29d240(0x10d)][_0x29d240(0x109)]=_0x29d240(0x190),analyserProduits();}document[_0x54120b(0xda)](_0x54120b(0x131))[_0x54120b(0xcc)](_0x54120b(0x14e),function(){var _0xd7c558=_0x54120b,_0x55f76d=this[_0xd7c558(0x132)],_0x3e4dfc=document['getElementById']('anneeSelect'),_0x423743=document[_0xd7c558(0xda)](_0xd7c558(0x1b2)),_0x884bb7=document[_0xd7c558(0xda)]('semaineSelect');_0x3e4dfc[_0xd7c558(0x10d)][_0xd7c558(0x109)]=_0x55f76d===_0xd7c558(0x184)||_0x55f76d===_0xd7c558(0xe5)||_0x55f76d==='hebdomadaire'?_0xd7c558(0x133):_0xd7c558(0x10e),_0x423743[_0xd7c558(0x10d)][_0xd7c558(0x109)]=_0x55f76d==='mensuelle'||_0x55f76d===_0xd7c558(0xc9)?_0xd7c558(0x133):'none',_0x884bb7['style'][_0xd7c558(0x109)]=_0x55f76d===_0xd7c558(0xc9)?_0xd7c558(0x133):_0xd7c558(0x10e),_0x55f76d===_0xd7c558(0xc9)&&mettreAJourSemaines(_0x423743[_0xd7c558(0x132)],_0x3e4dfc['value']),analyserProduits();});function _0x3da0(_0x109070,_0x4562d7){var _0x4a2d35=_0x4a2d();return _0x3da0=function(_0x3da057,_0xd4d524){_0x3da057=_0x3da057-0xc2;var _0x73990f=_0x4a2d35[_0x3da057];return _0x73990f;},_0x3da0(_0x109070,_0x4562d7);}function mettreAJourSemaines(_0x484b60,_0x1532ca){var _0x2d39a6=_0x54120b,_0xa54427=document['getElementById'](_0x2d39a6(0x1e0));_0xa54427[_0x2d39a6(0x149)]='';var _0x36105b=getNumberOfWeeksInMonth(_0x484b60,_0x1532ca);for(var _0x2ab61c=0x1;_0x2ab61c<=_0x36105b;_0x2ab61c++){var _0x676597=document[_0x2d39a6(0x1b5)]('option');_0x676597[_0x2d39a6(0x132)]=_0x2ab61c,_0x676597[_0x2d39a6(0x1c5)]=_0x2d39a6(0x1cc)+_0x2ab61c,_0xa54427[_0x2d39a6(0xf7)](_0x676597);}}function getNumberOfWeeksInMonth(_0x143a1b,_0x312a19){var _0x432427=_0x54120b,_0x594a61=new Date(_0x312a19,_0x143a1b-0x1,0x1),_0x5c9f48=new Date(_0x312a19,_0x143a1b,0x0),_0x3e0958=_0x5c9f48[_0x432427(0x172)]();return _0x594a61[_0x432427(0x1ab)]()!==0x1&&(_0x3e0958+=_0x594a61['getDay']()-0x1),Math['ceil'](_0x3e0958/0x7);}var anneeSelect=document[_0x54120b(0xda)](_0x54120b(0xef));for(var i=new Date()[_0x54120b(0xfd)]()-0x5;i<=new Date()[_0x54120b(0xfd)]()+0x5;i++){var option=document[_0x54120b(0x1b5)](_0x54120b(0x16f));option[_0x54120b(0x132)]=i,option[_0x54120b(0x1c5)]=i,anneeSelect[_0x54120b(0xf7)](option);}function _0x4a2d(){var _0x3ae947=['length','datasets','payment-button','getFullYear','afficherInscription','Commande','100%','separateur-mois','loginForm','stocksSection','Erreur\x20lors\x20de\x20la\x20modification\x20du\x20produit:','editDateStock','1675146hRzikF','razia-sarl.appspot.com','setDate','display','smooth','key','signupPassword','style','none','Montant\x20invalide.','Erreur\x20lors\x20de\x20la\x20récupération\x20des\x20données\x20des\x20stocks:','message','editProductForm','table_to_sheet','preventDefault','fas','</p>\x0a\x20\x20\x20\x20\x20\x20<p>Marge\x20bénéficiaire\x20totale:\x20','quantiteInitiale','quantite','editImpotDocument','querySelectorAll','typeArticle','designation','editQuantite','click','impotDocument','book_append_sheet','Êtes-vous\x20sûr\x20de\x20vouloir\x20payer\x20la\x20totalité\x20pour\x20ce\x20débiteur\x20?','1:490482635351:web:fc82421e1907576a090912','editCommande','Août','editCoutReviens','onclick','push','toLocaleDateString','editNumeroTelephone','input,\x20select','Produits','Produit\x20ajouté\x20avec\x20succès\x20!','button','Payer\x20Tranche','RAP','data-rap-status','analysePeriode','value','inline-block','then','Février','margeBenefice','nextElementSibling','editVille','5lHzmNk','labels','toFixed','rgba(54,\x20162,\x20235,\x201)','Produit\x20modifié\x20avec\x20succès\x20!','color','loadingBar','Fonctionnalité\x20d\x27exportation\x20des\x20analyses\x20à\x20implémenter.','quantiteVendues','editDesignation','Veuillez\x20remplir\x20tous\x20les\x20champs\x20du\x20formulaire\x20de\x20stock.','ville','searchInputDebiteurs','produitTable','date','Décembre','innerHTML','orderByChild','</p>\x20\x0a\x20\x20\x20\x20','Non\x20payé','editNetBrut','change','querySelector','Une\x20erreur\x20est\x20survenue.','#editProductForm\x20button[type=\x27submit\x27]','stockTable','data','fraisTransfert','line','tbody','child','replace','signupForm','</p>\x0a\x20\x20\x20\x20\x20\x20<p>Total\x20des\x20commandes:\x20','black','scrollIntoView','getElementsByTagName','reverse','Stock\x20ajouté\x20avec\x20succès\x20!','afficherConnexion','parentNode','editDate','XAF','fa-trash','Quantité','commande','rgba(255,\x2099,\x20132,\x200.2)','child_removed','limitToLast','loginPage','code','tendanceChart','toLowerCase','Septembre','option','11026365xEPYrz','netBrut','getDate','colspan','name','editPrixBrut','width','Erreur\x20lors\x20du\x20calcul\x20du\x20taux\x20de\x20croissance:','editRAP','editProductKey','stocks-header','categorie','catch','5942502ynvvOr','insertRow','</p>\x0a\x20\x20\x20\x20\x20\x20<p>Total\x20des\x20prix\x20de\x20vente:\x20','update','razia-sarl.firebaseapp.com','prixBrut','users','annuelle','editPrixVente','forEach','Erreur\x20lors\x20de\x20la\x20récupération\x20des\x20détails\x20des\x20produits:','editDesignationStock','typeClient','ajouterBtn','signupPage','Juillet','editDouaneTransport','rgba(255,\x2099,\x20132,\x201)','62119mCWMpJ','block','appendChild','Mars','34EOSCFC','98973wzFpsb','prixVente','div','Coût\x20de\x20Reviens','rgba(54,\x20162,\x20235,\x200.2)','\x20-\x20','Inscription\x20réussie\x20:\x20','rgba(255,\x20206,\x2086,\x200.2)','Novembre','focus','reparation','razia-sarl','Juin','Erreur\x20lors\x20de\x20la\x20suppression\x20du\x20stock:','debiteurTable','equalTo','onAuthStateChanged','cells','Stock\x20modifié\x20avec\x20succès\x20!','red','tendances-header','initializeApp','Stock\x20supprimé\x20avec\x20succès\x20!','getDay','remove','database','Stocks','setAttribute','Erreur\x20lors\x20de\x20la\x20récupération\x20des\x20détails\x20des\x20débiteurs:','classList','moisSelect','Erreur\x20lors\x20de\x20l\x27ajout\x20du\x20stock:','rgba(75,\x20192,\x20192,\x201)','createElement','Êtes-vous\x20sûr\x20de\x20vouloir\x20supprimer\x20ce\x20produit\x20?','editReparation','createUserWithEmailAndPassword','currency','user','</p>\x0a\x20\x20\x20\x20\x20\x20<p>Total\x20des\x20dépenses:\x20','freight','dateStock','rows','editStockModal','rgba(255,\x20206,\x2086,\x201)','insertBefore','G-Q2EWH7HJ8T','icon-container','debiteursSection','text','once','Entrez\x20le\x20montant\x20de\x20la\x20tranche\x20à\x20payer:','indexOf','signInWithEmailAndPassword','Erreur\x20d\x27inscription:\x20','reset','Semaine\x20','total-row','Période\x20sélectionnée:\x20<span\x20style=\x22font-weight:\x20bold;\x22>','onload','val','uid','9308744XJMpzh','className','rgba(75,\x20192,\x20192,\x200.2)','writeFile','Connexion\x20réussie\x20:\x20','removeAttribute','getMonth','toLocaleString','book_new','editCategorie','editMargeBenefice','getContext','editFreight','log','semaineSelect','Avril','error','textContent','ref','168dLaSBP','password','douaneTransport','coutReviens','trim','editProductModal','hebdomadaire','Fonctionnalité\x20d\x27exportation\x20des\x20tendances\x20à\x20implémenter.','debiteurs','addEventListener','mainContent','editTypeClient','editQuantiteInitialeStock','Payé','Produit\x20supprimé\x20avec\x20succès\x20!','child_changed','email','Veuillez\x20remplir\x20le\x20champ\x20','desc','exists','editStockKey','editFraisTransfert','editStockForm','getElementById','editTaux','tendancesSection','child_added','asc','fa-edit','numeroTelephone','Erreur\x20d\x27inscription\x20:\x20','editTypeArticle','utils','33120690uADnAW','mensuelle','produits','set','quantiteInitialeStock','Janvier','debiteurs-header','auth','quantiteRestante','insertCell','periodeSelectionnee','anneeSelect','signupEmail','searchInputStocks','productForm','submit','stocks.xlsx','Erreur\x20lors\x20de\x20la\x20suppression\x20du\x20produit:','taux','add','fr-FR','Erreur\x20de\x20connexion\x20:\x20'];_0x4a2d=function(){return _0x3ae947;};return _0x4a2d();}var moisSelect=document['getElementById'](_0x54120b(0x1b2)),mois=[_0x54120b(0xe9),'Février',_0x54120b(0x192),_0x54120b(0x1e1),'Mai','Juin','Juillet','Août',_0x54120b(0x16e),'Octobre',_0x54120b(0x19c),_0x54120b(0x148)];for(var i=0x0;i<mois[_0x54120b(0xfa)];i++){var option=document[_0x54120b(0x1b5)]('option');option[_0x54120b(0x132)]=i+0x1,option[_0x54120b(0x1c5)]=mois[i],moisSelect[_0x54120b(0xf7)](option);}moisSelect[_0x54120b(0xcc)](_0x54120b(0x14e),function(){var _0x43df59=_0x54120b;mettreAJourSemaines(this[_0x43df59(0x132)],anneeSelect[_0x43df59(0x132)]),analyserProduits();}),document[_0x54120b(0xda)](_0x54120b(0xef))['addEventListener'](_0x54120b(0x14e),analyserProduits),document[_0x54120b(0xda)](_0x54120b(0x1b2))['addEventListener']('change',analyserProduits),document[_0x54120b(0xda)](_0x54120b(0x1e0))[_0x54120b(0xcc)](_0x54120b(0x14e),analyserProduits);function changerCouleurTelephone(){var _0x4e41b2=_0x54120b,_0xf5cadb=parseFloat(document['getElementById'](_0x4e41b2(0x12f))[_0x4e41b2(0x132)][_0x4e41b2(0x158)](/[^0-9.-]+/g,''))||0x0,_0xcff4f3=document[_0x4e41b2(0xda)](_0x4e41b2(0xe0));_0xf5cadb>0x0?_0xcff4f3[_0x4e41b2(0x10d)]['color']=_0x4e41b2(0x1a7):_0xcff4f3[_0x4e41b2(0x10d)][_0x4e41b2(0x13e)]='black';}function afficherDebiteurs(){var _0x4ab869=_0x54120b;masquerToutesSections(),document[_0x4ab869(0xda)](_0x4ab869(0x1c4))['style'][_0x4ab869(0x109)]=_0x4ab869(0x190),remplirTableauDebiteurs();}function remplirTableauDebiteurs(){var _0x283542=_0x54120b,_0x28247d=document[_0x283542(0xda)]('debiteurTable')[_0x283542(0x15d)](_0x283542(0x156))[0x0];_0x28247d[_0x283542(0x149)]='';var _0x3ab799=0x0;debiteursRef[_0x283542(0x14a)](_0x283542(0x147))[_0x283542(0x1c6)](_0x283542(0x132))[_0x283542(0x134)](function(_0x2d06f2){var _0x278f07=_0x283542,_0x293d6d=[];_0x2d06f2['forEach'](function(_0x5d3df6){var _0x304424=_0x3da0;_0x293d6d[_0x304424(0x127)](_0x5d3df6[_0x304424(0x1d0)]());}),_0x293d6d[_0x278f07(0x15e)](),_0x293d6d[_0x278f07(0x186)](function(_0x37257d,_0x57ff1b){var _0x4929c4=_0x278f07,_0x10325e=_0x28247d['insertRow'](),_0x5223f2=_0x2d06f2[_0x4929c4(0x157)](_0x57ff1b)['key'],_0x3df048=_0x10325e[_0x4929c4(0xed)]();_0x3df048[_0x4929c4(0x1e3)]=_0x37257d['date'];var _0x3b453e=_0x10325e[_0x4929c4(0xed)]();_0x3b453e['textContent']=_0x37257d[_0x4929c4(0x11c)];var _0x26fda8=_0x10325e[_0x4929c4(0xed)]();_0x26fda8[_0x4929c4(0x1e3)]=_0x37257d[_0x4929c4(0xe0)];var _0x55b375=_0x10325e[_0x4929c4(0xed)]();_0x55b375[_0x4929c4(0x1e3)]=formaterMontantAffichage(_0x37257d['RAP']),_0x3ab799+=parseFloat(_0x37257d['RAP'])||0x0;var _0x424a1a=_0x10325e[_0x4929c4(0xed)]();_0x424a1a[_0x4929c4(0x1e3)]=_0x4929c4(0x14c);var _0x2ec7d9=_0x10325e['insertCell'](),_0x497e8c=document[_0x4929c4(0x1b5)](_0x4929c4(0x12d));_0x497e8c[_0x4929c4(0x1e3)]=_0x4929c4(0x12e),_0x497e8c['className']=_0x4929c4(0xfc),_0x497e8c[_0x4929c4(0x126)]=function(){var _0x19a482=_0x4929c4;if(confirm('Êtes-vous\x20sûr\x20de\x20vouloir\x20payer\x20une\x20tranche\x20pour\x20ce\x20débiteur\x20?')){var _0x2dc6ec=parseFloat(prompt(_0x19a482(0x1c7),0x0));if(isNaN(_0x2dc6ec)||_0x2dc6ec<=0x0){alert(_0x19a482(0x10f));return;}var _0xd080fc=parseFloat(_0x37257d[_0x19a482(0x12f)])-_0x2dc6ec;debiteursRef[_0x19a482(0x157)](_0x5223f2)[_0x19a482(0x180)]({'RAP':_0xd080fc}),mettreAJourRAP(_0x37257d[_0x19a482(0xe0)],_0xd080fc),_0x55b375['textContent']=formaterMontantAffichage(_0xd080fc),_0x3ab799-=_0x2dc6ec,_0xd080fc<=0x0&&(_0x10325e[_0x19a482(0x1ac)](),debiteursRef['child'](_0x5223f2)[_0x19a482(0x1ac)](),mettreAJourTelephone(_0x37257d[_0x19a482(0xe0)],_0x19a482(0x15b)),_0x424a1a[_0x19a482(0x1e3)]=_0x19a482(0xd0)),analyserProduits(),mettreAJourTotalDebiteurs(_0x28247d);}};var _0x4368ac=document[_0x4929c4(0x1b5)](_0x4929c4(0x12d));_0x4368ac[_0x4929c4(0x1e3)]='Payer\x20Total',_0x4368ac[_0x4929c4(0x1d3)]=_0x4929c4(0xfc),_0x4368ac[_0x4929c4(0x126)]=function(){var _0x4f92a7=_0x4929c4;confirm(_0x4f92a7(0x121))&&(_0x10325e[_0x4f92a7(0x1ac)](),debiteursRef['child'](_0x5223f2)['remove'](),mettreAJourRAP(_0x37257d[_0x4f92a7(0xe0)],0x0),mettreAJourTelephone(_0x37257d[_0x4f92a7(0xe0)],'black'),_0x424a1a[_0x4f92a7(0x1e3)]='Payé',_0x3ab799-=parseFloat(_0x37257d[_0x4f92a7(0x12f)]),analyserProduits(),mettreAJourTotalDebiteurs(_0x28247d));},_0x2ec7d9['appendChild'](_0x497e8c),_0x2ec7d9[_0x4929c4(0x191)](_0x4368ac);}),ajouterTotalDebiteurs(_0x28247d,_0x3ab799);})[_0x283542(0x17c)](function(_0x3079e2){var _0x5a5e67=_0x283542;console[_0x5a5e67(0x1e2)](_0x5a5e67(0x1b0),_0x3079e2),alert(_0x5a5e67(0x150));});}function ajouterTotalDebiteurs(_0x22b9fd,_0x312892){var _0x8c5c8c=_0x54120b,_0x12cae0=_0x22b9fd[_0x8c5c8c(0x17e)]();_0x12cae0[_0x8c5c8c(0x1b1)][_0x8c5c8c(0xf7)](_0x8c5c8c(0x1cd));var _0x37c173=_0x12cae0[_0x8c5c8c(0xed)]();_0x37c173[_0x8c5c8c(0x1e3)]='Total';var _0x53c58f=_0x12cae0[_0x8c5c8c(0xed)]();_0x53c58f[_0x8c5c8c(0x1e3)]=_0x22b9fd[_0x8c5c8c(0x1be)]['length']-0x1;var _0xd29b9a=_0x12cae0[_0x8c5c8c(0xed)]();_0xd29b9a[_0x8c5c8c(0x1e3)]='';var _0xafe6aa=_0x12cae0['insertCell']();_0xafe6aa[_0x8c5c8c(0x1e3)]=formaterMontantAffichage(_0x312892);var _0x533c3f=_0x12cae0['insertCell']();_0x533c3f[_0x8c5c8c(0x1e3)]='';var _0x9db7e0=_0x12cae0['insertCell']();_0x9db7e0[_0x8c5c8c(0x1e3)]='';}function mettreAJourTotalDebiteurs(_0x410406){var _0x4f2a56=_0x54120b,_0x582e22=0x0;for(var _0x25819c=0x1;_0x25819c<_0x410406[_0x4f2a56(0x1be)][_0x4f2a56(0xfa)]-0x1;_0x25819c++){var _0x2fef5f=_0x410406[_0x4f2a56(0x1be)][_0x25819c][_0x4f2a56(0x1a5)][0x3];_0x582e22+=parseFloat(_0x2fef5f[_0x4f2a56(0x1e3)][_0x4f2a56(0x158)](/[^0-9.-]+/g,''))||0x0;}_0x410406[_0x4f2a56(0x1be)][_0x410406[_0x4f2a56(0x1be)][_0x4f2a56(0xfa)]-0x1][_0x4f2a56(0x1a5)][0x3][_0x4f2a56(0x1e3)]=formaterMontantAffichage(_0x582e22),_0x410406[_0x4f2a56(0x1be)][_0x410406[_0x4f2a56(0x1be)]['length']-0x1]['cells'][0x1][_0x4f2a56(0x1e3)]=_0x410406['rows'][_0x4f2a56(0xfa)]-0x2;}function mettreAJourTelephone(_0xcee610,_0x31254d){var _0x4617ac=_0x54120b,_0x3a6a09=document[_0x4617ac(0xda)](_0x4617ac(0x146))[_0x4617ac(0x15d)]('tbody')[0x0],_0x5adce3=_0x3a6a09['querySelectorAll']('tr');_0x5adce3[_0x4617ac(0x186)](function(_0x46c22e){var _0x2921cf=_0x4617ac,_0x130792=_0x46c22e[_0x2921cf(0x14f)]('td:nth-child(21)');_0x130792[_0x2921cf(0x1e3)]===_0xcee610&&(_0x130792[_0x2921cf(0x10d)][_0x2921cf(0x13e)]=_0x31254d,_0x130792[_0x2921cf(0x1d7)](_0x2921cf(0x130)));});}function mettreAJourRAP(_0x4b297b,_0xaa9f55){var _0x101067=_0x54120b;produitsRef[_0x101067(0x14a)](_0x101067(0xe0))[_0x101067(0x1a3)](_0x4b297b)[_0x101067(0x1c6)](_0x101067(0x132),function(_0xba9a5f){var _0x20198e=_0x101067;_0xba9a5f[_0x20198e(0xd6)]()&&_0xba9a5f['forEach'](function(_0x2e96c1){var _0x268f41=_0x20198e;produitsRef[_0x268f41(0x157)](_0x2e96c1[_0x268f41(0x10b)])[_0x268f41(0x180)]({'RAP':_0xaa9f55});});});}produitsRef['on'](_0x54120b(0xdd),function(_0x37ac02){var _0x6f4eb2=_0x54120b,_0xe4f381=_0x37ac02[_0x6f4eb2(0x1d0)]();if(parseFloat(_0xe4f381[_0x6f4eb2(0x12f)])>0x0){}analyserProduits();}),produitsRef['on'](_0x54120b(0xd2),function(_0x1d1bf8){var _0x126207=_0x1d1bf8['val']();mettreAJourDebiteur(_0x126207),analyserProduits();});function mettreAJourDebiteur(_0x23f6d1){var _0x53cc5b=_0x54120b;parseFloat(_0x23f6d1['RAP'])>0x0?debiteursRef[_0x53cc5b(0x14a)](_0x53cc5b(0xe0))[_0x53cc5b(0x1a3)](_0x23f6d1[_0x53cc5b(0xe0)])[_0x53cc5b(0x1c6)](_0x53cc5b(0x132),function(_0x5f2d55){var _0xd3cdc9=_0x53cc5b;_0x5f2d55[_0xd3cdc9(0xd6)]()?_0x5f2d55[_0xd3cdc9(0x186)](function(_0x285d45){var _0x54ba42=_0xd3cdc9;debiteursRef[_0x54ba42(0x157)](_0x285d45[_0x54ba42(0x10b)])[_0x54ba42(0x180)]({'date':_0x23f6d1[_0x54ba42(0x147)],'designation':_0x23f6d1[_0x54ba42(0x11c)],'RAP':_0x23f6d1[_0x54ba42(0x12f)]});}):debiteursRef['push']({'date':_0x23f6d1[_0xd3cdc9(0x147)],'designation':_0x23f6d1[_0xd3cdc9(0x11c)],'numeroTelephone':_0x23f6d1[_0xd3cdc9(0xe0)],'RAP':_0x23f6d1[_0xd3cdc9(0x12f)]}),mettreAJourTelephone(_0x23f6d1[_0xd3cdc9(0xe0)],'red');}):debiteursRef['orderByChild'](_0x53cc5b(0xe0))[_0x53cc5b(0x1a3)](_0x23f6d1[_0x53cc5b(0xe0)])[_0x53cc5b(0x1c6)](_0x53cc5b(0x132),function(_0x3122b7){var _0x4100d8=_0x53cc5b;_0x3122b7[_0x4100d8(0xd6)]()&&(_0x3122b7[_0x4100d8(0x186)](function(_0x24b118){var _0x43015e=_0x4100d8;debiteursRef[_0x43015e(0x157)](_0x24b118['key'])[_0x43015e(0x1ac)]();}),mettreAJourTelephone(_0x23f6d1['numeroTelephone'],_0x4100d8(0x15b)));});}function afficherStocks(){var _0x480fdc=_0x54120b;masquerToutesSections(),document[_0x480fdc(0xda)](_0x480fdc(0x103))[_0x480fdc(0x10d)][_0x480fdc(0x109)]=_0x480fdc(0x190),remplirTableauStocks();}function remplirTableauStocks(){var _0x29629c=_0x54120b,_0x466e70=document[_0x29629c(0xda)](_0x29629c(0x152))['getElementsByTagName'](_0x29629c(0x156))[0x0];_0x466e70[_0x29629c(0x149)]='';var _0x292a43=0x0,_0x2336f0=0x0,_0x4df85d=0x0;stocksRef['once'](_0x29629c(0x132))['then'](function(_0x3e620){var _0x533d24=_0x29629c;_0x3e620['forEach'](function(_0xb6ef0d){var _0x54053c=_0x3da0,_0x3ba8c2=_0xb6ef0d['val'](),_0x5d9a7a=_0x466e70[_0x54053c(0x17e)](),_0x150611=_0xb6ef0d[_0x54053c(0x10b)],_0x24a4f8=_0x5d9a7a[_0x54053c(0xed)]();_0x24a4f8['textContent']=_0x3ba8c2['dateStock'];var _0x521d27=_0x5d9a7a['insertCell']();_0x521d27['textContent']=_0x3ba8c2[_0x54053c(0x11c)];var _0x26e4c4=_0x5d9a7a['insertCell']();_0x26e4c4['textContent']=_0x3ba8c2['quantiteInitiale'],_0x292a43+=parseFloat(_0x3ba8c2[_0x54053c(0x117)])||0x0;var _0x5319bf=_0x5d9a7a[_0x54053c(0xed)]();_0x5319bf[_0x54053c(0x1e3)]=_0x3ba8c2['quantiteVendues'],_0x2336f0+=parseFloat(_0x3ba8c2['quantiteVendues'])||0x0;var _0x2836bc=_0x5d9a7a[_0x54053c(0xed)]();_0x2836bc[_0x54053c(0x1e3)]=_0x3ba8c2[_0x54053c(0xec)],_0x4df85d+=parseFloat(_0x3ba8c2['quantiteRestante'])||0x0;var _0x5b9164=_0x5d9a7a[_0x54053c(0xed)](),_0x19f06b=document[_0x54053c(0x1b5)]('div');_0x19f06b[_0x54053c(0x1b1)][_0x54053c(0xf7)](_0x54053c(0x1c3));var _0x44f234=document[_0x54053c(0x1b5)]('i');_0x44f234[_0x54053c(0x1b1)][_0x54053c(0xf7)](_0x54053c(0x115),'fa-trash','icon-delete'),_0x44f234[_0x54053c(0x126)]=function(){var _0x3cfcdf=_0x54053c;confirm('Êtes-vous\x20sûr\x20de\x20vouloir\x20supprimer\x20ce\x20stock\x20?')&&stocksRef[_0x3cfcdf(0x157)](_0x150611)['remove']()[_0x3cfcdf(0x134)](function(){var _0x30a07b=_0x3cfcdf;remplirTableauStocks(),remplirChampDesignation(),analyserProduits(),alert(_0x30a07b(0x1aa));})[_0x3cfcdf(0x17c)](function(_0xb2bb15){var _0x3436d4=_0x3cfcdf;console[_0x3436d4(0x1e2)](_0x3436d4(0x1a1),_0xb2bb15),alert(_0x3436d4(0x150));});},_0x19f06b[_0x54053c(0x191)](_0x44f234);var _0x3e48b4=document[_0x54053c(0x1b5)]('i');_0x3e48b4[_0x54053c(0x1b1)][_0x54053c(0xf7)](_0x54053c(0x115),_0x54053c(0xdf),'icon-edit'),_0x3e48b4[_0x54053c(0x126)]=function(){ouvrirModalStock(_0x150611,_0x3ba8c2);},_0x19f06b[_0x54053c(0x191)](_0x3e48b4),_0x5b9164[_0x54053c(0x191)](_0x19f06b);});var _0x3ae596=_0x466e70['insertRow']();_0x3ae596['classList'][_0x533d24(0xf7)](_0x533d24(0x1cd));var _0x342044=_0x3ae596[_0x533d24(0xed)]();_0x342044[_0x533d24(0x1e3)]='Total';var _0x110541=_0x3ae596[_0x533d24(0xed)]();_0x110541[_0x533d24(0x1e3)]=_0x3e620['numChildren']();var _0x568d54=_0x3ae596[_0x533d24(0xed)]();_0x568d54[_0x533d24(0x1e3)]=_0x292a43;var _0x25f8e6=_0x3ae596['insertCell']();_0x25f8e6[_0x533d24(0x1e3)]=_0x2336f0;var _0x312dbe=_0x3ae596[_0x533d24(0xed)]();_0x312dbe[_0x533d24(0x1e3)]=_0x4df85d;var _0x2dbf01=_0x3ae596['insertCell']();_0x2dbf01[_0x533d24(0x1e3)]='';})[_0x29629c(0x17c)](function(_0x20550d){var _0x18d346=_0x29629c;console['error'](_0x18d346(0x110),_0x20550d),alert('Une\x20erreur\x20est\x20survenue.');});}function remplirChampDesignation(){var _0xb6a3fd=_0x54120b,_0x376fef=document['getElementById']('designation');_0x376fef['innerHTML']='';var _0x3a51bb=new Set();stocksRef[_0xb6a3fd(0x1c6)](_0xb6a3fd(0x132))[_0xb6a3fd(0x134)](function(_0x1edfd4){var _0x489a0c=_0xb6a3fd;_0x1edfd4['forEach'](function(_0x3676e9){var _0x2acfd0=_0x3da0,_0x919e48=_0x3676e9[_0x2acfd0(0x1d0)]();_0x3a51bb['add'](_0x919e48[_0x2acfd0(0x11c)]);}),_0x3a51bb[_0x489a0c(0x186)](function(_0x5705ec){var _0x45bfd6=_0x489a0c,_0x812b63=document[_0x45bfd6(0x1b5)](_0x45bfd6(0x16f));_0x812b63['value']=_0x5705ec,_0x812b63[_0x45bfd6(0x1c5)]=_0x5705ec,_0x376fef['add'](_0x812b63);});})[_0xb6a3fd(0x17c)](function(_0x1cc03b){var _0x55933c=_0xb6a3fd;console[_0x55933c(0x1e2)](_0x55933c(0x110),_0x1cc03b),alert('Une\x20erreur\x20est\x20survenue.');});}function ajouterStock(){var _0x5bc9eb=_0x54120b,_0x4db46d=document[_0x5bc9eb(0xda)](_0x5bc9eb(0x1bd))[_0x5bc9eb(0x132)],_0x55c210=document[_0x5bc9eb(0xda)]('designationStock')[_0x5bc9eb(0x132)],_0x1d81ee=parseFloat(document[_0x5bc9eb(0xda)](_0x5bc9eb(0xe8))[_0x5bc9eb(0x132)])||0x0;if(_0x4db46d===''||_0x55c210===''||isNaN(_0x1d81ee)){alert(_0x5bc9eb(0x143));return;}stocksRef['push']({'dateStock':_0x4db46d,'designation':_0x55c210,'quantiteInitiale':_0x1d81ee,'quantiteRestante':_0x1d81ee,'quantiteVendues':0x0})[_0x5bc9eb(0x134)](function(){var _0x2d12be=_0x5bc9eb;document[_0x2d12be(0xda)]('stockForm')[_0x2d12be(0x1cb)](),remplirTableauStocks(),remplirChampDesignation(),analyserProduits(),alert(_0x2d12be(0x15f));})[_0x5bc9eb(0x17c)](function(_0x4b000d){var _0xf88fbe=_0x5bc9eb;console[_0xf88fbe(0x1e2)](_0xf88fbe(0x1b3),_0x4b000d),alert('Une\x20erreur\x20est\x20survenue.');});}window[_0x54120b(0x1cf)]=function(){var _0xc0011e=_0x54120b;remplirChampDesignation();var _0x5955e9=document[_0xc0011e(0xda)](_0xc0011e(0xf2))[_0xc0011e(0x11a)](_0xc0011e(0x12a));for(var _0x14dc1d=0x0;_0x14dc1d<_0x5955e9[_0xc0011e(0xfa)];_0x14dc1d++){_0x5955e9[_0x14dc1d]['addEventListener']('keydown',function(_0x1223b4){var _0x4a2852=_0xc0011e;if(_0x1223b4['keyCode']===0xd){_0x1223b4[_0x4a2852(0x114)]();var _0xd4aeb3=this['nextElementSibling'];_0xd4aeb3?_0xd4aeb3[_0x4a2852(0x19d)]():document[_0x4a2852(0xda)](_0x4a2852(0x18a))[_0x4a2852(0x11e)]();}});}},document[_0x54120b(0xda)]('stockForm')[_0x54120b(0xcc)](_0x54120b(0xf3),function(_0x2a0439){_0x2a0439['preventDefault'](),ajouterStock();});function ouvrirModalProduit(_0x1c670b,_0x14a6be){var _0x5a58e6=_0x54120b;document['getElementById'](_0x5a58e6(0x179))['value']=_0x1c670b,document[_0x5a58e6(0xda)](_0x5a58e6(0x162))['value']=_0x14a6be['date'],document[_0x5a58e6(0xda)](_0x5a58e6(0x11d))[_0x5a58e6(0x132)]=_0x14a6be[_0x5a58e6(0x118)],document[_0x5a58e6(0xda)](_0x5a58e6(0x142))['value']=_0x14a6be[_0x5a58e6(0x11c)],document[_0x5a58e6(0xda)]('editTypeArticle')[_0x5a58e6(0x132)]=_0x14a6be[_0x5a58e6(0x11b)],document[_0x5a58e6(0xda)](_0x5a58e6(0x1db))[_0x5a58e6(0x132)]=_0x14a6be[_0x5a58e6(0x17b)],document['getElementById'](_0x5a58e6(0x185))[_0x5a58e6(0x132)]=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0x195)]),document['getElementById'](_0x5a58e6(0x178))[_0x5a58e6(0x132)]=formaterMontantAffichage(_0x14a6be['RAP']),document[_0x5a58e6(0xda)](_0x5a58e6(0x175))['value']=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0x182)]),document[_0x5a58e6(0xda)](_0x5a58e6(0xdb))[_0x5a58e6(0x132)]=_0x14a6be[_0x5a58e6(0xf6)],document[_0x5a58e6(0xda)]('editNetBrut')[_0x5a58e6(0x132)]=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0x171)]),document[_0x5a58e6(0xda)](_0x5a58e6(0x1de))['value']=formaterMontantAffichage(_0x14a6be['freight']),document[_0x5a58e6(0xda)](_0x5a58e6(0x18d))['value']=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0xc5)]),document[_0x5a58e6(0xda)](_0x5a58e6(0xd8))['value']=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0x154)]),document[_0x5a58e6(0xda)](_0x5a58e6(0x119))[_0x5a58e6(0x132)]=formaterMontantAffichage(_0x14a6be['impotDocument']),document['getElementById'](_0x5a58e6(0x1b7))['value']=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0x19e)]),document[_0x5a58e6(0xda)](_0x5a58e6(0xce))['value']=_0x14a6be[_0x5a58e6(0x189)],document[_0x5a58e6(0xda)](_0x5a58e6(0x138))[_0x5a58e6(0x132)]=_0x14a6be[_0x5a58e6(0x144)],document[_0x5a58e6(0xda)](_0x5a58e6(0x129))[_0x5a58e6(0x132)]=_0x14a6be['numeroTelephone'],document[_0x5a58e6(0xda)](_0x5a58e6(0x123))[_0x5a58e6(0x132)]=_0x14a6be['commande'],document[_0x5a58e6(0xda)](_0x5a58e6(0x125))[_0x5a58e6(0x132)]=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0xc6)]),document[_0x5a58e6(0xda)](_0x5a58e6(0x1dc))[_0x5a58e6(0x132)]=formaterMontantAffichage(_0x14a6be[_0x5a58e6(0x136)]);var _0x3b2073=document[_0x5a58e6(0xda)](_0x5a58e6(0x142));_0x3b2073[_0x5a58e6(0x149)]='';var _0x1a1a2e=new Set();stocksRef[_0x5a58e6(0x1c6)](_0x5a58e6(0x132))['then'](function(_0x12538d){var _0x4c0fac=_0x5a58e6;_0x12538d['forEach'](function(_0x530af3){var _0x3ce793=_0x3da0,_0x59ec54=_0x530af3[_0x3ce793(0x1d0)]();_0x1a1a2e[_0x3ce793(0xf7)](_0x59ec54[_0x3ce793(0x11c)]);}),_0x1a1a2e[_0x4c0fac(0x186)](function(_0x13c8c0){var _0x814d79=_0x4c0fac,_0x2c1987=document[_0x814d79(0x1b5)](_0x814d79(0x16f));_0x2c1987[_0x814d79(0x132)]=_0x13c8c0,_0x2c1987[_0x814d79(0x1c5)]=_0x13c8c0,_0x3b2073[_0x814d79(0xf7)](_0x2c1987);}),_0x3b2073[_0x4c0fac(0x132)]=_0x14a6be[_0x4c0fac(0x11c)];var _0x7fa3b8=document['getElementById'](_0x4c0fac(0x112))[_0x4c0fac(0x11a)](_0x4c0fac(0x12a));for(var _0x492ce7=0x0;_0x492ce7<_0x7fa3b8[_0x4c0fac(0xfa)];_0x492ce7++){_0x7fa3b8[_0x492ce7][_0x4c0fac(0xcc)]('keydown',function(_0x567658){var _0x239457=_0x4c0fac;if(_0x567658['keyCode']===0xd){_0x567658[_0x239457(0x114)]();var _0x4a0a3a=this[_0x239457(0x137)];_0x4a0a3a?_0x4a0a3a[_0x239457(0x19d)]():document[_0x239457(0x14f)](_0x239457(0x151))[_0x239457(0x11e)]();}});}})[_0x5a58e6(0x17c)](function(_0x1bab1b){var _0x2a2b13=_0x5a58e6;console[_0x2a2b13(0x1e2)](_0x2a2b13(0x110),_0x1bab1b),alert(_0x2a2b13(0x150));}),document[_0x5a58e6(0xda)]('editProductModal')['style'][_0x5a58e6(0x109)]=_0x5a58e6(0x190);}function fermerModalProduit(){var _0x325f44=_0x54120b;document[_0x325f44(0xda)](_0x325f44(0xc8))['style'][_0x325f44(0x109)]=_0x325f44(0x10e),document[_0x325f44(0xda)](_0x325f44(0x112))['reset']();}function modifierProduit(_0x5cb837){var _0x3c03a3=_0x54120b,_0x3efca8=parseFloat(document['getElementById']('editPrixVente')[_0x3c03a3(0x132)][_0x3c03a3(0x158)](/[^0-9.-]+/g,'')),_0xb5c656=parseFloat(document[_0x3c03a3(0xda)](_0x3c03a3(0x178))[_0x3c03a3(0x132)][_0x3c03a3(0x158)](/[^0-9.-]+/g,'')),_0x3b8669=parseFloat(document[_0x3c03a3(0xda)](_0x3c03a3(0x175))[_0x3c03a3(0x132)]['replace'](/[^0-9.-]+/g,'')),_0x13978a=parseFloat(document[_0x3c03a3(0xda)]('editFreight')[_0x3c03a3(0x132)][_0x3c03a3(0x158)](/[^0-9.-]+/g,'')),_0x56ee09=parseFloat(document[_0x3c03a3(0xda)]('editDouaneTransport')[_0x3c03a3(0x132)]['replace'](/[^0-9.-]+/g,'')),_0x460e99=parseFloat(document[_0x3c03a3(0xda)](_0x3c03a3(0xd8))[_0x3c03a3(0x132)][_0x3c03a3(0x158)](/[^0-9.-]+/g,'')),_0x21cdd2=parseFloat(document[_0x3c03a3(0xda)](_0x3c03a3(0x119))[_0x3c03a3(0x132)][_0x3c03a3(0x158)](/[^0-9.-]+/g,'')),_0x26cc7f=parseFloat(document['getElementById'](_0x3c03a3(0x1b7))[_0x3c03a3(0x132)]['replace'](/[^0-9.-]+/g,'')),_0x156258={'date':document[_0x3c03a3(0xda)]('editDate')[_0x3c03a3(0x132)],'quantite':document[_0x3c03a3(0xda)](_0x3c03a3(0x11d))[_0x3c03a3(0x132)],'designation':document[_0x3c03a3(0xda)]('editDesignation')[_0x3c03a3(0x132)],'typeArticle':document[_0x3c03a3(0xda)](_0x3c03a3(0xe2))[_0x3c03a3(0x132)],'categorie':document[_0x3c03a3(0xda)]('editCategorie')[_0x3c03a3(0x132)],'prixVente':_0x3efca8,'RAP':_0xb5c656,'netBrut':document['getElementById'](_0x3c03a3(0x14d))[_0x3c03a3(0x132)]['replace'](/[^0-9.-]+/g,''),'prixBrut':_0x3b8669,'taux':parseFloat(document[_0x3c03a3(0xda)]('editTaux')[_0x3c03a3(0x132)])||0x0,'freight':_0x13978a,'douaneTransport':_0x56ee09,'fraisTransfert':_0x460e99,'impotDocument':_0x21cdd2,'reparation':_0x26cc7f,'typeClient':document[_0x3c03a3(0xda)](_0x3c03a3(0xce))['value'],'ville':document[_0x3c03a3(0xda)](_0x3c03a3(0x138))[_0x3c03a3(0x132)],'numeroTelephone':document[_0x3c03a3(0xda)](_0x3c03a3(0x129))[_0x3c03a3(0x132)],'commande':document['getElementById'](_0x3c03a3(0x123))[_0x3c03a3(0x132)],'coutReviens':parseFloat(document[_0x3c03a3(0xda)](_0x3c03a3(0x125))[_0x3c03a3(0x132)][_0x3c03a3(0x158)](/[^0-9.-]+/g,''))||0x0,'margeBenefice':parseFloat(document[_0x3c03a3(0xda)]('editMargeBenefice')['value']['replace'](/[^0-9.-]+/g,''))||0x0};produitsRef[_0x3c03a3(0x157)](_0x5cb837)[_0x3c03a3(0x1c6)](_0x3c03a3(0x132),function(_0xbde52f){var _0x48407a=_0x3c03a3,_0x1219be=_0xbde52f[_0x48407a(0x1d0)](),_0x46e0fb=parseFloat(_0x156258[_0x48407a(0x118)])-parseFloat(_0x1219be[_0x48407a(0x118)]);produitsRef['child'](_0x5cb837)[_0x48407a(0x180)](_0x156258)[_0x48407a(0x134)](function(){var _0x17c750=_0x48407a;fermerModalProduit(),remplirTableau(),parseFloat(_0x156258[_0x17c750(0x12f)])>0x0?debiteursRef[_0x17c750(0x14a)](_0x17c750(0xe0))[_0x17c750(0x1a3)](_0x156258[_0x17c750(0xe0)])[_0x17c750(0x1c6)](_0x17c750(0x132),function(_0x144ae0){var _0x5ee705=_0x17c750;_0x144ae0[_0x5ee705(0xd6)]()?_0x144ae0[_0x5ee705(0x186)](function(_0x40393b){var _0xb4619=_0x5ee705;debiteursRef[_0xb4619(0x157)](_0x40393b[_0xb4619(0x10b)])[_0xb4619(0x180)]({'date':_0x156258[_0xb4619(0x147)],'designation':_0x156258[_0xb4619(0x11c)],'RAP':_0x156258[_0xb4619(0x12f)]});}):debiteursRef[_0x5ee705(0x127)]({'date':_0x156258[_0x5ee705(0x147)],'designation':_0x156258['designation'],'numeroTelephone':_0x156258[_0x5ee705(0xe0)],'RAP':_0x156258[_0x5ee705(0x12f)]});}):debiteursRef[_0x17c750(0x14a)]('numeroTelephone')['equalTo'](_0x156258[_0x17c750(0xe0)])[_0x17c750(0x1c6)](_0x17c750(0x132),function(_0x1ed186){var _0x4cd9d9=_0x17c750;_0x1ed186[_0x4cd9d9(0xd6)]()&&_0x1ed186[_0x4cd9d9(0x186)](function(_0x4e1dc6){var _0x2675ff=_0x4cd9d9;debiteursRef[_0x2675ff(0x157)](_0x4e1dc6['key'])[_0x2675ff(0x1ac)]();});}),remplirTableauDebiteurs(),mettreAJourStocks(_0x156258[_0x17c750(0x11c)],_0x46e0fb),remplirTableauStocks(),analyserProduits(),alert(_0x17c750(0x13d));})['catch'](function(_0x217cf8){var _0x2c8bc1=_0x48407a;console[_0x2c8bc1(0x1e2)](_0x2c8bc1(0x104),_0x217cf8),alert(_0x2c8bc1(0x150));});});}document['getElementById'](_0x54120b(0x112))[_0x54120b(0xcc)]('submit',function(_0x2db316){var _0x536c76=_0x54120b;_0x2db316['preventDefault']();var _0x3ad4ac=document[_0x536c76(0xda)](_0x536c76(0x179))[_0x536c76(0x132)];modifierProduit(_0x3ad4ac);});function ouvrirModalStock(_0x40605a,_0x42692c){var _0x41f3f0=_0x54120b;document[_0x41f3f0(0xda)](_0x41f3f0(0xd7))['value']=_0x40605a,document['getElementById'](_0x41f3f0(0x105))['value']=_0x42692c[_0x41f3f0(0x1bd)],document[_0x41f3f0(0xda)](_0x41f3f0(0x188))['value']=_0x42692c[_0x41f3f0(0x11c)],document['getElementById'](_0x41f3f0(0xcf))[_0x41f3f0(0x132)]=_0x42692c[_0x41f3f0(0x117)],document[_0x41f3f0(0xda)]('editStockModal')[_0x41f3f0(0x10d)][_0x41f3f0(0x109)]=_0x41f3f0(0x190);}function fermerModalStock(){var _0x4e4329=_0x54120b;document[_0x4e4329(0xda)](_0x4e4329(0x1bf))[_0x4e4329(0x10d)][_0x4e4329(0x109)]=_0x4e4329(0x10e),document[_0x4e4329(0xda)](_0x4e4329(0xd9))[_0x4e4329(0x1cb)]();}function modifierStock(_0x1ca194){var _0x5d8806=_0x54120b,_0xc6326c={'dateStock':document['getElementById'](_0x5d8806(0x105))[_0x5d8806(0x132)],'designation':document[_0x5d8806(0xda)](_0x5d8806(0x188))[_0x5d8806(0x132)],'quantiteInitiale':parseFloat(document[_0x5d8806(0xda)](_0x5d8806(0xcf))['value'])||0x0};stocksRef[_0x5d8806(0x157)](_0x1ca194)[_0x5d8806(0x180)](_0xc6326c)[_0x5d8806(0x134)](function(){var _0x5a18be=_0x5d8806;fermerModalStock(),recalculerQuantitesStock(_0xc6326c[_0x5a18be(0x11c)]),remplirTableauStocks(),remplirChampDesignation(),analyserProduits(),alert(_0x5a18be(0x1a6));})[_0x5d8806(0x17c)](function(_0x43457a){var _0x2a5232=_0x5d8806;console[_0x2a5232(0x1e2)]('Erreur\x20lors\x20de\x20la\x20modification\x20du\x20stock:',_0x43457a),alert('Une\x20erreur\x20est\x20survenue.');});}function recalculerQuantitesStock(_0x22d3fa){var _0x3613f3=_0x54120b;stocksRef['orderByChild'](_0x3613f3(0x11c))[_0x3613f3(0x1a3)](_0x22d3fa)['once'](_0x3613f3(0x132),function(_0x35632d){var _0x351e47=_0x3613f3;_0x35632d[_0x351e47(0xd6)]()&&_0x35632d[_0x351e47(0x186)](function(_0x5659f1){var _0x1ee859=_0x351e47,_0x4d402b=_0x5659f1['val'](),_0x3e9ba8=0x0;produitsRef[_0x1ee859(0x14a)]('designation')['equalTo'](_0x22d3fa)['once'](_0x1ee859(0x132),function(_0x43f094){var _0x3d6df5=_0x1ee859;_0x43f094[_0x3d6df5(0xd6)]()&&_0x43f094[_0x3d6df5(0x186)](function(_0x5428c8){var _0x1ef564=_0x3d6df5;_0x3e9ba8+=parseFloat(_0x5428c8['val']()[_0x1ef564(0x118)])||0x0;});var _0x5b05fb=_0x4d402b['quantiteInitiale']-_0x3e9ba8;stocksRef[_0x3d6df5(0x157)](_0x5659f1[_0x3d6df5(0x10b)])[_0x3d6df5(0x180)]({'quantiteRestante':_0x5b05fb,'quantiteVendues':_0x3e9ba8});});});});}document[_0x54120b(0xda)](_0x54120b(0xd9))['addEventListener']('submit',function(_0x42b370){var _0x15c444=_0x54120b;_0x42b370[_0x15c444(0x114)]();var _0x335a0b=document['getElementById'](_0x15c444(0xd7))['value'];modifierStock(_0x335a0b);});function trierTableau(_0x13c410,_0x3c2c80){var _0x590756=_0x54120b,_0x4e889f,_0x4c4ba4,_0x1d0d12,_0x2efd2e,_0x45ffe8,_0x284004,_0x5287fe,_0x54b893;_0x4e889f=document[_0x590756(0xda)](_0x13c410),_0x1d0d12=!![],_0x54b893=_0x590756(0xde);while(_0x1d0d12){_0x1d0d12=![],_0x4c4ba4=_0x4e889f[_0x590756(0x1be)];for(_0x2efd2e=0x1;_0x2efd2e<_0x4c4ba4['length']-0x1;_0x2efd2e++){_0x5287fe=![],_0x45ffe8=_0x4c4ba4[_0x2efd2e]['getElementsByTagName']('TD')[colonneIndex(_0x13c410,_0x3c2c80)],_0x284004=_0x4c4ba4[_0x2efd2e+0x1]['getElementsByTagName']('TD')[colonneIndex(_0x13c410,_0x3c2c80)];if(_0x54b893===_0x590756(0xde)){if(_0x45ffe8[_0x590756(0x149)]['toLowerCase']()>_0x284004[_0x590756(0x149)]['toLowerCase']()){_0x5287fe=!![];break;}}else{if(_0x54b893===_0x590756(0xd5)){if(_0x45ffe8[_0x590756(0x149)][_0x590756(0x16d)]()<_0x284004['innerHTML'][_0x590756(0x16d)]()){_0x5287fe=!![];break;}}}}_0x5287fe&&(_0x4c4ba4[_0x2efd2e][_0x590756(0x161)][_0x590756(0x1c1)](_0x4c4ba4[_0x2efd2e+0x1],_0x4c4ba4[_0x2efd2e]),_0x1d0d12=!![],_0x54b893=_0x54b893===_0x590756(0xde)?_0x590756(0xd5):_0x590756(0xde));}}function colonneIndex(_0x1e7099,_0x4a40c0){var _0x45cb5b=_0x54120b,_0x39f034=document[_0x45cb5b(0xda)](_0x1e7099)[_0x45cb5b(0x15d)]('TH');for(var _0x5726cd=0x0;_0x5726cd<_0x39f034[_0x45cb5b(0xfa)];_0x5726cd++){if(_0x39f034[_0x5726cd]['textContent'][_0x45cb5b(0xc7)]()===_0x4a40c0)return _0x5726cd;}return-0x1;}function rechercherProduits(){var _0x5cc37b=_0x54120b,_0x53a7eb=document['getElementById']('searchInputProduits')[_0x5cc37b(0x132)][_0x5cc37b(0x16d)](),_0x5eb5a2=document[_0x5cc37b(0xda)]('produitTable'),_0x35e484=_0x5eb5a2[_0x5cc37b(0x15d)]('tr'),_0xf7136f=0x0,_0x23428f=0x0,_0x296c1e=0x0,_0x467b9d=0x0,_0x4ed716=0x0,_0x4e1059=0x0,_0x5df80d=0x0,_0x4e1632=0x0,_0x21334e=0x0,_0x29882e=0x0,_0x5c3007=0x0,_0x3ae8f2=0x0,_0x426d32=0x0,_0x159fda=0x0,_0x29df5d=0x0;for(var _0x3bd464=0x1;_0x3bd464<_0x35e484['length']-0x1;_0x3bd464++){var _0x1766cf=![];if(_0x53a7eb==='')_0x1766cf=!![];else{var _0x2a17e3=_0x35e484[_0x3bd464][_0x5cc37b(0x15d)]('td');for(var _0x598623=0x0;_0x598623<_0x2a17e3['length'];_0x598623++){var _0x2d98a5=_0x2a17e3[_0x598623][_0x5cc37b(0x1e3)][_0x5cc37b(0x16d)]();if(_0x2d98a5[_0x5cc37b(0x1c8)](_0x53a7eb)>-0x1){_0x1766cf=!![];break;}}}_0x1766cf?(_0x35e484[_0x3bd464]['style']['display']='',_0xf7136f+=parseFloat(_0x35e484[_0x3bd464]['cells'][0x1][_0x5cc37b(0x1e3)])||0x0,_0x23428f+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0x5][_0x5cc37b(0x1e3)][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x296c1e+=parseFloat(_0x35e484[_0x3bd464]['cells'][0x6][_0x5cc37b(0x1e3)][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x467b9d+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0x7][_0x5cc37b(0x1e3)][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x4ed716+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0x8]['textContent'])||0x0,_0x4e1059+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0x9][_0x5cc37b(0x1e3)]['replace'](/[^0-9.-]+/g,''))||0x0,_0x5df80d+=parseFloat(_0x35e484[_0x3bd464]['cells'][0xa]['textContent'][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x4e1632+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0xb][_0x5cc37b(0x1e3)][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x21334e+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0xc]['textContent'][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x29882e+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0xd][_0x5cc37b(0x1e3)]['replace'](/[^0-9.-]+/g,''))||0x0,_0x5c3007+=parseFloat(_0x35e484[_0x3bd464][_0x5cc37b(0x1a5)][0xe]['textContent'][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x3ae8f2+=parseFloat(_0x35e484[_0x3bd464]['cells'][0xf][_0x5cc37b(0x1e3)]['replace'](/[^0-9.-]+/g,''))||0x0,_0x426d32+=parseFloat(_0x35e484[_0x3bd464]['cells'][0x10][_0x5cc37b(0x1e3)][_0x5cc37b(0x158)](/[^0-9.-]+/g,''))||0x0,_0x159fda+=parseFloat(_0x35e484[_0x3bd464]['cells'][0x11][_0x5cc37b(0x1e3)]['replace'](/[^0-9.-]+/g,''))||0x0,_0x29df5d++):_0x35e484[_0x3bd464][_0x5cc37b(0x10d)][_0x5cc37b(0x109)]='none';}var _0x51b5f3=_0x5eb5a2['rows'][_0x35e484[_0x5cc37b(0xfa)]-0x1];_0x51b5f3['style']['display']='',_0x51b5f3[_0x5cc37b(0x1a5)][0x1][_0x5cc37b(0x1e3)]=_0xf7136f,_0x51b5f3['cells'][0x2]['textContent']=_0x29df5d,_0x51b5f3['cells'][0x5]['textContent']=formaterMontantAffichage(_0x23428f),_0x51b5f3[_0x5cc37b(0x1a5)][0x6][_0x5cc37b(0x1e3)]=formaterMontantAffichage(_0x296c1e),_0x51b5f3[_0x5cc37b(0x1a5)][0x7][_0x5cc37b(0x1e3)]=formaterMontantAffichage(_0x467b9d),_0x51b5f3[_0x5cc37b(0x1a5)][0x8][_0x5cc37b(0x1e3)]=_0x4ed716,_0x51b5f3[_0x5cc37b(0x1a5)][0x9]['textContent']=formaterMontantAffichage(_0x4e1059),_0x51b5f3[_0x5cc37b(0x1a5)][0xa]['textContent']=formaterMontantAffichage(_0x5df80d),_0x51b5f3[_0x5cc37b(0x1a5)][0xb]['textContent']=formaterMontantAffichage(_0x4e1632),_0x51b5f3[_0x5cc37b(0x1a5)][0xc][_0x5cc37b(0x1e3)]=formaterMontantAffichage(_0x21334e),_0x51b5f3[_0x5cc37b(0x1a5)][0xd][_0x5cc37b(0x1e3)]=formaterMontantAffichage(_0x29882e),_0x51b5f3[_0x5cc37b(0x1a5)][0xe][_0x5cc37b(0x1e3)]=formaterMontantAffichage(_0x5c3007),_0x51b5f3[_0x5cc37b(0x1a5)][0xf]['textContent']=formaterMontantAffichage(_0x3ae8f2),_0x51b5f3['cells'][0x10]['textContent']=formaterMontantAffichage(_0x426d32),_0x51b5f3['cells'][0x11]['textContent']=formaterMontantAffichage(_0x159fda);}function rechercherDebiteurs(){var _0x467670=_0x54120b,_0x26fd46=document['getElementById'](_0x467670(0x145))[_0x467670(0x132)][_0x467670(0x16d)](),_0x388c15=document['getElementById'](_0x467670(0x1a2)),_0xc72b62=_0x388c15[_0x467670(0x15d)]('tr'),_0x4c9147=0x0,_0x5c5976=0x0;for(var _0x22e33a=0x1;_0x22e33a<_0xc72b62[_0x467670(0xfa)]-0x1;_0x22e33a++){var _0x3cec0c=![];if(_0x26fd46==='')_0x3cec0c=!![];else{var _0x45eb06=_0xc72b62[_0x22e33a][_0x467670(0x15d)]('td');for(var _0x104d6c=0x0;_0x104d6c<_0x45eb06[_0x467670(0xfa)];_0x104d6c++){var _0x33afce=_0x45eb06[_0x104d6c][_0x467670(0x1e3)][_0x467670(0x16d)]();if(_0x33afce['indexOf'](_0x26fd46)>-0x1){_0x3cec0c=!![];break;}}}_0x3cec0c?(_0xc72b62[_0x22e33a][_0x467670(0x10d)][_0x467670(0x109)]='',_0x4c9147+=parseFloat(_0xc72b62[_0x22e33a][_0x467670(0x1a5)][0x3][_0x467670(0x1e3)][_0x467670(0x158)](/[^0-9.-]+/g,''))||0x0,_0x5c5976++):_0xc72b62[_0x22e33a][_0x467670(0x10d)][_0x467670(0x109)]='none';}var _0xab287=_0x388c15[_0x467670(0x1be)][_0xc72b62['length']-0x1];_0xab287[_0x467670(0x10d)][_0x467670(0x109)]='',_0xab287[_0x467670(0x1a5)][0x1][_0x467670(0x1e3)]=_0x5c5976,_0xab287['cells'][0x3][_0x467670(0x1e3)]=formaterMontantAffichage(_0x4c9147);}function rechercherStocks(){var _0x5ab2ff=_0x54120b,_0x58ebd4=document[_0x5ab2ff(0xda)](_0x5ab2ff(0xf1))['value'][_0x5ab2ff(0x16d)](),_0x5d7526=document['getElementById'](_0x5ab2ff(0x152)),_0x5b88b4=_0x5d7526[_0x5ab2ff(0x15d)]('tr'),_0x262920=0x0,_0x5f1f0b=0x0,_0x37bcc0=0x0,_0x198b20=0x0;for(var _0x6614e6=0x1;_0x6614e6<_0x5b88b4[_0x5ab2ff(0xfa)]-0x1;_0x6614e6++){var _0x5de4f9=![];if(_0x58ebd4==='')_0x5de4f9=!![];else{var _0x72957c=_0x5b88b4[_0x6614e6][_0x5ab2ff(0x15d)]('td');for(var _0x88b122=0x0;_0x88b122<_0x72957c[_0x5ab2ff(0xfa)];_0x88b122++){var _0x3fac98=_0x72957c[_0x88b122][_0x5ab2ff(0x1e3)][_0x5ab2ff(0x16d)]();if(_0x3fac98[_0x5ab2ff(0x1c8)](_0x58ebd4)>-0x1){_0x5de4f9=!![];break;}}}_0x5de4f9?(_0x5b88b4[_0x6614e6][_0x5ab2ff(0x10d)]['display']='',_0x262920+=parseFloat(_0x5b88b4[_0x6614e6]['cells'][0x2][_0x5ab2ff(0x1e3)])||0x0,_0x5f1f0b+=parseFloat(_0x5b88b4[_0x6614e6][_0x5ab2ff(0x1a5)][0x3][_0x5ab2ff(0x1e3)])||0x0,_0x37bcc0+=parseFloat(_0x5b88b4[_0x6614e6][_0x5ab2ff(0x1a5)][0x4][_0x5ab2ff(0x1e3)])||0x0,_0x198b20++):_0x5b88b4[_0x6614e6][_0x5ab2ff(0x10d)]['display']=_0x5ab2ff(0x10e);}var _0x59cb37=_0x5d7526[_0x5ab2ff(0x1be)][_0x5b88b4[_0x5ab2ff(0xfa)]-0x1];_0x59cb37[_0x5ab2ff(0x10d)][_0x5ab2ff(0x109)]='',_0x59cb37['cells'][0x1]['textContent']=_0x198b20,_0x59cb37[_0x5ab2ff(0x1a5)][0x2][_0x5ab2ff(0x1e3)]=_0x262920,_0x59cb37[_0x5ab2ff(0x1a5)][0x3]['textContent']=_0x5f1f0b,_0x59cb37[_0x5ab2ff(0x1a5)][0x4][_0x5ab2ff(0x1e3)]=_0x37bcc0;}function masquerToutesSections(){var _0x2ef875=_0x54120b;document[_0x2ef875(0xda)]('detailsSection')[_0x2ef875(0x10d)][_0x2ef875(0x109)]=_0x2ef875(0x10e),document['getElementById']('tendancesSection')[_0x2ef875(0x10d)]['display']=_0x2ef875(0x10e),document['getElementById']('analysesSection')[_0x2ef875(0x10d)]['display']=_0x2ef875(0x10e),document[_0x2ef875(0xda)](_0x2ef875(0x1c4))['style'][_0x2ef875(0x109)]=_0x2ef875(0x10e),document[_0x2ef875(0xda)](_0x2ef875(0x103))['style'][_0x2ef875(0x109)]='none';}produitsRef['on'](_0x54120b(0xdd),analyserProduits),produitsRef['on'](_0x54120b(0xd2),analyserProduits),produitsRef['on'](_0x54120b(0x168),analyserProduits),firebase['auth']()[_0x54120b(0x1a4)](function(_0x5c943a){var _0x1fc5c4=_0x54120b;_0x5c943a?(document[_0x1fc5c4(0xda)](_0x1fc5c4(0xcd))[_0x1fc5c4(0x10d)]['display']=_0x1fc5c4(0x190),document[_0x1fc5c4(0xda)]('loginPage')[_0x1fc5c4(0x10d)][_0x1fc5c4(0x109)]=_0x1fc5c4(0x10e),document[_0x1fc5c4(0xda)](_0x1fc5c4(0x18b))['style'][_0x1fc5c4(0x109)]=_0x1fc5c4(0x10e)):(document[_0x1fc5c4(0xda)]('mainContent')[_0x1fc5c4(0x10d)]['display']='none',document[_0x1fc5c4(0xda)](_0x1fc5c4(0x16a))[_0x1fc5c4(0x10d)][_0x1fc5c4(0x109)]='block');});function scrollToDetails(){var _0x4dd6df=_0x54120b;document[_0x4dd6df(0xda)]('details-header')['scrollIntoView']({'behavior':_0x4dd6df(0x10a)});}function scrollToAnalyses(){var _0x1354d8=_0x54120b;document[_0x1354d8(0xda)]('analyses-header')['scrollIntoView']({'behavior':_0x1354d8(0x10a)});}function scrollToTendances(){var _0x4bcf43=_0x54120b;document['getElementById'](_0x4bcf43(0x1a8))['scrollIntoView']({'behavior':_0x4bcf43(0x10a)});}function scrollToDebiteurs(){var _0x1e8c0c=_0x54120b;document[_0x1e8c0c(0xda)](_0x1e8c0c(0xea))[_0x1e8c0c(0x15c)]({'behavior':_0x1e8c0c(0x10a)});}function scrollToStocks(){var _0x5ab324=_0x54120b;document['getElementById'](_0x5ab324(0x17a))[_0x5ab324(0x15c)]({'behavior':_0x5ab324(0x10a)});}function exporterProduitsVersExcel(){var _0x30b0e7=_0x54120b,_0x55d215=document[_0x30b0e7(0xda)]('produitTable'),_0x3ad63d=XLSX['utils']['table_to_sheet'](_0x55d215),_0x115efe=XLSX[_0x30b0e7(0xe3)][_0x30b0e7(0x1da)]();XLSX['utils'][_0x30b0e7(0x120)](_0x115efe,_0x3ad63d,_0x30b0e7(0x12b)),XLSX['writeFile'](_0x115efe,'produits.xlsx');}function exporterTendancesVersExcel(){var _0x49203a=_0x54120b;alert(_0x49203a(0xca));}function exporterAnalysesVersExcel(){var _0x1cd2ef=_0x54120b;alert(_0x1cd2ef(0x140));}function exporterDebiteursVersExcel(){var _0x505101=_0x54120b,_0x1bbc31=document[_0x505101(0xda)](_0x505101(0x1a2)),_0x3f382a=XLSX[_0x505101(0xe3)][_0x505101(0x113)](_0x1bbc31),_0x50d7f0=XLSX[_0x505101(0xe3)]['book_new']();XLSX[_0x505101(0xe3)][_0x505101(0x120)](_0x50d7f0,_0x3f382a,'Débiteurs'),XLSX[_0x505101(0x1d5)](_0x50d7f0,'debiteurs.xlsx');}function exporterStocksVersExcel(){var _0x238738=_0x54120b,_0x4f4cc6=document['getElementById']('stockTable'),_0x2f3dd9=XLSX['utils'][_0x238738(0x113)](_0x4f4cc6),_0x1e9665=XLSX[_0x238738(0xe3)]['book_new']();XLSX[_0x238738(0xe3)][_0x238738(0x120)](_0x1e9665,_0x2f3dd9,_0x238738(0x1ae)),XLSX[_0x238738(0x1d5)](_0x1e9665,_0x238738(0xf4));}function mettreAJourStocks(_0xf5b402,_0x24f765){var _0x473cf1=_0x54120b;stocksRef[_0x473cf1(0x14a)](_0x473cf1(0x11c))[_0x473cf1(0x1a3)](_0xf5b402)[_0x473cf1(0x1c6)](_0x473cf1(0x132))['then'](function(_0x4935c7){var _0x5682e3=_0x473cf1;_0x4935c7[_0x5682e3(0xd6)]()&&_0x4935c7[_0x5682e3(0x186)](function(_0x4aac19){var _0x412cc6=_0x5682e3,_0x1369da=_0x4aac19['val'](),_0x5cbcdc=parseFloat(_0x1369da['quantiteRestante'])-_0x24f765;stocksRef[_0x412cc6(0x157)](_0x4aac19[_0x412cc6(0x10b)])[_0x412cc6(0x180)]({'quantiteRestante':_0x5cbcdc,'quantiteVendues':parseFloat(_0x1369da[_0x412cc6(0x141)])+_0x24f765});});});}
+// Initialisez Firebase (remplacez les valeurs par vos propres identifiants)
+var firebaseConfig = {
+  apiKey: "AIzaSyDTxa2nD-EVgmSRrHWciqs7xdOkp12t5yA",
+  authDomain: "razia-sarl.firebaseapp.com",
+  databaseURL: "https://razia-sarl-default-rtdb.firebaseio.com",
+  projectId: "razia-sarl",
+  storageBucket: "razia-sarl.appspot.com",
+  messagingSenderId: "490482635351",
+  appId: "1:490482635351:web:fc82421e1907576a090912",
+  measurementId: "G-Q2EWH7HJ8T"
+};
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
+var produitsRef = database.ref('produits'); // Référence à la collection 'produits'
+var debiteursRef = database.ref('debiteurs'); // Référence à la collection 'debiteurs'
+var stocksRef = database.ref('stocks'); // Référence à la collection 'stocks'
+
+// Fonctions pour formater un montant en FCFA
+function formaterMontant(input) {
+  // Supprimer la mise en forme précédente si elle existe
+  input.value = input.value.replace(/[^0-9.-]+/g, "");
+
+  // Formater le montant en FCFA
+  var montant = parseFloat(input.value).toLocaleString('fr-FR', {
+    style: 'currency',
+    currency: 'XAF'
+  });
+  input.value = montant;
+}
+
+// Fonction pour ajouter un produit (modifiée pour ajouter le debiteur)
+function ajouterProduit() {
+  // Vérifier si tous les champs sont remplis
+  var inputs = document.getElementById("productForm").querySelectorAll("input, select");
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].value === "") {
+      alert("Veuillez remplir le champ " + inputs[i].name + ".");
+      inputs[i].focus(); // Mettre le focus sur le champ non rempli
+      return; // Arrêter l'exécution de la fonction
+    }
+  }
+
+  // Afficher la barre de chargement
+  document.getElementById("loadingBar").style.width = "0%";
+
+  // Nettoyer les montants formatés en FCFA avant de les stocker
+  var prixVente = parseFloat(document.getElementById("prixVente").value.replace(/[^0-9.-]+/g, ""));
+  var RAP = parseFloat(document.getElementById("RAP").value.replace(/[^0-9.-]+/g, ""));
+  var prixBrut = parseFloat(document.getElementById("prixBrut").value.replace(/[^0-9.-]+/g, ""));
+  var freight = parseFloat(document.getElementById("freight").value.replace(/[^0-9.-]+/g, ""));
+  var douaneTransport = parseFloat(document.getElementById("douaneTransport").value.replace(/[^0-9.-]+/g, ""));
+  var fraisTransfert = parseFloat(document.getElementById("fraisTransfert").value.replace(/[^0-9.-]+/g, ""));
+  var impotDocument = parseFloat(document.getElementById("impotDocument").value.replace(/[^0-9.-]+/g, ""));
+  var reparation = parseFloat(document.getElementById("reparation").value.replace(/[^0-9.-]+/g, ""));
+
+  var productData = {
+    date: document.getElementById("date").value,
+    quantite: document.getElementById("quantite").value,
+    designation: document.getElementById("designation").value,
+    typeArticle: document.getElementById("typeArticle").value,
+    categorie: document.getElementById("categorie").value,
+    prixVente: prixVente,
+    RAP: RAP,
+    netBrut: document.getElementById("netBrut").value.replace(/[^0-9.-]+/g, ""),
+    prixBrut: prixBrut,
+    taux: document.getElementById("taux").value,
+    freight: freight,
+    douaneTransport: douaneTransport,
+    fraisTransfert: fraisTransfert,
+    impotDocument: impotDocument,
+    reparation: reparation,
+    typeClient: document.getElementById("typeClient").value,
+    ville: document.getElementById("ville").value,
+    numeroTelephone: document.getElementById("numeroTelephone").value,
+    commande: document.getElementById("commande").value,
+    coutReviens: parseFloat(document.getElementById("coutReviens").value.replace(/[^0-9.-]+/g, "")) || 0,
+    margeBenefice: parseFloat(document.getElementById("margeBenefice").value.replace(/[^0-9.-]+/g, "")) || 0,
+  };
+
+  produitsRef.push(productData)
+    .then(function () {
+      // Animer la barre de chargement
+      document.getElementById("loadingBar").style.width = "100%";
+
+      // Attendre une courte durée pour que l'animation se termine
+      setTimeout(function () {
+        alert("Produit ajouté avec succès !");
+        document.getElementById("productForm").reset();
+        document.getElementById("loadingBar").style.width = "0%";
+        // Réinitialiser la barre de chargement
+        mettreAJourStocks(productData.designation, productData.quantite);
+
+        // Vérifier si RAP > 0 pour ajouter un debiteur
+        if (parseFloat(productData.RAP) > 0) {
+          // Ajouter le debiteur à la liste des debiteurs après l'ajout du produit
+          debiteursRef.push({
+            date: productData.date,
+            designation: productData.designation,
+            numeroTelephone: productData.numeroTelephone,
+            RAP: productData.RAP
+          });
+        }
+
+        // Actualiser l'analyse après l'ajout d'un produit
+        analyserProduits();
+
+        // Retourner au champ date et le mettre en édition
+        document.getElementById("date").focus();
+      }, 500); // Attendre 500 millisecondes (0.5 seconde)
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de l'ajout du produit:", error);
+      alert("Une erreur est survenue.");
+      document.getElementById("loadingBar").style.width = "0%"; // Réinitialiser la barre de chargement en cas d'erreur
+    });
+}
+
+function afficherDetails() {
+  masquerToutesSections();
+  document.getElementById("detailsSection").style.display = "block";
+  remplirTableau();
+}
+
+function remplirTableau() {
+  var productTable = document.getElementById("produitTable").getElementsByTagName('tbody')[0];
+  productTable.innerHTML = ''; // Effacer le contenu du tableau
+
+  var moisPrecedent = null; // Variable pour suivre le mois précédent
+
+  var totalQuantite = 0;
+  var totalPrixVente = 0;
+  var totalRAP = 0;
+  var totalPrixBrut = 0;
+  var totalTaux = 0;
+  var totalPrixNet = 0;
+  var totalFreight = 0;
+  var totalDouaneTransport = 0;
+  var totalFraisTransfert = 0;
+  var totalImpotDocument = 0;
+  var totalReparation = 0;
+  var totalDepenses = 0;
+  var totalCoutReviens = 0;
+  var totalMargeBenefice = 0;
+
+  database.ref('produits').orderByChild('date').once('value')
+    .then(function (snapshot) {
+      var produits = []; // Tableau pour stocker les produits
+      snapshot.forEach(function (childSnapshot) {
+        produits.push(childSnapshot.val());
+      });
+
+      // Inverser l'ordre des produits
+      produits.reverse();
+
+      // Parcourir les produits inversés
+      produits.forEach(function (product, index) {
+        var date = new Date(product.date);
+        var moisActuel = date.getMonth(); // 0 pour janvier, 1 pour février, etc.
+
+        // Ajouter une ligne de séparation si le mois a changé
+        if (moisPrecedent !== null && moisActuel !== moisPrecedent) {
+          var separatorRow = productTable.insertRow();
+          separatorRow.classList.add('separateur-mois'); // Ajouter la classe CSS pour le style
+          var emptyCell = separatorRow.insertCell();
+          emptyCell.setAttribute('colspan', 22); // Fusionner les cellules pour couvrir toute la ligne
+        }
+
+        var row = productTable.insertRow();
+        var key = snapshot.child(index).key; // Accéder à la clé en utilisant l'index
+
+        // Date
+        var dateCell = row.insertCell();
+        dateCell.textContent = product.date;
+
+        // Quantité
+        var quantiteCell = row.insertCell();
+        quantiteCell.textContent = product.quantite;
+        totalQuantite += parseFloat(product.quantite) || 0;
+
+        // Désignation
+        var designationCell = row.insertCell();
+        designationCell.textContent = product.designation;
+
+        // Type d'Article
+        var typeArticleCell = row.insertCell();
+        typeArticleCell.textContent = product.typeArticle;
+
+        // Catégorie
+        var categorieCell = row.insertCell();
+        categorieCell.textContent = product.categorie;
+
+        // Prix de vente
+        var prixVenteCell = row.insertCell();
+        prixVenteCell.textContent = formaterMontantAffichage(product.prixVente);
+        totalPrixVente += parseFloat(product.prixVente) || 0;
+
+        // RAP
+        var RAPCell = row.insertCell();
+        RAPCell.textContent = formaterMontantAffichage(product.RAP);
+        totalRAP += parseFloat(product.RAP) || 0;
+
+        // Prix Brut
+        var prixBrutCell = row.insertCell();
+        prixBrutCell.textContent = formaterMontantAffichage(product.prixBrut);
+        totalPrixBrut += parseFloat(product.prixBrut) || 0;
+
+        // Taux
+        var tauxCell = row.insertCell();
+        tauxCell.textContent = product.taux;
+        totalTaux += parseFloat(product.taux) || 0;
+
+        // Prix Net
+        var netBrutCell = row.insertCell();
+        netBrutCell.textContent = formaterMontantAffichage(product.netBrut);
+        totalPrixNet += parseFloat(product.netBrut) || 0;
+
+        // Freight
+        var freightCell = row.insertCell();
+        freightCell.textContent = formaterMontantAffichage(product.freight);
+        totalFreight += parseFloat(product.freight) || 0;
+
+        // Douane et Transport
+        var douaneTransportCell = row.insertCell();
+        douaneTransportCell.textContent = formaterMontantAffichage(product.douaneTransport);
+        totalDouaneTransport += parseFloat(product.douaneTransport) || 0;
+
+        // Frais de transfert et Tenue de Compte
+        var fraisTransfertCell = row.insertCell();
+        fraisTransfertCell.textContent = formaterMontantAffichage(product.fraisTransfert);
+        totalFraisTransfert += parseFloat(product.fraisTransfert) || 0;
+
+        // Impôt et Document
+        var impotDocumentCell = row.insertCell();
+        impotDocumentCell.textContent = formaterMontantAffichage(product.impotDocument);
+        totalImpotDocument += parseFloat(product.impotDocument) || 0;
+
+        // Réparation
+        var reparationCell = row.insertCell();
+        reparationCell.textContent = formaterMontantAffichage(product.reparation);
+        totalReparation += parseFloat(product.reparation) || 0;
+
+        // Calculer le total des dépenses
+        var totalDepensesLigne = parseFloat(product.freight) +
+          parseFloat(product.douaneTransport) +
+          parseFloat(product.fraisTransfert) +
+          parseFloat(product.impotDocument) +
+          parseFloat(product.reparation);
+
+        // Total des dépenses pour la ligne
+        var totalCell = row.insertCell();
+        totalCell.textContent = formaterMontantAffichage(totalDepensesLigne);
+        totalDepenses += totalDepensesLigne;
+
+        // Coût de Reviens du Produit
+        var coutReviensCell = row.insertCell();
+        coutReviensCell.textContent = formaterMontantAffichage(product.coutReviens);
+        totalCoutReviens += parseFloat(product.coutReviens) || 0;
+
+        // Marge Bénéfice
+        var margeBeneficeCell = row.insertCell();
+        margeBeneficeCell.textContent = formaterMontantAffichage(product.margeBenefice);
+        totalMargeBenefice += parseFloat(product.margeBenefice) || 0;
+
+        // Type de Client
+        var typeClientCell = row.insertCell();
+        typeClientCell.textContent = product.typeClient;
+
+        // Ville
+        var villeCell = row.insertCell();
+        villeCell.textContent = product.ville;
+
+        // Commande
+        var commandeCell = row.insertCell();
+        commandeCell.textContent = product.commande;
+
+        // Numéro de Téléphone
+        var numeroTelephoneCell = row.insertCell();
+        numeroTelephoneCell.textContent = product.numeroTelephone;
+        // Ajout d'un attribut pour le statut RAP
+        numeroTelephoneCell.setAttribute('data-rap-status', product.RAP > 0 ? 'red' : 'black');
+
+        // Ajouter les icônes de suppression et de modification
+        var actionsCell = row.insertCell();
+        var iconContainer = document.createElement("div");
+        iconContainer.classList.add("icon-container");
+
+        // Icône de suppression
+        var iconDelete = document.createElement("i");
+        iconDelete.classList.add("fas", "fa-trash", "icon-delete");
+        iconDelete.onclick = function () {
+          if (confirm("Êtes-vous sûr de vouloir supprimer ce produit ?")) {
+            // Supprimer le produit de Firebase
+            produitsRef.child(key).remove()
+              .then(function () {
+                // Mettre à jour le tableau des produits
+                remplirTableau();
+
+                // Supprimer le debiteur associé si nécessaire
+                if (parseFloat(product.RAP) > 0) {
+                  debiteursRef.orderByChild('numeroTelephone').equalTo(product.numeroTelephone).once('value',
+                    function (debiteurSnapshot) {
+                      if (debiteurSnapshot.exists()) {
+                        debiteurSnapshot.forEach(function (debiteurChildSnapshot) {
+                          debiteursRef.child(debiteurChildSnapshot.key).remove();
+                        });
+                      }
+                    });
+                }
+
+                // Mettre à jour le tableau des debiteurs
+                remplirTableauDebiteurs();
+
+                // Mettre à jour le tableau des stocks
+                mettreAJourStocks(product.designation, -product.quantite); // Quantité négative pour soustraire
+                remplirTableauStocks();
+
+                // Actualiser l'analyse après la suppression d'un produit
+                analyserProduits();
+
+                alert("Produit supprimé avec succès !");
+              })
+              .catch(function (error) {
+                console.error("Erreur lors de la suppression du produit:", error);
+                alert("Une erreur est survenue.");
+              });
+          }
+        };
+        iconContainer.appendChild(iconDelete);
+
+        // Icône de modification
+        var iconEdit = document.createElement("i");
+        iconEdit.classList.add("fas", "fa-edit", "icon-edit");
+        iconEdit.onclick = function () {
+          ouvrirModalProduit(key, product);
+        };
+        iconContainer.appendChild(iconEdit);
+
+        actionsCell.appendChild(iconContainer);
+
+        moisPrecedent = moisActuel; // Mettre à jour le mois précédent
+      });
+      // Ajouter la ligne total
+      ajouterLigneTotalProduits(productTable, produits.length, totalQuantite, totalPrixVente, totalRAP,
+        totalPrixBrut, totalTaux, totalPrixNet, totalFreight, totalDouaneTransport, totalFraisTransfert,
+        totalImpotDocument, totalReparation, totalDepenses, totalCoutReviens, totalMargeBenefice);
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de la récupération des détails des produits:", error);
+      alert("Une erreur est survenue.");
+    });
+}
+
+function formaterMontantAffichage(montant) {
+  return parseFloat(montant).toLocaleString('fr-FR', { style: 'currency', currency: 'XAF' });
+}
+
+function ajouterLigneTotalProduits(productTable, totalDesignation, totalQuantite, totalPrixVente, totalRAP,
+  totalPrixBrut, totalTaux, totalPrixNet, totalFreight, totalDouaneTransport, totalFraisTransfert,
+  totalImpotDocument, totalReparation, totalDepenses, totalCoutReviens, totalMargeBenefice) {
+
+  var totalRow = productTable.insertRow();
+  totalRow.classList.add('total-row');
+
+  totalRow.insertCell().textContent = "Total";
+  totalRow.insertCell().textContent = totalQuantite;
+  totalRow.insertCell().textContent = totalDesignation;
+  totalRow.insertCell().textContent = "";
+  totalRow.insertCell().textContent = "";
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalPrixVente);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalRAP);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalPrixBrut);
+  totalRow.insertCell().textContent = totalTaux;
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalPrixNet);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalFreight);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalDouaneTransport);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalFraisTransfert);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalImpotDocument);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalReparation);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalDepenses);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalCoutReviens);
+  totalRow.insertCell().textContent = formaterMontantAffichage(totalMargeBenefice);
+  totalRow.insertCell().textContent = "";
+  totalRow.insertCell().textContent = "";
+  totalRow.insertCell().textContent = "";
+  totalRow.insertCell().textContent = "";
+  totalRow.insertCell().textContent = "";
+}
+
+var tendanceChart = null; // Variable pour stocker l'objet du graphique
+
+function afficherTendances() {
+  masquerToutesSections();
+  document.getElementById("tendancesSection").style.display = "block";
+  creerGraphique(); // Créer le graphique
+}
+
+function creerGraphique() {
+  // Récupérer les données de Firebase pour le graphique
+  produitsRef.on('value', function (snapshot) {
+    var labels = [];
+    var quantiteData = [];
+    var commandeData = [];
+    var coutReviensData = [];
+    var margeBeneficeData = [];
+    // var tauxCroissanceData = [];
+
+    snapshot.forEach(function (childSnapshot) {
+      var product = childSnapshot.val();
+      labels.push(product.date);
+      quantiteData.push(parseFloat(product.quantite) || 0);
+      commandeData.push(parseFloat(product.commande) || 0);
+      coutReviensData.push(parseFloat(product.coutReviens) || 0);
+      margeBeneficeData.push(parseFloat(product.margeBenefice) || 0);
+      // tauxCroissanceData.push(parseFloat(product.tauxCroissance) || 0);
+    });
+
+    // Mettre à jour le graphique existant avec les nouvelles données
+    if (tendanceChart) {
+      tendanceChart.data.labels = labels;
+      tendanceChart.data.datasets[0].data = quantiteData;
+      tendanceChart.data.datasets[1].data = commandeData;
+      tendanceChart.data.datasets[2].data = coutReviensData;
+      tendanceChart.data.datasets[3].data = margeBeneficeData;
+      // tendanceChart.data.datasets[4].data = tauxCroissanceData;
+      tendanceChart.update();
+    } else {
+      // Créer le graphique si il n'existe pas encore
+      var ctx = document.getElementById('tendanceChart').getContext('2d');
+      tendanceChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Quantité',
+            data: quantiteData,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderWidth: 1
+          }, {
+            label: 'Commande',
+            data: commandeData,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderWidth: 1
+          }, {
+            label: 'Coût de Reviens',
+            data: coutReviensData,
+            borderColor: 'rgba(255, 206, 86, 1)',
+            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+            borderWidth: 1
+          }, {
+            label: 'Marge Bénéfice',
+            data: margeBeneficeData,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderWidth: 1
+          },
+            // {
+            //   label: 'Taux de croissance',
+            //   data: tauxCroissanceData,
+            //   borderColor: 'rgba(153, 102, 255, 1)',
+            //   backgroundColor: 'rgba(153, 102, 255, 0.2)',
+            //   borderWidth: 1
+            // }
+          ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+  });
+}
+
+function calculerTauxCroissance() {
+  var quantiteActuelle = parseFloat(document.getElementById("quantite").value) || 0;
+  var dateActuelle = new Date(document.getElementById("date").value);
+
+  // Trouver la quantité du mois précédent dans Firebase
+  database.ref('produits')
+    .orderByChild('date')
+    .endAt(dateActuelle.getFullYear() + '-' + (dateActuelle.getMonth()) + '-01') // Exclure le mois actuel
+    .limitToLast(1) // Récupérer le dernier enregistrement du mois précédent
+    .once('value')
+    .then(function (snapshot) {
+      var quantitePrecedente = 0;
+      snapshot.forEach(function (childSnapshot) {
+        quantitePrecedente = parseFloat(childSnapshot.val().quantite) || 0;
+      });
+
+      // Calculer le taux de croissance
+      var tauxCroissance = 0;
+      if (quantitePrecedente !== 0) {
+        tauxCroissance = ((quantiteActuelle - quantitePrecedente) / quantitePrecedente) * 100;
+      }
+
+      // Afficher le taux de croissance dans le champ
+      document.getElementById("tauxCroissance").value = tauxCroissance.toFixed(2);
+    })
+    .catch(function (error) {
+      console.error("Erreur lors du calcul du taux de croissance:", error);
+    });
+}
+
+
+// Fonction pour calculer le prix net
+function calculerPrixNet() {
+  var prixBrut = parseFloat(document.getElementById("prixBrut").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var taux = parseFloat(document.getElementById("taux").value) || 0;
+  var prixNet = prixBrut * taux;
+  document.getElementById("netBrut").value = formaterMontantAffichage(prixNet); // Appliquer le format monétaire à l'affichage
+}
+
+
+// Fonction pour calculer le coût de revient
+function calculerCoutReviens() {
+  var netBrut = parseFloat(document.getElementById("netBrut").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var freight = parseFloat(document.getElementById("freight").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var douaneTransport = parseFloat(document.getElementById("douaneTransport").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var fraisTransfert = parseFloat(document.getElementById("fraisTransfert").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var impotDocument = parseFloat(document.getElementById("impotDocument").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var reparation = parseFloat(document.getElementById("reparation").value.replace(/[^0-9.-]+/g, "")) || 0;
+
+  var coutReviens = netBrut + freight + douaneTransport + fraisTransfert + impotDocument + reparation;
+  document.getElementById("coutReviens").value = formaterMontantAffichage(coutReviens); // Appliquer le format monétaire à l'affichage
+
+  calculerMargeBenefice(); // Mettre à jour la marge bénéficiaire
+}
+
+// Fonction pour calculer la marge bénéficiaire
+function calculerMargeBenefice() {
+  var prixVente = parseFloat(document.getElementById("prixVente").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var coutReviens = parseFloat(document.getElementById("coutReviens").value.replace(/[^0-9.-]+/g, "")) || 0; // Supprimer le formatage avant le calcul
+
+  var margeBenefice = prixVente - coutReviens;
+  document.getElementById("margeBenefice").value = formaterMontantAffichage(margeBenefice); // Appliquer le format monétaire à l'affichage
+}
+
+// Fonction pour analyser les produits (modifiée pour la synchronisation dynamique)
+function analyserProduits() {
+  var resultatsAnalyse = document.getElementById("resultatsAnalyse");
+  resultatsAnalyse.innerHTML = ''; // Effacer les résultats précédents
+
+  // Obtenir les valeurs de sélection pour la période
+  var periode = document.getElementById("analysePeriode").value;
+  var selectedYear = document.getElementById("anneeSelect").value;
+  var selectedMonth = document.getElementById("moisSelect").value;
+  var selectedWeek = document.getElementById("semaineSelect").value;
+
+  // Définir la période à afficher (seulement pour l'analyse hebdomadaire)
+  var periodeAffichee = '';
+  if (periode === "hebdomadaire" && selectedWeek && selectedMonth && selectedYear) {
+    var startDate = getStartDateOfWeek(selectedWeek, selectedMonth, selectedYear);
+    var endDate = new Date(startDate);
+    endDate.setDate(endDate.getDate() + 6); // Fin de la semaine
+    periodeAffichee = 'Semaine ' + selectedWeek + ', ' + getMonthName(selectedMonth) + ' ' + selectedYear + ' (' +
+      startDate.toLocaleDateString() + ' - ' + endDate.toLocaleDateString() + ')';
+  }
+
+  // Afficher la période sélectionnée (seulement pour l'analyse hebdomadaire)
+  document.getElementById("periodeSelectionnee").innerHTML = periodeAffichee ? 'Période sélectionnée: <span style="font-weight: bold;">' +
+    periodeAffichee + '</span>' : '';
+
+  // Récupérer et analyser les données des produits
+  produitsRef.on('value', function (snapshot) { // Utilisation de 'on' pour la synchronisation en temps réel
+    var totalQuantite = 0;
+    var totalCommande = 0;
+    var totalCoutReviens = 0;
+    var totalMargeBenefice = 0;
+    var totalPrixVente = 0;
+    var totalPrixNet = 0;
+    var totalDepenses = 0;
+
+    snapshot.forEach(function (childSnapshot) {
+      var product = childSnapshot.val();
+      var productDate = new Date(product.date);
+
+      // Vérifier si le produit correspond à la période sélectionnée
+      if (
+        (periode === "annuelle" && productDate.getFullYear() == selectedYear) ||
+        (periode === "mensuelle" && productDate.getFullYear() == selectedYear && productDate.getMonth() + 1 ==
+          selectedMonth) ||
+        (periode === "hebdomadaire" && productDate >= getStartDateOfWeek(selectedWeek, selectedMonth,
+          selectedYear) && productDate <= new Date(getStartDateOfWeek(selectedWeek, selectedMonth,
+          selectedYear)).setDate(new Date(getStartDateOfWeek(selectedWeek, selectedMonth,
+          selectedYear)).getDate() + 6))
+      ) {
+        totalQuantite += parseFloat(product.quantite) || 0;
+        totalCommande += parseFloat(product.commande) || 0;
+        totalCoutReviens += parseFloat(product.coutReviens) || 0;
+        totalMargeBenefice += parseFloat(product.margeBenefice) || 0;
+        totalPrixVente += parseFloat(product.prixVente) || 0;
+        totalPrixNet += parseFloat(product.netBrut) || 0;
+        totalDepenses += (parseFloat(product.freight) || 0) + (parseFloat(product.douaneTransport) || 0) + (
+          parseFloat(product.fraisTransfert) || 0) + (parseFloat(product.impotDocument) || 0) + (parseFloat(
+          product.reparation) || 0);
+      }
+    });
+
+    // Afficher les totaux calculés
+    resultatsAnalyse.innerHTML += `
+      <h3>Totaux pour la période sélectionnée</h3>
+      <p>Quantité totale: ${totalQuantite}</p>
+      <p>Total des commandes: ${totalCommande}</p>
+      <p>Coût de revient total: ${formaterMontantAffichage(totalCoutReviens)}</p>
+      <p>Total des prix de vente: ${formaterMontantAffichage(totalPrixVente)}</p>
+      <p>Total des prix nets: ${formaterMontantAffichage(totalPrixNet)}</p>
+      <p>Total des dépenses: ${formaterMontantAffichage(totalDepenses)}</p>
+      <p>Marge bénéficiaire totale: ${formaterMontantAffichage(totalMargeBenefice)}</p> 
+    `;
+  });
+}
+
+// Fonction pour obtenir la date de début d'une semaine donnée
+function getStartDateOfWeek(weekNumber, month, year) {
+  var date = new Date(year, month - 1, 1); // Mois en JavaScript est basé sur 0
+  var day = date.getDay(); // 0 pour dimanche, 1 pour lundi, etc.
+
+  // Ajuster la date pour commencer la semaine à lundi
+  var diff = date.getDate() - day + (day === 0 ? -6 : 1); // Ajuster pour les semaines commençant le dimanche
+  date.setDate(diff);
+
+  // Ajouter le nombre de jours pour atteindre la semaine souhaitée
+  date.setDate(date.getDate() + (weekNumber - 1) * 7);
+
+  return date;
+}
+
+// Fonction pour obtenir le nom du mois
+function getMonthName(monthNumber) {
+  var mois = [
+    "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+    "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+  ];
+  return mois[monthNumber - 1];
+}
+
+function afficherAnalyses() {
+  masquerToutesSections();
+  document.getElementById("analysesSection").style.display = "block";
+  analyserProduits(); // Appeler la fonction d'analyse 
+}
+
+// Écouteur d'événement pour le changement de période d'analyse (modifié pour la synchronisation dynamique)
+document.getElementById("analysePeriode").addEventListener('change', function () {
+  var periode = this.value;
+  var anneeSelect = document.getElementById("anneeSelect");
+  var moisSelect = document.getElementById("moisSelect");
+  var semaineSelect = document.getElementById("semaineSelect");
+
+  // Afficher/masquer les champs de sélection en fonction de la période sélectionnée
+  anneeSelect.style.display = periode === "annuelle" || periode === "mensuelle" || periode ===
+    "hebdomadaire" ? "inline-block" : "none";
+  moisSelect.style.display = periode === "mensuelle" || periode === "hebdomadaire" ? "inline-block" :
+    "none";
+  semaineSelect.style.display = periode === "hebdomadaire" ? "inline-block" : "none";
+
+  // Mettre à jour les options du champ de sélection des semaines en fonction du mois sélectionné
+  if (periode === "hebdomadaire") {
+    mettreAJourSemaines(moisSelect.value, anneeSelect.value);
+  }
+
+  // Analyser les produits en fonction de la période sélectionnée
+  analyserProduits();
+});
+
+
+// Fonction pour mettre à jour les options du champ de sélection des semaines
+function mettreAJourSemaines(month, year) {
+  var semaineSelect = document.getElementById("semaineSelect");
+  semaineSelect.innerHTML = ''; // Effacer les options existantes
+
+  // Calculer le nombre de semaines dans le mois
+  var numWeeks = getNumberOfWeeksInMonth(month, year);
+
+  // Ajouter les options de semaine
+  for (var i = 1; i <= numWeeks; i++) {
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = 'Semaine ' + i;
+    semaineSelect.add(option);
+  }
+}
+
+// Fonction pour obtenir le nombre de semaines dans un mois donné
+function getNumberOfWeeksInMonth(month, year) {
+  var firstDay = new Date(year, month - 1, 1); // Mois en JavaScript est basé sur 0
+  var lastDay = new Date(year, month, 0);
+  var numDays = lastDay.getDate();
+
+  // Ajuster le nombre de jours pour les semaines commençant le dimanche
+  if (firstDay.getDay() !== 1) {
+    numDays += firstDay.getDay() - 1;
+  }
+
+  return Math.ceil(numDays / 7);
+}
+
+// Remplir les options d'année (par exemple, 2020 à 2025)
+var anneeSelect = document.getElementById("anneeSelect");
+for (var i = new Date().getFullYear() - 5; i <= new Date().getFullYear() + 5; i++) {
+  var option = document.createElement("option");
+  option.value = i;
+  option.text = i;
+  anneeSelect.add(option);
+}
+
+// Remplir les options de mois
+var moisSelect = document.getElementById("moisSelect");
+var mois = [
+  "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+  "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+];
+for (var i = 0; i < mois.length; i++) {
+  var option = document.createElement("option");
+  option.value = i + 1; // Mois en JavaScript est basé sur 0
+  option.text = mois[i];
+  moisSelect.add(option);
+}
+
+// Écouteur d'événement pour le changement de mois
+moisSelect.addEventListener('change', function () {
+  mettreAJourSemaines(this.value, anneeSelect.value);
+  analyserProduits(); // Analyser les produits pour la semaine sélectionnée
+});
+
+// Écouteurs d'événements pour la sélection de l'année, du mois et de la semaine (modifiés pour la synchronisation dynamique)
+document.getElementById("anneeSelect").addEventListener('change', analyserProduits);
+document.getElementById("moisSelect").addEventListener('change', analyserProduits);
+document.getElementById("semaineSelect").addEventListener('change', analyserProduits);
+
+
+// Fonction pour changer la couleur du numéro de téléphone
+function changerCouleurTelephone() {
+  var RAP = parseFloat(document.getElementById("RAP").value.replace(/[^0-9.-]+/g, "")) || 0;
+  var numeroTelephoneInput = document.getElementById("numeroTelephone");
+  if (RAP > 0) {
+    numeroTelephoneInput.style.color = 'red';
+  } else {
+    numeroTelephoneInput.style.color = 'black';
+  }
+}
+
+// Fonction pour afficher la liste des debiteurs
+function afficherDebiteurs() {
+  masquerToutesSections();
+  document.getElementById("debiteursSection").style.display = "block";
+  remplirTableauDebiteurs(); // Remplir le tableau des debiteurs
+}
+
+// Fonction pour remplir le tableau des debiteurs (modifiée pour les boutons)
+function remplirTableauDebiteurs() {
+  var debiteurTable = document.getElementById("debiteurTable").getElementsByTagName('tbody')[0];
+  debiteurTable.innerHTML = ''; // Effacer le contenu du tableau
+
+  var totalRAPDebiteurs = 0; // Variable pour le total du RAP des débiteurs
+
+  debiteursRef.orderByChild('date').once('value') // Trier par date (les plus récents en haut) et supprimer la limite
+    .then(function (snapshot) {
+      var debiteurs = [];
+      snapshot.forEach(function (childSnapshot) {
+        debiteurs.push(childSnapshot.val());
+      });
+
+      // Inverser l'ordre des débiteurs
+      debiteurs.reverse();
+
+      // Parcourir les débiteurs inversés
+      debiteurs.forEach(function (debiteur, index) { // Ajouter index pour accéder à childSnapshot.key
+        var row = debiteurTable.insertRow();
+        var key = snapshot.child(index).key; // Accéder à la clé en utilisant l'index
+
+        // Date 
+        var dateCell = row.insertCell();
+        dateCell.textContent = debiteur.date;
+
+        // Désignation
+        var designationCell = row.insertCell();
+        designationCell.textContent = debiteur.designation;
+
+        // Numéro de Téléphone
+        var numeroTelephoneCell = row.insertCell();
+        numeroTelephoneCell.textContent = debiteur.numeroTelephone;
+
+        // Montant RAP
+        var RAPCell = row.insertCell();
+        RAPCell.textContent = formaterMontantAffichage(debiteur.RAP); // Formater le montant RAP
+        totalRAPDebiteurs += parseFloat(debiteur.RAP) || 0; // Ajouter au total du RAP
+
+        // Statut
+        var statutCell = row.insertCell();
+        statutCell.textContent = "Non payé"; // Statut initial
+
+        // Actions
+        var actionsCell = row.insertCell();
+        var payerTrancheButton = document.createElement("button");
+        payerTrancheButton.textContent = "Payer Tranche";
+        payerTrancheButton.className = "payment-button"; // Ajout de la classe pour le style
+        payerTrancheButton.onclick = function () {
+          if (confirm("Êtes-vous sûr de vouloir payer une tranche pour ce débiteur ?")) {
+            var montantTranche = parseFloat(prompt("Entrez le montant de la tranche à payer:", 0));
+            if (isNaN(montantTranche) || montantTranche <= 0) {
+              alert("Montant invalide.");
+              return;
+            }
+
+            // Soustraire le montant de la tranche du RAP
+            var nouveauRAP = parseFloat(debiteur.RAP) - montantTranche;
+
+            // Mettre à jour le RAP dans Firebase
+            debiteursRef.child(key).update({
+              RAP: nouveauRAP
+            });
+            // Mettre à jour le montant RAP du produit dans Firebase
+            mettreAJourRAP(debiteur.numeroTelephone, nouveauRAP);
+
+            // Mettre à jour le RAP dans la cellule du tableau
+            RAPCell.textContent = formaterMontantAffichage(nouveauRAP); // Formater le montant RAP
+
+            // Mettre à jour le total du RAP des débiteurs
+            totalRAPDebiteurs -= montantTranche;
+
+            // Si le RAP est égal à 0, supprimer le débiteur
+            if (nouveauRAP <= 0) {
+              row.remove();
+              debiteursRef.child(key).remove();
+              mettreAJourTelephone(debiteur.numeroTelephone, 'black');
+              statutCell.textContent = "Payé"; // Mettre à jour le statut
+            }
+
+            // Actualiser l'analyse après le paiement d'une tranche
+            analyserProduits();
+
+            // Mettre à jour la ligne Total du tableau des débiteurs
+            mettreAJourTotalDebiteurs(debiteurTable);
+          }
+        };
+
+        var payerTotalButton = document.createElement("button");
+        payerTotalButton.textContent = "Payer Total";
+        payerTotalButton.className = "payment-button"; // Ajout de la classe pour le style
+        payerTotalButton.onclick = function () {
+          if (confirm("Êtes-vous sûr de vouloir payer la totalité pour ce débiteur ?")) {
+            // Supprimer la ligne du tableau des débiteurs
+            row.remove();
+
+            // Supprimer le débiteur de Firebase
+            debiteursRef.child(key).remove();
+
+            // Mettre à jour le montant RAP du produit dans Firebase
+            mettreAJourRAP(debiteur.numeroTelephone, 0);
+
+            // Mettre à jour la couleur du numéro de téléphone dans le tableau des données
+            mettreAJourTelephone(debiteur.numeroTelephone, 'black');
+
+            // Mettre à jour le statut du débiteur
+            statutCell.textContent = "Payé";
+
+            // Mettre à jour le total du RAP des débiteurs
+            totalRAPDebiteurs -= parseFloat(debiteur.RAP);
+
+            // Actualiser l'analyse après le paiement total
+            analyserProduits();
+
+            // Mettre à jour la ligne Total du tableau des débiteurs
+            mettreAJourTotalDebiteurs(debiteurTable);
+          }
+        };
+
+        actionsCell.appendChild(payerTrancheButton);
+        actionsCell.appendChild(payerTotalButton);
+      });
+
+      // Ajouter la ligne Total au tableau des débiteurs
+      ajouterTotalDebiteurs(debiteurTable, totalRAPDebiteurs);
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de la récupération des détails des débiteurs:", error);
+      alert("Une erreur est survenue.");
+    });
+}
+
+// Fonction pour ajouter la ligne Total au tableau des débiteurs
+function ajouterTotalDebiteurs(debiteurTable, totalRAPDebiteurs) {
+  var totalRow = debiteurTable.insertRow();
+  totalRow.classList.add('total-row'); // Ajouter une classe CSS pour le style
+
+  var totalDateCell = totalRow.insertCell();
+  totalDateCell.textContent = "Total";
+
+  var totalDesignationCell = totalRow.insertCell();
+  totalDesignationCell.textContent = debiteurTable.rows.length - 1; // Nombre de débiteurs
+
+  var totalNumeroTelephoneCell = totalRow.insertCell();
+  totalNumeroTelephoneCell.textContent = "";
+
+  var totalRAPCell = totalRow.insertCell();
+  totalRAPCell.textContent = formaterMontantAffichage(totalRAPDebiteurs); // Formater le montant RAP
+
+  var totalStatutCell = totalRow.insertCell();
+  totalStatutCell.textContent = "";
+
+  var totalActionsCell = totalRow.insertCell();
+  totalActionsCell.textContent = "";
+}
+
+// Fonction pour mettre à jour la ligne Total du tableau des débiteurs
+function mettreAJourTotalDebiteurs(debiteurTable) {
+  var totalRAPDebiteurs = 0;
+
+  // Parcourir les lignes du tableau pour recalculer le total du RAP
+  for (var i = 1; i < debiteurTable.rows.length - 1; i++) { // Ignorer l'en-tête et la ligne Total
+    var RAPCell = debiteurTable.rows[i].cells[3]; // Cellule du RAP
+    totalRAPDebiteurs += parseFloat(RAPCell.textContent.replace(/[^0-9.-]+/g, "")) || 0;
+  }
+
+  // Mettre à jour la cellule du Total du RAP
+  debiteurTable.rows[debiteurTable.rows.length - 1].cells[3].textContent = formaterMontantAffichage(totalRAPDebiteurs);
+
+  // Mettre à jour la cellule du nombre de débiteurs
+  debiteurTable.rows[debiteurTable.rows.length - 1].cells[1].textContent = debiteurTable.rows.length - 2; // Exclure l'en-tête et la ligne Total
+}
+
+// Fonction pour mettre à jour la couleur du numéro de téléphone dans le tableau des données
+function mettreAJourTelephone(numeroTelephone, couleur) {
+  var produitTable = document.getElementById("produitTable").getElementsByTagName('tbody')[0];
+  var rows = produitTable.querySelectorAll('tr');
+
+  rows.forEach(function (row) {
+    var numeroTelephoneCell = row.querySelector('td:nth-child(21)'); // Sélectionne la cellule du numéro de téléphone
+    if (numeroTelephoneCell.textContent === numeroTelephone) {
+      numeroTelephoneCell.style.color = couleur;
+      // Supprimer l'attribut data-rap-status pour réinitialiser la coloration
+      numeroTelephoneCell.removeAttribute('data-rap-status');
+    }
+  });
+}
+
+// Fonction pour mettre à jour le montant RAP du produit dans Firebase
+function mettreAJourRAP(numeroTelephone, nouveauRAP) {
+  produitsRef.orderByChild('numeroTelephone').equalTo(numeroTelephone).once('value', function (produitSnapshot) {
+    if (produitSnapshot.exists()) {
+      produitSnapshot.forEach(function (childSnapshot) {
+        produitsRef.child(childSnapshot.key).update({
+          RAP: nouveauRAP
+        });
+      });
+    }
+  });
+}
+
+// Lorsque des données sont ajoutées à la collection 'produits'
+produitsRef.on('child_added', function (snapshot) {
+  var product = snapshot.val();
+
+  // Vérifier si RAP > 0
+  if (parseFloat(product.RAP) > 0) {
+    // Ajouter le debiteur à la liste des debiteurs
+    // ajouterDebiteur(product); // Appeler la fonction pour ajouter le debiteur
+  }
+
+  // Actualiser l'analyse après l'ajout d'un produit
+  analyserProduits();
+});
+
+// Mettre à jour le tableau des debiteurs si un produit est modifié
+produitsRef.on('child_changed', function (snapshot) {
+  var product = snapshot.val();
+  mettreAJourDebiteur(product);
+
+  // Actualiser l'analyse après la modification d'un produit
+  analyserProduits();
+});
+
+// Fonction pour mettre à jour les debiteurs en fonction des modifications de produits
+function mettreAJourDebiteur(product) {
+  // Vérifier si RAP > 0
+  if (parseFloat(product.RAP) > 0) {
+    // Vérifier si le debiteur existe déjà dans la liste
+    debiteursRef.orderByChild('numeroTelephone').equalTo(product.numeroTelephone).once('value', function (
+      debiteurSnapshot) {
+      if (debiteurSnapshot.exists()) {
+        // Mettre à jour le debiteur existant
+        debiteurSnapshot.forEach(function (childSnapshot) {
+          debiteursRef.child(childSnapshot.key).update({
+            date: product.date,
+            designation: product.designation,
+            RAP: product.RAP
+          });
+        });
+      } else {
+        // Ajouter le debiteur à la liste des debiteurs
+        debiteursRef.push({
+          date: product.date,
+          designation: product.designation,
+          numeroTelephone: product.numeroTelephone,
+          RAP: product.RAP
+        });
+      }
+
+      // Mettre à jour la couleur du numéro de téléphone dans le tableau des données
+      mettreAJourTelephone(product.numeroTelephone, 'red');
+    });
+  } else {
+    // Vérifier si le debiteur existe déjà dans la liste
+    debiteursRef.orderByChild('numeroTelephone').equalTo(product.numeroTelephone).once('value', function (
+      debiteurSnapshot) {
+      if (debiteurSnapshot.exists()) {
+        // Supprimer le debiteur de la liste
+        debiteurSnapshot.forEach(function (childSnapshot) {
+          debiteursRef.child(childSnapshot.key).remove();
+        });
+
+        // Mettre à jour la couleur du numéro de téléphone dans le tableau des données
+        mettreAJourTelephone(product.numeroTelephone, 'black');
+      }
+    });
+  }
+}
+
+// Fonction pour afficher la section "Gestion de Stocks"
+function afficherStocks() {
+  masquerToutesSections();
+  document.getElementById("stocksSection").style.display = "block";
+  remplirTableauStocks(); // Remplir le tableau des stocks
+}
+
+// Fonction pour remplir le tableau des stocks (modifiée pour ajouter la ligne total et l'icône de modification)
+function remplirTableauStocks() {
+  var stockTable = document.getElementById("stockTable").getElementsByTagName('tbody')[0];
+  stockTable.innerHTML = ''; // Effacer le contenu du tableau
+
+  var totalQuantiteInitiale = 0;
+  var totalQuantiteVendues = 0;
+  var totalQuantiteRestante = 0;
+
+  stocksRef.once('value')
+    .then(function (snapshot) {
+      snapshot.forEach(function (childSnapshot) {
+        var stock = childSnapshot.val();
+        var row = stockTable.insertRow();
+        var key = childSnapshot.key; // Récupérer la clé du stock
+
+        // Date
+        var dateCell = row.insertCell();
+        dateCell.textContent = stock.dateStock; // Afficher la date du stock
+
+        // Désignation
+        var designationCell = row.insertCell();
+        designationCell.textContent = stock.designation;
+
+        // Quantité Initiale
+        var quantiteInitialeCell = row.insertCell();
+        quantiteInitialeCell.textContent = stock.quantiteInitiale;
+        totalQuantiteInitiale += parseFloat(stock.quantiteInitiale) || 0;
+
+        // Quantité Vendues
+        var quantiteVenduesCell = row.insertCell();
+        quantiteVenduesCell.textContent = stock.quantiteVendues;
+        totalQuantiteVendues += parseFloat(stock.quantiteVendues) || 0;
+
+        // Quantité Restante
+        var quantiteRestanteCell = row.insertCell();
+        quantiteRestanteCell.textContent = stock.quantiteRestante;
+        totalQuantiteRestante += parseFloat(stock.quantiteRestante) || 0;
+
+        // Ajouter les icônes de suppression et de modification
+        var actionsCell = row.insertCell();
+        var iconContainer = document.createElement("div");
+        iconContainer.classList.add("icon-container");
+
+        // Icône de suppression
+        var iconDelete = document.createElement("i");
+        iconDelete.classList.add("fas", "fa-trash", "icon-delete");
+        iconDelete.onclick = function () {
+          if (confirm("Êtes-vous sûr de vouloir supprimer ce stock ?")) {
+            stocksRef.child(key).remove()
+              .then(function () {
+                // Mettre à jour le tableau des stocks et le champ de sélection "Désignation"
+                remplirTableauStocks();
+                remplirChampDesignation();
+
+                // Actualiser l'analyse après la suppression d'un stock
+                analyserProduits();
+
+                alert("Stock supprimé avec succès !");
+              })
+              .catch(function (error) {
+                console.error("Erreur lors de la suppression du stock:", error);
+                alert("Une erreur est survenue.");
+              });
+          }
+        };
+        iconContainer.appendChild(iconDelete);
+
+        // Icône de modification
+        var iconEdit = document.createElement("i");
+        iconEdit.classList.add("fas", "fa-edit", "icon-edit");
+        iconEdit.onclick = function () {
+          ouvrirModalStock(key, stock);
+        };
+        iconContainer.appendChild(iconEdit);
+
+        actionsCell.appendChild(iconContainer);
+      });
+
+      // Ajouter la ligne total
+      var totalRow = stockTable.insertRow();
+      totalRow.classList.add('total-row'); // Ajouter une classe CSS pour le style
+
+      var totalDateCell = totalRow.insertCell();
+      totalDateCell.textContent = "Total";
+
+      var totalDesignationCell = totalRow.insertCell();
+      totalDesignationCell.textContent = snapshot.numChildren();
+
+      var totalQuantiteInitialeCell = totalRow.insertCell();
+      totalQuantiteInitialeCell.textContent = totalQuantiteInitiale;
+
+      var totalQuantiteVenduesCell = totalRow.insertCell();
+      totalQuantiteVenduesCell.textContent = totalQuantiteVendues;
+
+      var totalQuantiteRestanteCell = totalRow.insertCell();
+      totalQuantiteRestanteCell.textContent = totalQuantiteRestante;
+
+      var totalActionsCell = totalRow.insertCell();
+      totalActionsCell.textContent = "";
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de la récupération des données des stocks:", error);
+      alert("Une erreur est survenue.");
+    });
+}
+
+
+// Fonction pour remplir le champ de sélection "Désignation" (modifiée pour éviter les doublons)
+function remplirChampDesignation() {
+  var designationSelect = document.getElementById("designation");
+  designationSelect.innerHTML = ''; // Effacer les options existantes
+
+  // Utiliser un Set pour stocker les désignations uniques
+  var designationsUniques = new Set();
+
+  // Récupérer les désignations des stocks depuis Firebase
+  stocksRef.once('value')
+    .then(function (snapshot) {
+      snapshot.forEach(function (childSnapshot) {
+        var stock = childSnapshot.val();
+        designationsUniques.add(stock.designation);
+      });
+
+      // Ajouter les désignations uniques au champ de sélection
+      designationsUniques.forEach(function (designation) {
+        var option = document.createElement("option");
+        option.value = designation;
+        option.text = designation;
+        designationSelect.add(option);
+      });
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de la récupération des données des stocks:", error);
+      alert("Une erreur est survenue.");
+    });
+}
+
+// Fonction pour ajouter un stock (modifiée pour inclure la date)
+function ajouterStock() {
+  var dateStock = document.getElementById("dateStock").value; // Récupérer la date du stock
+  var designation = document.getElementById("designationStock").value;
+  var quantiteAajouter = parseFloat(document.getElementById("quantiteInitialeStock").value) || 0;
+
+  // Vérifier si tous les champs sont remplis
+  if (dateStock === "" || designation === "" || isNaN(quantiteAajouter)) {
+    alert("Veuillez remplir tous les champs du formulaire de stock.");
+    return;
+  }
+
+  // Ajouter le nouveau stock dans Firebase
+  stocksRef.push({
+    dateStock: dateStock, // Ajouter la date du stock
+    designation: designation,
+    quantiteInitiale: quantiteAajouter,
+    quantiteRestante: quantiteAajouter,
+    quantiteVendues: 0
+  })
+    .then(function () {
+      // Réinitialiser le formulaire
+      document.getElementById("stockForm").reset();
+      // Mettre à jour le tableau des stocks
+      remplirTableauStocks();
+      // Mettre à jour le champ de sélection "Désignation" du formulaire des produits
+      remplirChampDesignation();
+
+      // Actualiser l'analyse après l'ajout d'un stock
+      analyserProduits();
+
+      alert("Stock ajouté avec succès !");
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de l'ajout du stock:", error);
+      alert("Une erreur est survenue.");
+    });
+}
+
+// Appeler la fonction pour remplir le champ de sélection au chargement de la page
+window.onload = function () {
+  remplirChampDesignation();
+
+  // Gestion de la navigation avec la touche Entrée dans le formulaire productForm
+  var inputs = document.getElementById("productForm").querySelectorAll("input, select");
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("keydown", function (event) {
+      if (event.keyCode === 13) { // Vérifier si la touche Entrée est pressée
+        event.preventDefault(); // Empêcher le comportement par défaut (soumission du formulaire)
+        var nextInput = this.nextElementSibling; // Trouver l'élément suivant
+        if (nextInput) {
+          nextInput.focus(); // Mettre le focus sur l'élément suivant
+        } else {
+          // Si c'est le dernier champ, soumettre le formulaire
+          document.getElementById("ajouterBtn").click(); // Simuler un clic sur le bouton "Ajouter"
+        }
+      }
+    });
+  }
+};
+
+// Écouteur d'événement pour le formulaire de stock
+document.getElementById("stockForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Empêche le rechargement de la page
+  ajouterStock(); // Appel de la fonction pour ajouter le stock
+});
+
+// Fonction pour ouvrir la fenêtre flottante (modal) pour la modification des produits
+function ouvrirModalProduit(key, product) {
+  // Remplir les champs du formulaire de modification avec les données du produit
+  document.getElementById("editProductKey").value = key;
+  document.getElementById("editDate").value = product.date;
+  document.getElementById("editQuantite").value = product.quantite;
+  document.getElementById("editDesignation").value = product.designation;
+  document.getElementById("editTypeArticle").value = product.typeArticle;
+  document.getElementById("editCategorie").value = product.categorie;
+  document.getElementById("editPrixVente").value = formaterMontantAffichage(product.prixVente); // Formater le montant
+  document.getElementById("editRAP").value = formaterMontantAffichage(product.RAP); // Formater le montant
+  document.getElementById("editPrixBrut").value = formaterMontantAffichage(product.prixBrut); // Formater le montant
+  document.getElementById("editTaux").value = product.taux;
+  document.getElementById("editNetBrut").value = formaterMontantAffichage(product.netBrut); // Formater le montant
+  document.getElementById("editFreight").value = formaterMontantAffichage(product.freight); // Formater le montant
+  document.getElementById("editDouaneTransport").value = formaterMontantAffichage(product.douaneTransport); // Formater le montant
+  document.getElementById("editFraisTransfert").value = formaterMontantAffichage(product.fraisTransfert); // Formater le montant
+  document.getElementById("editImpotDocument").value = formaterMontantAffichage(product.impotDocument); // Formater le montant
+  document.getElementById("editReparation").value = formaterMontantAffichage(product.reparation); // Formater le montant
+  document.getElementById("editTypeClient").value = product.typeClient;
+  document.getElementById("editVille").value = product.ville;
+  document.getElementById("editNumeroTelephone").value = product.numeroTelephone;
+  document.getElementById("editCommande").value = product.commande;
+  document.getElementById("editCoutReviens").value = formaterMontantAffichage(product.coutReviens); // Formater le montant
+  document.getElementById("editMargeBenefice").value = formaterMontantAffichage(product.margeBenefice); // Formater le montant
+
+  // Mettre à jour le champ de sélection "Désignation" dans le modal
+  var editDesignationSelect = document.getElementById("editDesignation");
+  editDesignationSelect.innerHTML = ''; // Effacer les options existantes
+
+  // Utiliser un Set pour stocker les désignations uniques
+  var editDesignationsUniques = new Set();
+
+  // Récupérer les désignations des stocks depuis Firebase
+  stocksRef.once('value')
+    .then(function (snapshot) {
+      snapshot.forEach(function (childSnapshot) {
+        var stock = childSnapshot.val();
+        editDesignationsUniques.add(stock.designation);
+      });
+
+      // Ajouter les désignations uniques au champ de sélection dans le modal
+      editDesignationsUniques.forEach(function (designation) {
+        var option = document.createElement("option");
+        option.value = designation;
+        option.text = designation;
+        editDesignationSelect.add(option);
+      });
+
+      // Sélectionner la désignation du produit en cours de modification
+      editDesignationSelect.value = product.designation;
+
+      // Gestion de la navigation avec la touche Entrée dans le formulaire editProductForm
+      var editInputs = document.getElementById("editProductForm").querySelectorAll("input, select");
+      for (var i = 0; i < editInputs.length; i++) {
+        editInputs[i].addEventListener("keydown", function (event) {
+          if (event.keyCode === 13) { // Vérifier si la touche Entrée est pressée
+            event.preventDefault(); // Empêcher le comportement par défaut (soumission du formulaire)
+            var nextInput = this.nextElementSibling; // Trouver l'élément suivant
+            if (nextInput) {
+              nextInput.focus(); // Mettre le focus sur l'élément suivant
+            } else {
+              // Si c'est le dernier champ, soumettre le formulaire
+              document.querySelector("#editProductForm button[type='submit']").click(); // Simuler un clic sur le bouton "Enregistrer les modifications"
+            }
+          }
+        });
+      }
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de la récupération des données des stocks:", error);
+      alert("Une erreur est survenue.");
+    });
+
+  document.getElementById("editProductModal").style.display = "block";
+}
+
+
+// Fonction pour fermer la fenêtre flottante (modal) pour la modification des produits
+function fermerModalProduit() {
+  document.getElementById("editProductModal").style.display = "none";
+  // Réinitialiser le formulaire de modification
+  document.getElementById("editProductForm").reset();
+}
+
+// Fonction pour modifier un produit
+function modifierProduit(key) {
+  // Nettoyer les montants formatés en FCFA avant de les stocker
+  var prixVente = parseFloat(document.getElementById("editPrixVente").value.replace(/[^0-9.-]+/g, ""));
+  var RAP = parseFloat(document.getElementById("editRAP").value.replace(/[^0-9.-]+/g, ""));
+  var prixBrut = parseFloat(document.getElementById("editPrixBrut").value.replace(/[^0-9.-]+/g, ""));
+  var freight = parseFloat(document.getElementById("editFreight").value.replace(/[^0-9.-]+/g, ""));
+  var douaneTransport = parseFloat(document.getElementById("editDouaneTransport").value.replace(/[^0-9.-]+/g, ""));
+  var fraisTransfert = parseFloat(document.getElementById("editFraisTransfert").value.replace(/[^0-9.-]+/g, ""));
+  var impotDocument = parseFloat(document.getElementById("editImpotDocument").value.replace(/[^0-9.-]+/g, ""));
+  var reparation = parseFloat(document.getElementById("editReparation").value.replace(/[^0-9.-]+/g, ""));
+
+  var updatedProductData = {
+    date: document.getElementById("editDate").value,
+    quantite: document.getElementById("editQuantite").value,
+    designation: document.getElementById("editDesignation").value,
+    typeArticle: document.getElementById("editTypeArticle").value,
+    categorie: document.getElementById("editCategorie").value,
+    prixVente: prixVente, // Valeur nettoyée
+    RAP: RAP, // Valeur nettoyée
+    netBrut: document.getElementById("editNetBrut").value.replace(/[^0-9.-]+/g, ""), // Valeur nettoyée
+    prixBrut: prixBrut, // Valeur nettoyée
+    taux: parseFloat(document.getElementById("editTaux").value) || 0, // parseFloat pour gérer les décimales
+    freight: freight, // Valeur nettoyée
+    douaneTransport: douaneTransport, // Valeur nettoyée
+    fraisTransfert: fraisTransfert, // Valeur nettoyée
+    impotDocument: impotDocument, // Valeur nettoyée
+    reparation: reparation, // Valeur nettoyée
+    typeClient: document.getElementById("editTypeClient").value,
+    ville: document.getElementById("editVille").value,
+    numeroTelephone: document.getElementById("editNumeroTelephone").value,
+    commande: document.getElementById("editCommande").value,
+    coutReviens: parseFloat(document.getElementById("editCoutReviens").value.replace(/[^0-9.-]+/g, "")) || 0,
+    margeBenefice: parseFloat(document.getElementById("editMargeBenefice").value.replace(/[^0-9.-]+/g, "")) || 0,
+  };
+
+  // Récupérer les données du produit original avant la modification
+  produitsRef.child(key).once('value', function (snapshot) {
+    var originalProductData = snapshot.val();
+
+    // Calculer la différence de quantité
+    var quantiteDifference = parseFloat(updatedProductData.quantite) - parseFloat(originalProductData.quantite);
+
+    // Mettre à jour le produit dans Firebase
+    produitsRef.child(key).update(updatedProductData)
+      .then(function () {
+        // Fermer la fenêtre flottante
+        fermerModalProduit();
+
+        // Mettre à jour le tableau des produits
+        remplirTableau();
+
+        // Mettre à jour le tableau des debiteurs si nécessaire
+        if (parseFloat(updatedProductData.RAP) > 0) {
+          // Vérifier si le debiteur existe déjà
+          debiteursRef.orderByChild('numeroTelephone').equalTo(updatedProductData.numeroTelephone).once(
+            'value', function (snapshot) {
+              if (snapshot.exists()) {
+                // Mettre à jour le debiteur existant
+                snapshot.forEach(function (childSnapshot) {
+                  debiteursRef.child(childSnapshot.key).update({
+                    date: updatedProductData.date,
+                    designation: updatedProductData.designation,
+                    RAP: updatedProductData.RAP
+                  });
+                });
+              } else {
+                // Ajouter un nouveau debiteur
+                debiteursRef.push({
+                  date: updatedProductData.date,
+                  designation: updatedProductData.designation,
+                  numeroTelephone: updatedProductData.numeroTelephone,
+                  RAP: updatedProductData.RAP
+                });
+              }
+            });
+        } else {
+          // Supprimer le debiteur si RAP est 0
+          debiteursRef.orderByChild('numeroTelephone').equalTo(updatedProductData.numeroTelephone).once(
+            'value', function (snapshot) {
+              if (snapshot.exists()) {
+                snapshot.forEach(function (childSnapshot) {
+                  debiteursRef.child(childSnapshot.key).remove();
+                });
+              }
+            });
+        }
+
+        // Mettre à jour le tableau des debiteurs
+        remplirTableauDebiteurs();
+
+        // Mettre à jour le tableau des stocks 
+        mettreAJourStocks(updatedProductData.designation, quantiteDifference); // Utiliser la différence de quantité
+        remplirTableauStocks();
+
+        // Actualiser l'analyse après la modification d'un produit
+        analyserProduits();
+
+        alert("Produit modifié avec succès !");
+      })
+      .catch(function (error) {
+        console.error("Erreur lors de la modification du produit:", error);
+        alert("Une erreur est survenue.");
+      });
+  });
+}
+
+// Écouteur d'événement pour le formulaire de modification du produit
+document.getElementById("editProductForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  var key = document.getElementById("editProductKey").value;
+  modifierProduit(key);
+});
+
+// Fonction pour ouvrir la fenêtre flottante (modal) pour la modification des stocks
+function ouvrirModalStock(key, stock) {
+  // Remplir les champs du formulaire de modification avec les données du stock
+  document.getElementById("editStockKey").value = key;
+  document.getElementById("editDateStock").value = stock.dateStock;
+  document.getElementById("editDesignationStock").value = stock.designation;
+  document.getElementById("editQuantiteInitialeStock").value = stock.quantiteInitiale;
+
+  document.getElementById("editStockModal").style.display = "block";
+}
+
+// Fonction pour fermer la fenêtre flottante (modal) pour la modification des stocks
+function fermerModalStock() {
+  document.getElementById("editStockModal").style.display = "none";
+  // Réinitialiser le formulaire de modification
+  document.getElementById("editStockForm").reset();
+}
+
+// Fonction pour modifier un stock
+function modifierStock(key) {
+  var updatedStockData = {
+    dateStock: document.getElementById("editDateStock").value,
+    designation: document.getElementById("editDesignationStock").value,
+    quantiteInitiale: parseFloat(document.getElementById("editQuantiteInitialeStock").value) || 0,
+    // La quantité restante et la quantité vendue seront recalculées après la mise à jour
+  };
+
+  // Mettre à jour le stock dans Firebase
+  stocksRef.child(key).update(updatedStockData)
+    .then(function () {
+      // Fermer la fenêtre flottante
+      fermerModalStock();
+
+      // Recalculer la quantité restante et la quantité vendue pour tous les produits avec la même désignation
+      recalculerQuantitesStock(updatedStockData.designation);
+
+      // Mettre à jour le tableau des stocks
+      remplirTableauStocks();
+
+      // Mettre à jour le champ de sélection "Désignation" du formulaire des produits
+      remplirChampDesignation();
+
+      // Actualiser l'analyse après la modification d'un stock
+      analyserProduits();
+
+      alert("Stock modifié avec succès !");
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de la modification du stock:", error);
+      alert("Une erreur est survenue.");
+    });
+}
+
+// Fonction pour recalculer la quantité restante et la quantité vendue pour une désignation donnée
+function recalculerQuantitesStock(designation) {
+  // Récupérer le stock correspondant à la désignation
+  stocksRef.orderByChild('designation').equalTo(designation).once('value', function (snapshot) {
+    if (snapshot.exists()) {
+      snapshot.forEach(function (childSnapshot) {
+        var stock = childSnapshot.val();
+        var quantiteVendues = 0;
+
+        // Calculer la quantité vendue en fonction des produits vendus avec la même désignation
+        produitsRef.orderByChild('designation').equalTo(designation).once('value', function (produitsSnapshot) {
+          if (produitsSnapshot.exists()) {
+            produitsSnapshot.forEach(function (produitChildSnapshot) {
+              quantiteVendues += parseFloat(produitChildSnapshot.val().quantite) || 0;
+            });
+          }
+
+          // Calculer la quantité restante
+          var quantiteRestante = stock.quantiteInitiale - quantiteVendues;
+
+          // Mettre à jour les quantités dans Firebase
+          stocksRef.child(childSnapshot.key).update({
+            quantiteRestante: quantiteRestante,
+            quantiteVendues: quantiteVendues
+          });
+        });
+      });
+    }
+  });
+}
+
+// Écouteur d'événement pour le formulaire de modification du stock
+document.getElementById("editStockForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  var key = document.getElementById("editStockKey").value;
+  modifierStock(key);
+});
+
+// Fonction pour trier le tableau (modifiée pour être générique)
+function trierTableau(tableId, colonne) {
+  var tableau, lignes, changeant, i, x, y, shouldSwitch, direction;
+  tableau = document.getElementById(tableId);
+  changeant = true;
+  direction = "asc";
+  while (changeant) {
+    changeant = false;
+    lignes = tableau.rows;
+    for (i = 1; i < (lignes.length - 1); i++) {
+      shouldSwitch = false;
+      x = lignes[i].getElementsByTagName("TD")[colonneIndex(tableId, colonne)];
+      y = lignes[i + 1].getElementsByTagName("TD")[colonneIndex(tableId, colonne)];
+      if (direction === "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      } else if (direction === "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      lignes[i].parentNode.insertBefore(lignes[i + 1], lignes[i]);
+      changeant = true;
+      direction = direction === "asc" ? "desc" : "asc";
+    }
+  }
+}
+
+// Fonction pour obtenir l'index de la colonne en fonction du nom de la colonne (corrigée)
+function colonneIndex(tableId, colonne) {
+  var entete = document.getElementById(tableId).getElementsByTagName("TH");
+  for (var i = 0; i < entete.length; i++) {
+    if (entete[i].textContent.trim() === colonne) {
+      return i;
+    }
+  }
+  return -1; // Retourner -1 si la colonne n'est pas trouvée
+}
+
+// Fonction pour rechercher dans le tableau des produits (modifiée pour afficher tous les produits si le champ de recherche est vide)
+function rechercherProduits() {
+  var searchTerm = document.getElementById("searchInputProduits").value.toLowerCase();
+  var table = document.getElementById("produitTable");
+  var rows = table.getElementsByTagName("tr");
+
+  // Réinitialiser les totaux
+  var totalQuantite = 0;
+  var totalPrixVente = 0;
+  var totalRAP = 0;
+  var totalPrixBrut = 0;
+  var totalTaux = 0;
+  var totalPrixNet = 0;
+  var totalFreight = 0;
+  var totalDouaneTransport = 0;
+  var totalFraisTransfert = 0;
+  var totalImpotDocument = 0;
+  var totalReparation = 0;
+  var totalDepenses = 0;
+  var totalCoutReviens = 0;
+  var totalMargeBenefice = 0;
+  var totalDesignation = 0;
+
+  for (var i = 1; i < rows.length - 1; i++) { // Exclure la dernière ligne (totaux) de la recherche
+    var shouldShow = false;
+    if (searchTerm === "") {
+      shouldShow = true; // Afficher toutes les lignes si le champ de recherche est vide
+    } else {
+      var cells = rows[i].getElementsByTagName("td");
+      for (var j = 0; j < cells.length; j++) {
+        var cellText = cells[j].textContent.toLowerCase();
+        if (cellText.indexOf(searchTerm) > -1) {
+          shouldShow = true;
+          break;
+        }
+      }
+    }
+
+    if (shouldShow) {
+      rows[i].style.display = ""; // Afficher la ligne
+      totalQuantite += parseFloat(rows[i].cells[1].textContent) || 0;
+      totalPrixVente += parseFloat(rows[i].cells[5].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalRAP += parseFloat(rows[i].cells[6].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalPrixBrut += parseFloat(rows[i].cells[7].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalTaux += parseFloat(rows[i].cells[8].textContent) || 0;
+      totalPrixNet += parseFloat(rows[i].cells[9].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalFreight += parseFloat(rows[i].cells[10].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalDouaneTransport += parseFloat(rows[i].cells[11].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalFraisTransfert += parseFloat(rows[i].cells[12].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalImpotDocument += parseFloat(rows[i].cells[13].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalReparation += parseFloat(rows[i].cells[14].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalDepenses += parseFloat(rows[i].cells[15].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalCoutReviens += parseFloat(rows[i].cells[16].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalMargeBenefice += parseFloat(rows[i].cells[17].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalDesignation++;
+    } else {
+      rows[i].style.display = "none"; // Masquer la ligne
+    }
+  }
+
+  // Mettre à jour la ligne de totaux (toujours affichée)
+  var totalRow = table.rows[rows.length - 1];
+  totalRow.style.display = "";
+  totalRow.cells[1].textContent = totalQuantite;
+  totalRow.cells[2].textContent = totalDesignation;
+  totalRow.cells[5].textContent = formaterMontantAffichage(totalPrixVente);
+  totalRow.cells[6].textContent = formaterMontantAffichage(totalRAP);
+  totalRow.cells[7].textContent = formaterMontantAffichage(totalPrixBrut);
+  totalRow.cells[8].textContent = totalTaux;
+  totalRow.cells[9].textContent = formaterMontantAffichage(totalPrixNet);
+  totalRow.cells[10].textContent = formaterMontantAffichage(totalFreight);
+  totalRow.cells[11].textContent = formaterMontantAffichage(totalDouaneTransport);
+  totalRow.cells[12].textContent = formaterMontantAffichage(totalFraisTransfert);
+  totalRow.cells[13].textContent = formaterMontantAffichage(totalImpotDocument);
+  totalRow.cells[14].textContent = formaterMontantAffichage(totalReparation);
+  totalRow.cells[15].textContent = formaterMontantAffichage(totalDepenses);
+  totalRow.cells[16].textContent = formaterMontantAffichage(totalCoutReviens);
+  totalRow.cells[17].textContent = formaterMontantAffichage(totalMargeBenefice);
+}
+
+// Fonction pour rechercher dans le tableau des débiteurs
+function rechercherDebiteurs() {
+  var searchTerm = document.getElementById("searchInputDebiteurs").value.toLowerCase();
+  var table = document.getElementById("debiteurTable");
+  var rows = table.getElementsByTagName("tr");
+
+  // Réinitialiser les totaux
+  var totalRAPDebiteurs = 0;
+  var totalDesignation = 0;
+
+  for (var i = 1; i < rows.length - 1; i++) { // Exclure la ligne de totaux de la recherche
+    var shouldShow = false;
+    if (searchTerm === "") {
+      shouldShow = true; // Afficher toutes les lignes si le champ de recherche est vide
+    } else {
+      var cells = rows[i].getElementsByTagName("td");
+      for (var j = 0; j < cells.length; j++) {
+        var cellText = cells[j].textContent.toLowerCase();
+        if (cellText.indexOf(searchTerm) > -1) {
+          shouldShow = true;
+          break;
+        }
+      }
+    }
+
+    if (shouldShow) {
+      rows[i].style.display = ""; // Afficher la ligne
+      totalRAPDebiteurs += parseFloat(rows[i].cells[3].textContent.replace(/[^0-9.-]+/g, "")) || 0;
+      totalDesignation++;
+    } else {
+      rows[i].style.display = "none"; // Masquer la ligne
+    }
+  }
+
+  // Mettre à jour la ligne de totaux (toujours affichée)
+  var totalRow = table.rows[rows.length - 1];
+  totalRow.style.display = "";
+  totalRow.cells[1].textContent = totalDesignation;
+  totalRow.cells[3].textContent = formaterMontantAffichage(totalRAPDebiteurs);
+}
+
+// Fonction pour rechercher dans le tableau des stocks
+function rechercherStocks() {
+  var searchTerm = document.getElementById("searchInputStocks").value.toLowerCase();
+  var table = document.getElementById("stockTable");
+  var rows = table.getElementsByTagName("tr");
+
+  // Réinitialiser les totaux
+  var totalQuantiteInitiale = 0;
+  var totalQuantiteVendues = 0;
+  var totalQuantiteRestante = 0;
+  var totalDesignation = 0;
+
+  for (var i = 1; i < rows.length - 1; i++) { // Exclure la ligne de totaux de la recherche
+    var shouldShow = false;
+    if (searchTerm === "") {
+      shouldShow = true; // Afficher toutes les lignes si le champ de recherche est vide
+    } else {
+      var cells = rows[i].getElementsByTagName("td");
+      for (var j = 0; j < cells.length; j++) {
+        var cellText = cells[j].textContent.toLowerCase();
+        if (cellText.indexOf(searchTerm) > -1) {
+          shouldShow = true;
+          break;
+        }
+      }
+    }
+
+    if (shouldShow) {
+      rows[i].style.display = ""; // Afficher la ligne
+      totalQuantiteInitiale += parseFloat(rows[i].cells[2].textContent) || 0;
+      totalQuantiteVendues += parseFloat(rows[i].cells[3].textContent) || 0;
+      totalQuantiteRestante += parseFloat(rows[i].cells[4].textContent) || 0;
+      totalDesignation++;
+    } else {
+      rows[i].style.display = "none"; // Masquer la ligne
+    }
+  }
+
+  // Mettre à jour la ligne de totaux (toujours affichée)
+  var totalRow = table.rows[rows.length - 1];
+  totalRow.style.display = "";
+  totalRow.cells[1].textContent = totalDesignation;
+  totalRow.cells[2].textContent = totalQuantiteInitiale;
+  totalRow.cells[3].textContent = totalQuantiteVendues;
+  totalRow.cells[4].textContent = totalQuantiteRestante;
+}
+
+// Fonction pour masquer toutes les sections
+function masquerToutesSections() {
+  document.getElementById("detailsSection").style.display = "none";
+  document.getElementById("tendancesSection").style.display = "none";
+  document.getElementById("analysesSection").style.display = "none";
+  document.getElementById("debiteursSection").style.display = "none";
+  document.getElementById("stocksSection").style.display = "none";
+}
+
+// Lorsque des données sont ajoutées, modifiées ou supprimées de la collection 'produits'
+produitsRef.on('child_added', analyserProduits);
+produitsRef.on('child_changed', analyserProduits);
+produitsRef.on('child_removed', analyserProduits);
+
+// Fonctions pour scroller vers les sections
+function scrollToDetails() {
+  document.getElementById("details-header").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function scrollToAnalyses() {
+  document.getElementById("analyses-header").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function scrollToTendances() {
+  document.getElementById("tendances-header").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function scrollToDebiteurs() {
+  document.getElementById("debiteurs-header").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function scrollToStocks() {
+  document.getElementById("stocks-header").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// Fonctions pour exporter les données des tableaux vers Excel
+function exporterProduitsVersExcel() {
+  var tableau = document.getElementById("produitTable");
+  var feuille = XLSX.utils.table_to_sheet(tableau);
+  var classeur = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(classeur, feuille, "Produits");
+  XLSX.writeFile(classeur, "produits.xlsx");
+}
+
+function exporterTendancesVersExcel() {
+  // Code pour exporter les données de la section Tendances vers Excel
+  alert("Fonctionnalité d'exportation des tendances à implémenter.");
+}
+
+function exporterAnalysesVersExcel() {
+  // Code pour exporter les données de la section Analyses vers Excel
+  alert("Fonctionnalité d'exportation des analyses à implémenter.");
+}
+
+function exporterDebiteursVersExcel() {
+  var tableau = document.getElementById("debiteurTable");
+  var feuille = XLSX.utils.table_to_sheet(tableau);
+  var classeur = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(classeur, feuille, "Débiteurs");
+  XLSX.writeFile(classeur, "debiteurs.xlsx");
+}
+
+function exporterStocksVersExcel() {
+  var tableau = document.getElementById("stockTable");
+  var feuille = XLSX.utils.table_to_sheet(tableau);
+  var classeur = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(classeur, feuille, "Stocks");
+  XLSX.writeFile(classeur, "stocks.xlsx");
+}
+
+// Fonction pour mettre à jour les stocks 
+function mettreAJourStocks(designation, quantiteVendue) {
+  // Trouver le stock correspondant à la désignation
+  stocksRef.orderByChild('designation').equalTo(designation).once('value')
+    .then(function (snapshot) {
+      if (snapshot.exists()) {
+        snapshot.forEach(function (childSnapshot) {
+          var stock = childSnapshot.val();
+          var quantiteRestante = parseFloat(stock.quantiteRestante) - quantiteVendue;
+
+          // Mettre à jour le stock dans Firebase
+          stocksRef.child(childSnapshot.key).update({
+            quantiteRestante: quantiteRestante,
+            quantiteVendues: parseFloat(stock.quantiteVendues) + quantiteVendue
+          });
+        });
+      }
+    });
+}
