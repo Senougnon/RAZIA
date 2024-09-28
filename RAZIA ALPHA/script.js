@@ -29,7 +29,7 @@ function formaterMontant(input) {
   input.value = montant;
 }
 
-// Fonction pour ajouter un produit (modifiée pour ajouter le debiteur)
+// Fonction pour ajouter un produit (modifiée pour gérer les stocks)
 function ajouterProduit() {
   // Vérifier si tous les champs sont remplis
   var inputs = document.getElementById("productForm").querySelectorAll("input, select");
@@ -78,6 +78,56 @@ function ajouterProduit() {
     margeBenefice: parseFloat(document.getElementById("margeBenefice").value.replace(/[^0-9.-]+/g, "")) || 0,
   };
 
+  // Vérifiez si la désignation existe déjà dans les stocks
+  stocksRef.orderByChild('designation').equalTo(productData.designation).once('value')
+    .then(function (snapshot) {
+      if (snapshot.exists()) {
+        // La désignation existe déjà, mettre à jour la quantité 
+        snapshot.forEach(function (childSnapshot) {
+          var stockKey = childSnapshot.key;
+          var stockData = childSnapshot.val();
+          var nouvelleQuantite = parseFloat(stockData.quantiteRestante) + parseFloat(productData.quantite);
+
+          stocksRef.child(stockKey).update({
+            quantiteRestante: nouvelleQuantite,
+            quantiteInitiale: nouvelleQuantite // Mettez à jour la quantité initiale si nécessaire
+          })
+            .then(function () {
+              // Ajouter le produit à Firebase après la mise à jour du stock
+              ajouterProduitAFirebase(productData);
+            })
+            .catch(function (error) {
+              console.error("Erreur lors de la mise à jour du stock:", error);
+              alert("Une erreur est survenue.");
+            });
+        });
+      } else {
+        // La désignation n'existe pas, ajouter un nouveau stock
+        stocksRef.push({
+          dateStock: productData.date,
+          designation: productData.designation,
+          quantiteInitiale: parseFloat(productData.quantite),
+          quantiteRestante: parseFloat(productData.quantite),
+          quantiteVendues: 0
+        })
+          .then(function () {
+            // Ajouter le produit à Firebase après l'ajout du stock
+            ajouterProduitAFirebase(productData);
+          })
+          .catch(function (error) {
+            console.error("Erreur lors de l'ajout du stock:", error);
+            alert("Une erreur est survenue.");
+          });
+      }
+    })
+    .catch(function (error) {
+      console.error("Erreur lors de la vérification du stock:", error);
+      alert("Une erreur est survenue.");
+    });
+}
+
+// Fonction pour ajouter le produit à Firebase
+function ajouterProduitAFirebase(productData) {
   produitsRef.push(productData)
     .then(function () {
       // Animer la barre de chargement
@@ -88,12 +138,10 @@ function ajouterProduit() {
         alert("Produit ajouté avec succès !");
         document.getElementById("productForm").reset();
         document.getElementById("loadingBar").style.width = "0%";
-        // Réinitialiser la barre de chargement
-        mettreAJourStocks(productData.designation, productData.quantite);
 
-        // Vérifier si RAP > 0 pour ajouter un debiteur
+        // Vérifier si RAP > 0 pour ajouter un débiteur
         if (parseFloat(productData.RAP) > 0) {
-          // Ajouter le debiteur à la liste des debiteurs après l'ajout du produit
+          // Ajouter le débiteur à la liste des débiteurs après l'ajout du produit
           debiteursRef.push({
             date: productData.date,
             designation: productData.designation,
@@ -104,6 +152,8 @@ function ajouterProduit() {
 
         // Actualiser l'analyse après l'ajout d'un produit
         analyserProduits();
+        remplirTableau();
+        remplirTableauStocks();
 
         // Retourner au champ date et le mettre en édition
         document.getElementById("date").focus();
@@ -115,6 +165,7 @@ function ajouterProduit() {
       document.getElementById("loadingBar").style.width = "0%"; // Réinitialiser la barre de chargement en cas d'erreur
     });
 }
+
 
 function afficherDetails() {
   masquerToutesSections();
@@ -145,18 +196,11 @@ function remplirTableau() {
 
   database.ref('produits').orderByChild('date').once('value')
     .then(function (snapshot) {
-      var produits = []; // Tableau pour stocker les produits
       snapshot.forEach(function (childSnapshot) {
-        produits.push(childSnapshot.val());
-      });
-
-      // Inverser l'ordre des produits
-      produits.reverse();
-
-      // Parcourir les produits inversés
-      produits.forEach(function (product, index) {
+        var product = childSnapshot.val();
         var date = new Date(product.date);
         var moisActuel = date.getMonth(); // 0 pour janvier, 1 pour février, etc.
+        var key = childSnapshot.key; // Récupérer la clé du produit
 
         // Ajouter une ligne de séparation si le mois a changé
         if (moisPrecedent !== null && moisActuel !== moisPrecedent) {
@@ -167,7 +211,6 @@ function remplirTableau() {
         }
 
         var row = productTable.insertRow();
-        var key = snapshot.child(index).key; // Accéder à la clé en utilisant l'index
 
         // Date
         var dateCell = row.insertCell();
@@ -290,30 +333,21 @@ function remplirTableau() {
         iconDelete.classList.add("fas", "fa-trash", "icon-delete");
         iconDelete.onclick = function () {
           if (confirm("Êtes-vous sûr de vouloir supprimer ce produit ?")) {
-            // Supprimer le produit de Firebase
+            // 1. Supprimer le produit de Firebase EN PREMIER
             produitsRef.child(key).remove()
               .then(function () {
-                // Mettre à jour le tableau des produits
-                remplirTableau();
-
-                // Supprimer le debiteur associé si nécessaire
+                // 2. Supprimer le débiteur associé si nécessaire APRES la suppression du produit
                 if (parseFloat(product.RAP) > 0) {
-                  debiteursRef.orderByChild('numeroTelephone').equalTo(product.numeroTelephone).once('value',
-                    function (debiteurSnapshot) {
-                      if (debiteurSnapshot.exists()) {
-                        debiteurSnapshot.forEach(function (debiteurChildSnapshot) {
-                          debiteursRef.child(debiteurChildSnapshot.key).remove();
-                        });
-                      }
-                    });
+                  supprimerDebiteurParNumero(product.numeroTelephone);
                 }
 
-                // Mettre à jour le tableau des debiteurs
-                remplirTableauDebiteurs();
-
-                // Mettre à jour le tableau des stocks
+                // 3. Mettre à jour le tableau des stocks APRES la suppression du produit et du débiteur
                 mettreAJourStocks(product.designation, -product.quantite); // Quantité négative pour soustraire
-                remplirTableauStocks();
+                
+                // 4. Mettre à jour les tableaux APRES les suppressions dans Firebase
+                remplirTableau(); // Mettre à jour le tableau des produits
+                remplirTableauDebiteurs(); // Mettre à jour le tableau des debiteurs
+                remplirTableauStocks(); 
 
                 // Actualiser l'analyse après la suppression d'un produit
                 analyserProduits();
@@ -341,7 +375,7 @@ function remplirTableau() {
         moisPrecedent = moisActuel; // Mettre à jour le mois précédent
       });
       // Ajouter la ligne total
-      ajouterLigneTotalProduits(productTable, produits.length, totalQuantite, totalPrixVente, totalRAP,
+      ajouterLigneTotalProduits(productTable, snapshot.numChildren(), totalQuantite, totalPrixVente, totalRAP,
         totalPrixBrut, totalTaux, totalPrixNet, totalFreight, totalDouaneTransport, totalFraisTransfert,
         totalImpotDocument, totalReparation, totalDepenses, totalCoutReviens, totalMargeBenefice);
     })
@@ -350,6 +384,19 @@ function remplirTableau() {
       alert("Une erreur est survenue.");
     });
 }
+
+// Nouvelle fonction pour supprimer un débiteur par numéro de téléphone
+function supprimerDebiteurParNumero(numeroTelephone) {
+  debiteursRef.orderByChild('numeroTelephone').equalTo(numeroTelephone).once('value',
+    function (debiteurSnapshot) {
+      if (debiteurSnapshot.exists()) {
+        debiteurSnapshot.forEach(function (debiteurChildSnapshot) {
+          debiteursRef.child(debiteurChildSnapshot.key).remove();
+        });
+      }
+    });
+}
+
 
 function formaterMontantAffichage(montant) {
   return parseFloat(montant).toLocaleString('fr-FR', { style: 'currency', currency: 'XAF' });
@@ -954,73 +1001,16 @@ function mettreAJourRAP(numeroTelephone, nouveauRAP) {
   });
 }
 
-// Lorsque des données sont ajoutées à la collection 'produits'
-produitsRef.on('child_added', function (snapshot) {
-  var product = snapshot.val();
-
-  // Vérifier si RAP > 0
-  if (parseFloat(product.RAP) > 0) {
-    // Ajouter le debiteur à la liste des debiteurs
-    // ajouterDebiteur(product); // Appeler la fonction pour ajouter le debiteur
-  }
-
-  // Actualiser l'analyse après l'ajout d'un produit
-  analyserProduits();
-});
-
-// Mettre à jour le tableau des debiteurs si un produit est modifié
-produitsRef.on('child_changed', function (snapshot) {
-  var product = snapshot.val();
-  mettreAJourDebiteur(product);
-
-  // Actualiser l'analyse après la modification d'un produit
-  analyserProduits();
-});
-
-// Fonction pour mettre à jour les debiteurs en fonction des modifications de produits
-function mettreAJourDebiteur(product) {
-  // Vérifier si RAP > 0
-  if (parseFloat(product.RAP) > 0) {
-    // Vérifier si le debiteur existe déjà dans la liste
-    debiteursRef.orderByChild('numeroTelephone').equalTo(product.numeroTelephone).once('value', function (
-      debiteurSnapshot) {
+// Nouvelle fonction pour supprimer un débiteur par numéro de téléphone
+function supprimerDebiteurParNumero(numeroTelephone) {
+  debiteursRef.orderByChild('numeroTelephone').equalTo(numeroTelephone).once('value',
+    function (debiteurSnapshot) {
       if (debiteurSnapshot.exists()) {
-        // Mettre à jour le debiteur existant
-        debiteurSnapshot.forEach(function (childSnapshot) {
-          debiteursRef.child(childSnapshot.key).update({
-            date: product.date,
-            designation: product.designation,
-            RAP: product.RAP
-          });
-        });
-      } else {
-        // Ajouter le debiteur à la liste des debiteurs
-        debiteursRef.push({
-          date: product.date,
-          designation: product.designation,
-          numeroTelephone: product.numeroTelephone,
-          RAP: product.RAP
+        debiteurSnapshot.forEach(function (debiteurChildSnapshot) {
+          debiteursRef.child(debiteurChildSnapshot.key).remove();
         });
       }
-
-      // Mettre à jour la couleur du numéro de téléphone dans le tableau des données
-      mettreAJourTelephone(product.numeroTelephone, 'red');
     });
-  } else {
-    // Vérifier si le debiteur existe déjà dans la liste
-    debiteursRef.orderByChild('numeroTelephone').equalTo(product.numeroTelephone).once('value', function (
-      debiteurSnapshot) {
-      if (debiteurSnapshot.exists()) {
-        // Supprimer le debiteur de la liste
-        debiteurSnapshot.forEach(function (childSnapshot) {
-          debiteursRef.child(childSnapshot.key).remove();
-        });
-
-        // Mettre à jour la couleur du numéro de téléphone dans le tableau des données
-        mettreAJourTelephone(product.numeroTelephone, 'black');
-      }
-    });
-  }
 }
 
 // Fonction pour afficher la section "Gestion de Stocks"
@@ -1079,6 +1069,7 @@ function remplirTableauStocks() {
         iconDelete.classList.add("fas", "fa-trash", "icon-delete");
         iconDelete.onclick = function () {
           if (confirm("Êtes-vous sûr de vouloir supprimer ce stock ?")) {
+            // Supprimer le stock de Firebase EN PREMIER
             stocksRef.child(key).remove()
               .then(function () {
                 // Mettre à jour le tableau des stocks et le champ de sélection "Désignation"
@@ -1496,7 +1487,7 @@ function recalculerQuantitesStock(designation) {
         var stock = childSnapshot.val();
         var quantiteVendues = 0;
 
-        // Calculer la quantité vendue en fonction des produits vendus avec la même désignation
+        // Calculer la quantité vendue en fonction des produits vendus avec la       même désignation
         produitsRef.orderByChild('designation').equalTo(designation).once('value', function (produitsSnapshot) {
           if (produitsSnapshot.exists()) {
             produitsSnapshot.forEach(function (produitChildSnapshot) {
