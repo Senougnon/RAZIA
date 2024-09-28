@@ -166,7 +166,6 @@ function ajouterProduitAFirebase(productData) {
     });
 }
 
-
 function afficherDetails() {
   masquerToutesSections();
   document.getElementById("detailsSection").style.display = "block";
@@ -196,7 +195,13 @@ function remplirTableau() {
 
   database.ref('produits').orderByChild('date').once('value')
     .then(function (snapshot) {
+      // Parcourir les produits dans l'ordre inverse (les plus récents en premier)
+      var produits = [];
       snapshot.forEach(function (childSnapshot) {
+        produits.unshift(childSnapshot); // Ajouter au début du tableau
+      });
+
+      produits.forEach(function (childSnapshot) {
         var product = childSnapshot.val();
         var date = new Date(product.date);
         var moisActuel = date.getMonth(); // 0 pour janvier, 1 pour février, etc.
@@ -343,11 +348,11 @@ function remplirTableau() {
 
                 // 3. Mettre à jour le tableau des stocks APRES la suppression du produit et du débiteur
                 mettreAJourStocks(product.designation, -product.quantite); // Quantité négative pour soustraire
-                
+
                 // 4. Mettre à jour les tableaux APRES les suppressions dans Firebase
                 remplirTableau(); // Mettre à jour le tableau des produits
                 remplirTableauDebiteurs(); // Mettre à jour le tableau des debiteurs
-                remplirTableauStocks(); 
+                remplirTableauStocks();
 
                 // Actualiser l'analyse après la suppression d'un produit
                 analyserProduits();
