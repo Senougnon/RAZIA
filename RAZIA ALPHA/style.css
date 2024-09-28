@@ -1,3 +1,5 @@
+--- START OF FILE style.css ---
+
 body {
   font-family: sans-serif;
 }
@@ -11,26 +13,6 @@ h2 {
 }
 
 /* Agrandir les champs de saisie et le bloc de connexion/inscription */
-#loginPage,
-#signupPage {
-  width: 400px;
-  border: 3px solid black;
-  margin: 0 auto;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#loginPage input,
-#signupPage input {
-  width: 100%;
-  padding: 15px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
 form {
   display: grid;
   background-color: #8186f9;
@@ -70,16 +52,6 @@ button {
   border-radius: 10px;
   font-size: 20px;
 }
-
-/* Cibler les boutons des formulaires de connexion et d'inscription */
-#loginForm button,
-#signupForm button {
-  font-size: 14px;
-  /* Réduire la taille de la police */
-  padding: 8px 16px;
-  /* Réduire le padding */
-}
-
 
 /* Ajout de styles pour les boutons */
 .button-container {
@@ -396,16 +368,6 @@ input[type="number"]::-webkit-outer-spin-button {
   /* Ajustez la valeur pour l'espacement souhaité */
 }
 
-/* Styles pour les pages de connexion et d'inscription */
-#loginPage,
-#signupPage {
-  width: 700px;
-  margin: 0 auto;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
 /* Style pour le bouton Exporter vers Excel */
 h2 button {
   background-color: #4CAF50;
@@ -420,33 +382,4 @@ h2 button {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
-}
-
-/* Styles pour les pages de connexion et d'inscription */
-#loginPage,
-#signupPage {
-  width: 90%; /* Adapte la largeur aux smartphones */
-  max-width: 700px; /* Limite la largeur maximale */
-  margin: 0 auto;
-  padding: 20px; /* Réduit le padding pour les petits écrans */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* Adapte les champs de saisie aux smartphones */
-#loginPage input,
-#signupPage input {
-  width: 100%;
-  padding: 10px; /* Réduit le padding pour les petits écrans */
-  margin: 8px 0; /* Réduit la marge pour les petits écrans */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-/* Adapte les boutons aux smartphones */
-#loginForm button,
-#signupForm button {
-  font-size: 16px; /* Augmente la taille de la police */
-  padding: 10px 20px; /* Augmente le padding */
 }
