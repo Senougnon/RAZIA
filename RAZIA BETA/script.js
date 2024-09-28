@@ -15,84 +15,8 @@ var database = firebase.database();
 var produitsRef = database.ref('produits'); // Référence à la collection 'produits'
 var debiteursRef = database.ref('debiteurs'); // Référence à la collection 'debiteurs'
 var stocksRef = database.ref('stocks'); // Référence à la collection 'stocks'
-var usersRef = database.ref('users'); // Référence pour les utilisateurs
 
-// Fonctions pour la page de connexion et d'inscription
-function afficherPageConnexion() {
-  document.getElementById("loginPage").style.display = "block";
-  document.getElementById("signupPage").style.display = "none";
-}
-
-function afficherPageInscription() {
-  document.getElementById("loginPage").style.display = "none";
-  document.getElementById("signupPage").style.display = "block";
-}
-
-// Gestion de l'affichage des pages d'inscription et de connexion
-document.getElementById("afficherInscription").addEventListener("click", afficherPageInscription);
-document.getElementById("afficherConnexion").addEventListener("click", afficherPageConnexion);
-
-// Gestion de la connexion avec Firebase Authentication
-document.getElementById("loginForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-
-  // Connexion avec Firebase Authentication
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(function (userCredential) {
-      // Connexion réussie
-      console.log("Connexion réussie : ", userCredential.user);
-
-      // Rediriger l'utilisateur vers le contenu principal
-      document.getElementById("mainContent").style.display = "block";
-      document.getElementById("loginPage").style.display = "none";
-    })
-    .catch(function (error) {
-      // Gestion des erreurs de connexion
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert("Erreur de connexion : " + errorMessage);
-      console.error("Erreur de connexion: ", error); // Affiche l'erreur dans la console
-    });
-});
-
-// Gestion de l'inscription avec Firebase Authentication
-document.getElementById("signupForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  var username = document.getElementById("signupUsername").value;
-  var email = document.getElementById("signupEmail").value;
-  var password = document.getElementById("signupPassword").value;
-
-  // Création d'un nouvel utilisateur avec Firebase Authentication
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(function (userCredential) {
-      // Inscription réussie
-      console.log("Inscription réussie : ", userCredential.user);
-
-      // Enregistrer le nom d'utilisateur dans la base de données Realtime Database
-      return usersRef.child(userCredential.user.uid).set({
-        username: username,
-        email: email
-      });
-    })
-    .then(function () {
-      // Rediriger l'utilisateur vers le contenu principal
-      document.getElementById("mainContent").style.display = "block";
-      document.getElementById("signupPage").style.display = "none";
-    })
-    .catch(function (error) {
-      // Gestion des erreurs d'inscription
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert("Erreur d'inscription : " + errorMessage);
-      console.error("Erreur d'inscription: ", error); // Affiche l'erreur dans la console
-    });
-});
-
-// Fonction pour formater un montant en FCFA
+// Fonctions pour formater un montant en FCFA
 function formaterMontant(input) {
   // Supprimer la mise en forme précédente si elle existe
   input.value = input.value.replace(/[^0-9.-]+/g, "");
@@ -1826,20 +1750,6 @@ function masquerToutesSections() {
 produitsRef.on('child_added', analyserProduits);
 produitsRef.on('child_changed', analyserProduits);
 produitsRef.on('child_removed', analyserProduits);
-
-// Vérifier si l'utilisateur est connecté au chargement de la page
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    // Utilisateur connecté, afficher le contenu principal
-    document.getElementById("mainContent").style.display = "block";
-    document.getElementById("loginPage").style.display = "none";
-    document.getElementById("signupPage").style.display = "none";
-  } else {
-    // Utilisateur non connecté, afficher la page de connexion
-    document.getElementById("mainContent").style.display = "none";
-    document.getElementById("loginPage").style.display = "block";
-  }
-});
 
 // Fonctions pour scroller vers les sections
 function scrollToDetails() {
