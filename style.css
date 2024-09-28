@@ -421,3 +421,32 @@ h2 button {
   cursor: pointer;
   border-radius: 5px;
 }
+
+/* Styles pour les pages de connexion et d'inscription */
+#loginPage,
+#signupPage {
+  width: 90%; /* Adapte la largeur aux smartphones */
+  max-width: 700px; /* Limite la largeur maximale */
+  margin: 0 auto;
+  padding: 20px; /* Réduit le padding pour les petits écrans */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Adapte les champs de saisie aux smartphones */
+#loginPage input,
+#signupPage input {
+  width: 100%;
+  padding: 10px; /* Réduit le padding pour les petits écrans */
+  margin: 8px 0; /* Réduit la marge pour les petits écrans */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Adapte les boutons aux smartphones */
+#loginForm button,
+#signupForm button {
+  font-size: 16px; /* Augmente la taille de la police */
+  padding: 10px 20px; /* Augmente le padding */
+}
