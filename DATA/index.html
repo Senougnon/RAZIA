@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des données</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div id="loginPage">
+        <h1 class="centered">Connexion</h1>
+        <div class="form-container centered">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="centered-button">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="mainPage" style="display: none;">
+        <div id="headerBar">
+            <span id="usernameDisplay"></span>
+            <span id="userStatusDisplay"></span>
+        </div>
+
+        <h1 class="centered">Gestion des données</h1>
+
+        <div class="form-container centered">
+            <h2 class="form-title">Formulaire de saisie</h2>
+            <form id="dataForm">
+                <div class="form-row">
+                    <div>
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div>
+                        <label for="quantity">Quantité:</label>
+                        <input type="number" id="quantity" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="price">Prix de vente:</label>
+                        <input type="number" id="price" required>
+                        <span id="formattedPrice"></span>
+                    </div>
+                    <div>
+                        <label for="saleType">Type de vente:</label>
+                        <select id="saleType" required>
+                            <option value="vente">Vente</option>
+                            <option value="retour">Retour</option>
+                            <option value="reservation">Réservation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="designation">Désignation:</label>
+                        <input type="text" id="designation" required>
+                    </div>
+                    <div>
+                        <label for="image">Image:</label>
+                        <input type="file" id="image" accept="image/*" capture="camera">
+                    </div>
+                </div>
+                <button type="submit" class="centered-button">Enregistrer</button>
+            </form>
+        </div>
+
+        <button id="toggleTableButton" class="centered-button">Afficher le tableau</button>
+
+        <div id="tableContainer" style="display: none;">
+            <h2>Données enregistrées</h2>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type de vente</th>
+                        <th>Quantité</th>
+                        <th>Désignation</th>
+                        <th>Prix de vente</th>
+                        <th class="image-column">Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Fenêtre modale pour la modification -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">×</span>
+                <h2 class="modal-title">Modifier les données</h2>
+                <form id="editForm">
+                    <input type="hidden" id="editDataKey">
+                    <div class="form-group">
+                        <label for="editDate">Date:</label>
+                        <input type="date" id="editDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editSaleType">Type de vente:</label>
+                        <select id="editSaleType" required>
+                            <option value="vente">Vente</option>
+                            <option value="retour">Retour</option>
+                            <option value="reservation">Réservation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDesignation">Désignation:</label>
+                        <input type="text" id="editDesignation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editQuantity">Quantité:</label>
+                        <input type="number" id="editQuantity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPrice">Prix de vente:</label>
+                        <input type="number" id="editPrice" required>
+                        <span id="editFormattedPrice"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="editImage">Image:</label>
+                        <input type="file" id="editImage" accept="image/*" capture="camera">
+                    </div>
+                    <button type="submit" class="centered-button">Mettre à jour</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-storage-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

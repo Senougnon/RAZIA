@@ -1,0 +1,272 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #10e7e0; /* Couleur de fond du corps */
+}
+
+h1, h2 {
+    color: #333; /* Couleur du texte des titres */
+    text-align: center;
+}
+
+.form-container {
+    background-color: #fff; /* Couleur de fond des conteneurs de formulaire */
+    padding: 20px;
+    border: 5px solid #ddd; /* Bordure des conteneurs de formulaire */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre des conteneurs de formulaire */
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes de même largeur */
+    gap: 10px; /* Espacement entre les colonnes */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc; /* Bordure des champs de formulaire */
+    border-radius: 5px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    margin: 5px 0;
+    padding: 8px;
+    border: 1px solid #ddd; /* Bordure des champs de formulaire */
+    border-radius: 3px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd; /* Bordure des cellules du tableau */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Couleur de fond des en-têtes de tableau */
+}
+
+.centered {
+    text-align: center;
+}
+
+.centered-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #0eb808; /* Couleur de fond des boutons */
+    color: white; /* Couleur du texte des boutons */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre des boutons */
+}
+
+#tableContainer {
+    background-color: #fff; /* Couleur de fond du conteneur du tableau */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#dataTable img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+}
+
+.image-column {
+    width: 150px; /* Largeur de la colonne "Image" */
+}
+
+/* Styles pour les icônes d'édition et de suppression (masquées par défaut) */
+.edit-icon,
+.delete-icon {
+    cursor: pointer;
+    margin-right: 5px; /* Espacement entre les icônes */
+    display: none; /* Masquées par défaut */
+}
+
+/* Styles pour la fenêtre modale */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed; /* Positionnement fixe */
+    z-index: 1; /* Affichée au-dessus des autres éléments */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largeur totale */
+    height: 100%; /* Hauteur totale */
+    overflow: auto; /* Activer le défilement si nécessaire */
+    background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Couleur de fond du contenu de la modale */
+    margin: 10% auto; /* Centrer la fenêtre modale */
+    padding: 20px;
+    border: 1px solid #888; /* Bordure du contenu de la modale */
+    width: 80%; /* Largeur du contenu de la modale */
+    max-width: 900px;
+}
+
+.close-modal {
+    color: #aaa; /* Couleur de l'icône de fermeture */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black; /* Couleur au survol de l'icône de fermeture */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles pour les groupes de champs */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Styles pour les icônes */
+.edit-icon {
+    color: blue; /* Couleur de l'icône d'édition */
+}
+
+.delete-icon {
+    color: red; /* Couleur de l'icône de suppression */
+}
+
+/* Styles pour le formulaire de modification */
+#editForm {
+    background-color: #f9f9f9; /* Couleur de fond du formulaire de modification */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Styles spécifiques pour la disposition des champs dans le formulaire de modification */
+#editForm .form-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    gap: 10px; /* Espacement entre les colonnes */
+    margin-bottom: 10px; /* Espacement entre les lignes */
+}
+
+#editForm .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#editForm .form-group input,
+#editForm .form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc; /* Bordure des champs du formulaire de modification */
+    border-radius: 5px;
+}
+
+#editForm .form-group:nth-child(5) {
+    /* Sélectionne le 5ème groupe de champs (Prix de vente) */
+    grid-column: span 2; /* S'étend sur les deux colonnes */
+}
+
+/* Styles pour la ligne de séparation des mois */
+.month-separator {
+    background-color: #f2f2f2; /* Couleur de fond de la ligne de séparation */
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Styles pour la ligne d'erreur */
+.error-row {
+    background-color: #fdd; /* Couleur de fond rouge clair */
+    color: red; /* Couleur du texte rouge */
+    font-weight: bold;
+}
+
+/* Styles pour la barre d'en-tête */
+#headerBar {
+    background-color: #f2f2f2; /* Couleur de fond de la barre d'en-tête */
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: right; /* Aligner le texte à droite */
+    font-weight: bold;
+}
+
+#headerBar span {
+    margin-left: 50px; /* Espacement entre les éléments */
+}
+
+/* Styles pour la ligne de total */
+.total-row {
+    font-weight: bold;
+}
+
+/* Media queries pour l'adaptation aux smartphones */
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr; /* Une seule colonne pour les formulaires */
+    }
+
+    #dataTable {
+        font-size: 14px; /* Réduire la taille de la police du tableau */
+    }
+
+    #dataTable th,
+    #dataTable td {
+        padding: 5px; /* Réduire le padding des cellules du tableau */
+    }
+
+    .image-column {
+        width: 80px; /* Réduire la largeur de la colonne Image */
+    }
+
+    #dataTable img {
+        max-width: 80px; /* Réduire la taille maximale des images */
+        max-height: 80px;
+    }
+
+    .modal-content {
+        width: 95%; /* Ajuster la largeur de la modale */
+    }
+}
