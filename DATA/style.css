@@ -1,272 +1,367 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
-    background-color: #10e7e0; /* Couleur de fond du corps */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #10e7e0; /* Couleur de fond du corps */
 }
 
-h1, h2 {
-    color: #333; /* Couleur du texte des titres */
-    text-align: center;
+h1,
+h2 {
+  color: #333; /* Couleur du texte des titres */
+  text-align: center;
 }
 
 .form-container {
-    background-color: #fff; /* Couleur de fond des conteneurs de formulaire */
-    padding: 20px;
-    border: 5px solid #ddd; /* Bordure des conteneurs de formulaire */
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre des conteneurs de formulaire */
+  background-color: #fff; /* Couleur de fond des conteneurs de formulaire */
+  padding: 20px;
+  border: 5px solid #ddd; /* Bordure des conteneurs de formulaire */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre des conteneurs de formulaire */
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes de même largeur */
-    gap: 10px; /* Espacement entre les colonnes */
-    margin-bottom: 10px; /* Espacement entre les lignes */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Deux colonnes de même largeur */
+  gap: 10px; /* Espacement entre les colonnes */
+  margin-bottom: 10px; /* Espacement entre les lignes */
 }
 
 .form-title {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .form-container input,
 .form-container select {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    border: 1px solid #ccc; /* Bordure des champs de formulaire */
-    border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc; /* Bordure des champs de formulaire */
+  border-radius: 5px;
 }
 
 .form-container label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input,
 select,
 button {
-    margin: 5px 0;
-    padding: 8px;
-    border: 1px solid #ddd; /* Bordure des champs de formulaire */
-    border-radius: 3px;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ddd; /* Bordure des champs de formulaire */
+  border-radius: 3px;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 th,
 td {
-    border: 1px solid #ddd; /* Bordure des cellules du tableau */
-    padding: 8px;
-    text-align: left;
+  border: 1px solid #ddd; /* Bordure des cellules du tableau */
+  padding: 8px;
+  text-align: left;
 }
 
 th {
-    background-color: #f2f2f2; /* Couleur de fond des en-têtes de tableau */
+  background-color: #f2f2f2; /* Couleur de fond des en-têtes de tableau */
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 .centered-button {
-    display: block;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    background-color: #0eb808; /* Couleur de fond des boutons */
-    color: white; /* Couleur du texte des boutons */
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre des boutons */
+  display: inline-block; /* Modification pour aligner les boutons */
+  margin: 10px 5px; /* Marge réduite pour les boutons, espacement horizontal */
+  padding: 10px 20px;
+  background-color: #0eb808; /* Couleur de fond des boutons */
+  color: white; /* Couleur du texte des boutons */
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre des boutons */
 }
 
-#tableContainer {
-    background-color: #fff; /* Couleur de fond du conteneur du tableau */
-    padding: 20px;
-    border-radius: 5px;
+#tableContainer,
+#reservationsContainer,
+#retoursContainer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-#dataTable img {
-    max-width: 100px;
-    max-height: 100px;
-    display: block;
+#dataTable img,
+#reservationTable img,
+#retourTable img {
+  max-width: 100px;
+  max-height: 100px;
+  display: block;
+  cursor: pointer;
 }
 
 .image-column {
-    width: 150px; /* Largeur de la colonne "Image" */
+  width: 150px;
 }
 
-/* Styles pour les icônes d'édition et de suppression (masquées par défaut) */
+/* Styles pour les icônes d'édition et de suppression */
 .edit-icon,
 .delete-icon {
-    cursor: pointer;
-    margin-right: 5px; /* Espacement entre les icônes */
-    display: none; /* Masquées par défaut */
+  cursor: pointer;
+  margin-right: 5px;
+  display: none;
 }
 
 /* Styles pour la fenêtre modale */
 .modal {
-    display: none; /* Cachée par défaut */
-    position: fixed; /* Positionnement fixe */
-    z-index: 1; /* Affichée au-dessus des autres éléments */
-    left: 0;
-    top: 0;
-    width: 100%; /* Largeur totale */
-    height: 100%; /* Hauteur totale */
-    overflow: auto; /* Activer le défilement si nécessaire */
-    background-color: rgba(0, 0, 0, 0.4); /* Fond semi-transparent */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-    background-color: #fefefe; /* Couleur de fond du contenu de la modale */
-    margin: 10% auto; /* Centrer la fenêtre modale */
-    padding: 20px;
-    border: 1px solid #888; /* Bordure du contenu de la modale */
-    width: 80%; /* Largeur du contenu de la modale */
-    max-width: 900px;
+  background-color: #fefefe;
+  margin: 5% auto; /* Marge ajustée pour une meilleure visibilité sur mobile */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Largeur ajustée pour une meilleure adaptation */
+  max-width: 500px; /* Largeur maximale pour éviter un contenu trop large */
+  box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
 }
 
 .close-modal {
-    color: #aaa; /* Couleur de l'icône de fermeture */
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .close-modal:hover,
 .close-modal:focus {
-    color: black; /* Couleur au survol de l'icône de fermeture */
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .modal-title {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Styles pour les groupes de champs */
 .form-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
-/* Styles pour les icônes */
 .edit-icon {
-    color: blue; /* Couleur de l'icône d'édition */
+  color: blue;
 }
 
 .delete-icon {
-    color: red; /* Couleur de l'icône de suppression */
+  color: red;
 }
 
-/* Styles pour le formulaire de modification */
 #editForm {
-    background-color: #f9f9f9; /* Couleur de fond du formulaire de modification */
-    padding: 20px;
-    border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-/* Styles spécifiques pour la disposition des champs dans le formulaire de modification */
 #editForm .form-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-    gap: 10px; /* Espacement entre les colonnes */
-    margin-bottom: 10px; /* Espacement entre les lignes */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 #editForm .form-group label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 #editForm .form-group input,
 #editForm .form-group select {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    border: 1px solid #ccc; /* Bordure des champs du formulaire de modification */
-    border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 #editForm .form-group:nth-child(5) {
-    /* Sélectionne le 5ème groupe de champs (Prix de vente) */
-    grid-column: span 2; /* S'étend sur les deux colonnes */
+  grid-column: span 2;
 }
 
 /* Styles pour la ligne de séparation des mois */
 .month-separator {
-    background-color: #f2f2f2; /* Couleur de fond de la ligne de séparation */
-    font-weight: bold;
-    text-align: center;
-    padding: 10px 0;
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 0;
 }
 
 /* Styles pour la ligne d'erreur */
 .error-row {
-    background-color: #fdd; /* Couleur de fond rouge clair */
-    color: red; /* Couleur du texte rouge */
-    font-weight: bold;
+  background-color: #fdd;
+  color: red;
+  font-weight: bold;
 }
 
 /* Styles pour la barre d'en-tête */
 #headerBar {
-    background-color: #f2f2f2; /* Couleur de fond de la barre d'en-tête */
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: right; /* Aligner le texte à droite */
-    font-weight: bold;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: right;
+  font-weight: bold;
+  display: flex; /* Permet d'aligner le logo et le texte */
+  align-items: center; /* Aligner verticalement les éléments */
+}
+
+#headerLogo {
+  height: 100px; /* Ajuster la hauteur du logo */
+  margin-right: 20px; /* Espace entre le logo et le texte */
 }
 
 #headerBar span {
-    margin-left: 50px; /* Espacement entre les éléments */
+  margin-left: 50px;
 }
 
-/* Styles pour la ligne de total */
-.total-row {
-    font-weight: bold;
+/* Styles pour la fenêtre modale d'image agrandie */
+.image-modal {
+  display: flex; /* Utiliser flexbox pour centrer l'image */
+  align-items: center; /* Centrer verticalement */
+  justify-content: center; /* Centrer horizontalement */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Media queries pour l'adaptation aux smartphones */
-@media (max-width: 600px) {
-    .form-row {
-        grid-template-columns: 1fr; /* Une seule colonne pour les formulaires */
-    }
+.image-modal img {
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  cursor: zoom-out; /* Curseur zoom-out pour indiquer le zoom arrière */
+}
 
-    #dataTable {
-        font-size: 14px; /* Réduire la taille de la police du tableau */
-    }
+.close-image-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
 
-    #dataTable th,
-    #dataTable td {
-        padding: 5px; /* Réduire le padding des cellules du tableau */
-    }
+.close-image-modal:hover,
+.close-image-modal:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    .image-column {
-        width: 80px; /* Réduire la largeur de la colonne Image */
-    }
+/* Styles pour les écrans de smartphone */
+@media screen and (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 
-    #dataTable img {
-        max-width: 80px; /* Réduire la taille maximale des images */
-        max-height: 80px;
-    }
+  #dataTable,
+  #reservationTable,
+  #retourTable {
+    font-size: 12px; /* Réduire la taille de la police davantage */
+  }
 
-    .modal-content {
-        width: 95%; /* Ajuster la largeur de la modale */
-    }
+  #dataTable th,
+  #dataTable td,
+  #reservationTable th,
+  #reservationTable td,
+  #retourTable th,
+  #retourTable td {
+    padding: 5px;
+  }
+
+  #dataTable img,
+  #reservationTable img,
+  #retourTable img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  #headerBar {
+    text-align: center; /* Centrer le texte sur les petits écrans */
+    flex-direction: column; /* Empiler le logo et le texte */
+  }
+
+  #headerLogo {
+    margin-right: 0; /* Supprimer la marge droite du logo */
+    margin-bottom: 10px; /* Ajouter une marge inférieure au logo */
+  }
+
+  #headerBar span {
+    margin-left: 0; /* Supprimer la marge gauche du texte */
+  }
+}
+
+/* Styles pour le conteneur des boutons */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Permettre aux boutons de s'enrouler sur plusieurs lignes si nécessaire */
+}
+
+.button-container button {
+  margin: 5px; /* Espace entre les boutons */
+}
+
+/* Styles pour les champs de saisie avec "F CFA" en dessous */
+#price + #formattedPrice,
+#advanceAmount + #formattedAdvance,
+#montantAjoute + #formattedMontantAjoute,
+#editPrice + #editFormattedPrice,
+#editAdvanceAmount + #formattedEditAdvance,
+#editMontantAjoute + #formattedEditMontantAjoute,
+#advanceAmount + #formattedModalAdvance,
+#trancheAmount + #formattedTrancheAmount {
+  display: block; /* Afficher le span en tant que bloc */
+  margin-top: 5px; /* Espace entre le champ et le texte formaté */
+  font-size: 14px; /* Taille de la police du texte formaté */
+  color: #555; /* Couleur du texte formaté */
+}
+
+/* Style pour la ligne sélectionnée dans le tableau des réservations */
+#reservationTable tr.selected {
+  background-color: lightblue; /* Couleur de fond pour la ligne sélectionnée */
 }
