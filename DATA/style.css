@@ -117,7 +117,7 @@ th {
 .edit-icon,
 .delete-icon {
   cursor: pointer;
-  margin-right: 5px;
+  margin-right: 10px; /* Espacement accru entre les icônes */
   display: none;
 }
 
@@ -181,26 +181,37 @@ th {
   color: red;
 }
 
-#editForm {
+/* Styles pour les formulaires de modification */
+#editForm, 
+#editReservationForm, 
+#editRetourForm {
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 5px;
 }
 
-#editForm .form-group {
+#editForm .form-group,
+#editReservationForm .form-group,
+#editRetourForm .form-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-bottom: 10px;
 }
 
-#editForm .form-group label {
+#editForm .form-group label,
+#editReservationForm .form-group label,
+#editRetourForm .form-group label {
   display: block;
   margin-bottom: 5px;
 }
 
 #editForm .form-group input,
-#editForm .form-group select {
+#editForm .form-group select,
+#editReservationForm .form-group input,
+#editReservationForm .form-group select,
+#editRetourForm .form-group input,
+#editRetourForm .form-group select {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
@@ -208,7 +219,9 @@ th {
   border-radius: 5px;
 }
 
-#editForm .form-group:nth-child(5) {
+#editForm .form-group:nth-child(5),
+#editReservationForm .form-group:nth-child(5),
+#editRetourForm .form-group:nth-child(5) {
   grid-column: span 2;
 }
 
@@ -354,7 +367,11 @@ th {
 #editAdvanceAmount + #formattedEditAdvance,
 #editMontantAjoute + #formattedEditMontantAjoute,
 #advanceAmount + #formattedModalAdvance,
-#trancheAmount + #formattedTrancheAmount {
+#trancheAmount + #formattedTrancheAmount,
+#editReservationPrice + #editReservationFormattedPrice,
+#editReservationAdvanceAmount + #editReservationFormattedAdvance,
+#editRetourPrice + #editRetourFormattedPrice,
+#editRetourMontantAjoute + #editRetourFormattedMontantAjoute {
   display: block; /* Afficher le span en tant que bloc */
   margin-top: 5px; /* Espace entre le champ et le texte formaté */
   font-size: 14px; /* Taille de la police du texte formaté */
@@ -364,4 +381,22 @@ th {
 /* Style pour la ligne sélectionnée dans le tableau des réservations */
 #reservationTable tr.selected {
   background-color: lightblue; /* Couleur de fond pour la ligne sélectionnée */
+}
+
+/* Style pour le conteneur du mot de passe avec l'icône de visibilité */
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* Espace pour l'icône */
+}
+
+.password-container i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
 }

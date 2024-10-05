@@ -21,7 +21,10 @@
         </div>
         <div class="form-group">
           <label for="password">Mot de passe:</label>
-          <input type="password" id="password" required>
+          <div class="password-container">
+            <input type="password" id="password" required>
+            <i class="far fa-eye" id="togglePassword"></i>
+          </div>
         </div>
         <button type="submit" class="centered-button">Se connecter</button>
       </form>
@@ -54,7 +57,7 @@
           <div>
             <label for="price">Prix de vente:</label>
             <input type="number" id="price" required>
-            <span id="formattedPrice"></span> <!--- Span pour le prix formaté --->
+            <span id="formattedPrice"></span>
           </div>
           <div>
             <label for="saleType">Type de vente:</label>
@@ -69,14 +72,18 @@
           <div>
             <label for="advanceAmount">Montant avancé:</label>
             <input type="number" id="advanceAmount">
-            <span id="formattedAdvance"></span> <!--- Span pour le montant avancé formaté --->
+            <span id="formattedAdvance"></span>
+          </div>
+          <div>
+            <label for="telephone">Téléphone:</label>
+            <input type="tel" id="telephone">
           </div>
         </div>
         <div class="form-row" id="retourField" style="display:none;">
           <div>
             <label for="montantAjoute">Montant ajouté:</label>
             <input type="number" id="montantAjoute">
-            <span id="formattedMontantAjoute"></span> <!--- Span pour le montant ajouté formaté --->
+            <span id="formattedMontantAjoute"></span>
           </div>
           <div>
             <label for="ancienneImage">Ancienne Image:</label>
@@ -97,7 +104,7 @@
       </form>
     </div>
 
-    <div class="button-container"> <!--- Conteneur pour les boutons --->
+    <div class="button-container">
       <button id="toggleTableButton" class="centered-button">Afficher le tableau des ventes</button>
       <button id="toggleReservationsButton" class="centered-button">Afficher le tableau des
         réservations</button>
@@ -132,8 +139,10 @@
             <th>Désignation</th>
             <th>Quantité</th>
             <th>Montant avancé</th>
-            <th>Prix de vente</th> <!--- Colonne Prix de vente déplacée ici --->
+            <th>Reste à payer</th>
+            <th>Prix de vente</th>
             <th class="image-column">Image</th>
+            <th>Téléphone</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -162,10 +171,11 @@
       </table>
     </div>
 
+    <!-- Fenêtre de modification pour les ventes -->
     <div id="editModal" class="modal">
       <div class="modal-content">
         <span class="close-modal" onclick="closeModal('editModal')">×</span>
-        <h2 class="modal-title">Modifier les données</h2>
+        <h2 class="modal-title">Modifier les données (Ventes)</h2>
         <form id="editForm">
           <input type="hidden" id="editDataKey">
           <div class="form-group">
@@ -183,12 +193,14 @@
           <div class="form-group" id="editAdvanceField" style="display:none;">
             <label for="editAdvanceAmount">Montant avancé:</label>
             <input type="number" id="editAdvanceAmount">
-            <span id="formattedEditAdvance"></span> <!--- Span pour le montant avancé formaté (modification) --->
+            <span id="formattedEditAdvance"></span>
+            <label for="editTelephone">Téléphone:</label>
+            <input type="tel" id="editTelephone">
           </div>
           <div class="form-group" id="editRetourField" style="display:none;">
             <label for="editMontantAjoute">Montant ajouté:</label>
             <input type="number" id="editMontantAjoute">
-            <span id="formattedEditMontantAjoute"></span> <!--- Span pour le montant ajouté formaté (modification) --->
+            <span id="formattedEditMontantAjoute"></span>
             <label for="editAncienneImage">Ancienne Image:</label>
             <input type="file" id="editAncienneImage" accept="image/*" capture="camera">
           </div>
@@ -203,11 +215,95 @@
           <div class="form-group">
             <label for="editPrice">Prix de vente:</label>
             <input type="number" id="editPrice" required>
-            <span id="editFormattedPrice"></span> <!--- Span pour le prix formaté (modification) --->
+            <span id="editFormattedPrice"></span>
           </div>
           <div class="form-group">
             <label for="editImage">Image:</label>
             <input type="file" id="editImage" accept="image/*" capture="camera">
+          </div>
+          <button type="submit" class="centered-button">Mettre à jour</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Fenêtre de modification pour les réservations -->
+    <div id="editReservationModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('editReservationModal')">×</span>
+        <h2 class="modal-title">Modifier les données (Réservations)</h2>
+        <form id="editReservationForm">
+          <input type="hidden" id="editReservationDataKey">
+          <div class="form-group">
+            <label for="editReservationDate">Date:</label>
+            <input type="date" id="editReservationDate" required>
+          </div>
+          <div class="form-group">
+            <label for="editReservationDesignation">Désignation:</label>
+            <input type="text" id="editReservationDesignation" required>
+          </div>
+          <div class="form-group">
+            <label for="editReservationQuantity">Quantité:</label>
+            <input type="number" id="editReservationQuantity" required>
+          </div>
+          <div class="form-group">
+            <label for="editReservationPrice">Prix de vente:</label>
+            <input type="number" id="editReservationPrice" required>
+            <span id="editReservationFormattedPrice"></span>
+          </div>
+          <div class="form-group">
+            <label for="editReservationAdvanceAmount">Montant avancé:</label>
+            <input type="number" id="editReservationAdvanceAmount" required>
+            <span id="editReservationFormattedAdvance"></span>
+          </div>
+          <div class="form-group">
+            <label for="editReservationTelephone">Téléphone:</label>
+            <input type="tel" id="editReservationTelephone" required>
+          </div>
+          <div class="form-group">
+            <label for="editReservationImage">Image:</label>
+            <input type="file" id="editReservationImage" accept="image/*" capture="camera">
+          </div>
+          <button type="submit" class="centered-button">Mettre à jour</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Fenêtre de modification pour les retours -->
+    <div id="editRetourModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal('editRetourModal')">×</span>
+        <h2 class="modal-title">Modifier les données (Retours)</h2>
+        <form id="editRetourForm">
+          <input type="hidden" id="editRetourDataKey">
+          <div class="form-group">
+            <label for="editRetourDate">Date:</label>
+            <input type="date" id="editRetourDate" required>
+          </div>
+          <div class="form-group">
+            <label for="editRetourDesignation">Désignation:</label>
+            <input type="text" id="editRetourDesignation" required>
+          </div>
+          <div class="form-group">
+            <label for="editRetourQuantity">Quantité:</label>
+            <input type="number" id="editRetourQuantity" required>
+          </div>
+          <div class="form-group">
+            <label for="editRetourPrice">Prix de vente:</label>
+            <input type="number" id="editRetourPrice" required>
+            <span id="editRetourFormattedPrice"></span>
+          </div>
+          <div class="form-group">
+            <label for="editRetourMontantAjoute">Montant ajouté:</label>
+            <input type="number" id="editRetourMontantAjoute" required>
+            <span id="editRetourFormattedMontantAjoute"></span>
+          </div>
+          <div class="form-group">
+            <label for="editRetourAncienneImage">Ancienne Image:</label>
+            <input type="file" id="editRetourAncienneImage" accept="image/*" capture="camera">
+          </div>
+          <div class="form-group">
+            <label for="editRetourImage">Nouvelle Image:</label>
+            <input type="file" id="editRetourImage" accept="image/*" capture="camera">
           </div>
           <button type="submit" class="centered-button">Mettre à jour</button>
         </form>
@@ -225,7 +321,7 @@
           <div class="form-group">
             <label for="advanceAmount">Montant avancé :</label>
             <input type="number" id="advanceAmount" required>
-            <span id="formattedModalAdvance"></span> <!--- Span pour le montant avancé formaté (modal) --->
+            <span id="formattedModalAdvance"></span>
           </div>
           <button type="submit" class="centered-button">Enregistrer</button>
         </form>
@@ -244,7 +340,7 @@
           <div class="form-group">
             <label for="trancheAmount">Montant de la tranche :</label>
             <input type="number" id="trancheAmount" required>
-            <span id="formattedTrancheAmount"></span> <!--- Span pour le montant de la tranche formaté (modal) --->
+            <span id="formattedTrancheAmount"></span>
           </div>
           <button type="submit" class="centered-button" id="payerTrancheButton">Payer Tranche</button>
           <button type="button" class="centered-button" id="payerTotalButton" onclick="payerTotal()">Payé Total</button>
@@ -252,6 +348,7 @@
       </div>
     </div>
   </div>
+
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-storage-compat.js"></script>
