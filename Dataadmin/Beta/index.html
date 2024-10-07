@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace Administrateur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Espace Administrateur</h1>
+
+        <div class="form-container">
+            <img src="Img/user.jpg" alt="user" class="form-image"> 
+            <h2>Création d'un compte utilisateur</h2>
+            <form id="userForm">
+                <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Mot de passe" required>
+                <select id="status">
+                    <option value="editeur">Editeur</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button type="submit">Créer un compte</button>
+            </form>
+        </div>
+
+        <button id="showTableButton">Afficher/Masquer le tableau</button>
+
+        <div id="tableContainer" style="display: none;">
+            <h2>Liste des utilisateurs</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Nom d'utilisateur</th>
+                        <th>Email</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les utilisateurs seront ajoutés ici dynamiquement -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Fenêtre flottante (modal) pour l'édition -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">×</span>
+                <h2>Modifier l'utilisateur</h2>
+                <form id="editForm">
+                    <input type="hidden" id="editUsername"> 
+                    <input type="email" id="editEmail" placeholder="Email" required>
+                    <input type="password" id="editPassword" placeholder="Mot de passe">
+                    <select id="editStatus">
+                        <option value="editeur">Editeur</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <button type="submit">Enregistrer les modifications</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclure Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
