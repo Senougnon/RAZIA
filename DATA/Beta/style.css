@@ -182,8 +182,8 @@ th {
 }
 
 /* Styles pour les formulaires de modification */
-#editForm, 
-#editReservationForm, 
+#editForm,
+#editReservationForm,
 #editRetourForm {
   background-color: #f9f9f9;
   padding: 20px;
