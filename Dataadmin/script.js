@@ -1,1 +1,195 @@
-const _0x3209cf=_0x3889;(function(_0x27a5fa,_0x245031){const _0x423376=_0x3889,_0x446d8f=_0x27a5fa();while(!![]){try{const _0x118912=-parseInt(_0x423376(0xe9))/0x1+-parseInt(_0x423376(0xd7))/0x2+-parseInt(_0x423376(0xef))/0x3*(parseInt(_0x423376(0xe4))/0x4)+-parseInt(_0x423376(0xad))/0x5+parseInt(_0x423376(0xd4))/0x6+-parseInt(_0x423376(0xdc))/0x7*(-parseInt(_0x423376(0xc8))/0x8)+-parseInt(_0x423376(0xc4))/0x9*(-parseInt(_0x423376(0xb7))/0xa);if(_0x118912===_0x245031)break;else _0x446d8f['push'](_0x446d8f['shift']());}catch(_0xaaea42){_0x446d8f['push'](_0x446d8f['shift']());}}}(_0x1a3d,0x89a30));const firebaseConfig={'apiKey':_0x3209cf(0xec),'authDomain':_0x3209cf(0xab),'databaseURL':_0x3209cf(0xed),'projectId':_0x3209cf(0xea),'storageBucket':_0x3209cf(0xd2),'messagingSenderId':'797498750723','appId':'1:797498750723:web:385d55e45ab4a0221b1b36','measurementId':_0x3209cf(0xf3)};firebase[_0x3209cf(0xb3)](firebaseConfig);const database=firebase[_0x3209cf(0xca)]();document[_0x3209cf(0xe6)](_0x3209cf(0xaa))[_0x3209cf(0xac)]('submit',function(_0x1cc27b){const _0x15d2f3=_0x3209cf;_0x1cc27b[_0x15d2f3(0xd6)]();const _0x314a56=document['getElementById'](_0x15d2f3(0xb0))[_0x15d2f3(0xd0)],_0x475172=document[_0x15d2f3(0xe6)]('email')['value'],_0x188cbe=document[_0x15d2f3(0xe6)](_0x15d2f3(0xee))[_0x15d2f3(0xd0)],_0x38afd8=document[_0x15d2f3(0xe6)](_0x15d2f3(0xc0))[_0x15d2f3(0xd0)],_0xdbe9a6=database['ref'](_0x15d2f3(0xbd)+_0x314a56);_0xdbe9a6[_0x15d2f3(0xb2)]('value')[_0x15d2f3(0xb6)](function(_0x20a1f7){const _0x2c466e=_0x15d2f3;_0x20a1f7['exists']()?alert(_0x2c466e(0xdd)):_0xdbe9a6[_0x2c466e(0xc2)]({'email':_0x475172,'password':_0x188cbe,'status':_0x38afd8})['then'](()=>{const _0x4e301f=_0x2c466e;alert(_0x4e301f(0xf1)),document[_0x4e301f(0xe6)](_0x4e301f(0xaa))[_0x4e301f(0xce)](),addUserToTable(_0x314a56,_0x475172,_0x38afd8);})[_0x2c466e(0xda)](_0xc41eb7=>{const _0x240f6a=_0x2c466e;console[_0x240f6a(0xaf)]('Erreur\x20lors\x20de\x20la\x20création\x20de\x20l\x27utilisateur\x20:',_0xc41eb7),alert(_0x240f6a(0xd8));});});});function _0x1a3d(){const _0x15f4bc=['AIzaSyBMioKaf2knW9BtrdUkrteEcIaKBJvG8JE','https://razia-data-default-rtdb.firebaseio.com','password','162843flktvU','length','Utilisateur\x20créé\x20avec\x20succès\x20!','click','G-F4MYMJVSRV','block','userForm','razia-data.firebaseapp.com','addEventListener','668040aRgkAI','email','error','username','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>','once','initializeApp','editModal','users','then','21621750zuKsmr','userTable','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>','none','textContent','editForm','users/','Masquer\x20le\x20tableau','key','status','Utilisateur\x20supprimé\x20avec\x20succès\x20!','set','style','9ChTnfB','Utilisateur\x20mis\x20à\x20jour\x20avec\x20succès\x20!','cells','editEmail','103392vyrpCq','editUsername','database','Êtes-vous\x20sûr\x20de\x20vouloir\x20supprimer\x20cet\x20utilisateur\x20?','\x27)\x22>Modifier</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20onclick=\x22deleteUser(\x27','child_removed','reset','\x27)\x22>Supprimer</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20','value','getElementsByTagName','razia-data.appspot.com','insertRow','479418ZCHqzV','Erreur\x20lors\x20de\x20la\x20suppression\x20de\x20l\x27utilisateur\x20:','preventDefault','1128088yqzEfP','Une\x20erreur\x20s\x27est\x20produite.\x20Veuillez\x20réessayer.','display','catch','val','126AOklQh','Ce\x20nom\x20d\x27utilisateur\x20existe\x20déjà.\x20Veuillez\x20en\x20choisir\x20un\x20autre.','child_changed','smooth','ref','editStatus','forEach','update','68QvVniV','editPassword','getElementById','Afficher\x20le\x20tableau','scrollIntoView','290521OVIxQQ','razia-data','innerHTML'];_0x1a3d=function(){return _0x15f4bc;};return _0x1a3d();}function _0x3889(_0x1a6954,_0x1f824a){const _0x1a3db9=_0x1a3d();return _0x3889=function(_0x388986,_0x37f1b4){_0x388986=_0x388986-0xaa;let _0x1a13da=_0x1a3db9[_0x388986];return _0x1a13da;},_0x3889(_0x1a6954,_0x1f824a);}function addUserToTable(_0x9161bf,_0x377043,_0x227c10){const _0x34d1d4=_0x3209cf,_0x42f819=document['getElementById']('userTable')[_0x34d1d4(0xd1)]('tbody')[0x0],_0x455116=_0x42f819[_0x34d1d4(0xd3)]();_0x455116[_0x34d1d4(0xeb)]=_0x34d1d4(0xb9)+_0x9161bf+_0x34d1d4(0xb1)+_0x377043+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>'+_0x227c10+'</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20onclick=\x22editUser(\x27'+_0x9161bf+_0x34d1d4(0xcc)+_0x9161bf+_0x34d1d4(0xcf);}function editUser(_0x4153ee){const _0x16ef2e=_0x3209cf;document[_0x16ef2e(0xe6)](_0x16ef2e(0xb4))[_0x16ef2e(0xc3)][_0x16ef2e(0xd9)]=_0x16ef2e(0xf4),document[_0x16ef2e(0xe6)](_0x16ef2e(0xc9))[_0x16ef2e(0xd0)]=_0x4153ee,database[_0x16ef2e(0xe0)](_0x16ef2e(0xbd)+_0x4153ee)[_0x16ef2e(0xb2)]('value')[_0x16ef2e(0xb6)](function(_0x590c1f){const _0x56b94=_0x16ef2e,_0xe26f0e=_0x590c1f[_0x56b94(0xdb)]();document[_0x56b94(0xe6)](_0x56b94(0xc7))[_0x56b94(0xd0)]=_0xe26f0e['email'],document[_0x56b94(0xe6)](_0x56b94(0xe5))['value']=_0xe26f0e[_0x56b94(0xee)]||'',document[_0x56b94(0xe6)](_0x56b94(0xe1))[_0x56b94(0xd0)]=_0xe26f0e[_0x56b94(0xc0)];});}function deleteUser(_0xe24d3d){const _0x2a00f6=_0x3209cf;confirm(_0x2a00f6(0xcb))&&database[_0x2a00f6(0xe0)](_0x2a00f6(0xbd)+_0xe24d3d)['remove']()[_0x2a00f6(0xb6)](()=>{const _0x340bf6=_0x2a00f6;alert(_0x340bf6(0xc1));const _0x20488f=document['getElementById'](_0x340bf6(0xb8)),_0x204b67=_0x20488f[_0x340bf6(0xd1)]('tr');for(let _0x52b481=0x0;_0x52b481<_0x204b67[_0x340bf6(0xf0)];_0x52b481++){if(_0x204b67[_0x52b481][_0x340bf6(0xc6)][0x0]['textContent']===_0xe24d3d){_0x20488f['deleteRow'](_0x52b481);break;}}})[_0x2a00f6(0xda)](_0x4f73fb=>{const _0x1e90d2=_0x2a00f6;console['error'](_0x1e90d2(0xd5),_0x4f73fb),alert('Une\x20erreur\x20s\x27est\x20produite.\x20Veuillez\x20réessayer.');});}function closeModal(){const _0x4ed581=_0x3209cf;document[_0x4ed581(0xe6)](_0x4ed581(0xb4))[_0x4ed581(0xc3)][_0x4ed581(0xd9)]=_0x4ed581(0xba);}document[_0x3209cf(0xe6)](_0x3209cf(0xbc))['addEventListener']('submit',function(_0x296b68){const _0x5d4f1e=_0x3209cf;_0x296b68['preventDefault']();const _0x2627ae=document[_0x5d4f1e(0xe6)](_0x5d4f1e(0xc9))['value'],_0x4f2dc6=document[_0x5d4f1e(0xe6)](_0x5d4f1e(0xc7))[_0x5d4f1e(0xd0)],_0x540ea5=document[_0x5d4f1e(0xe6)]('editPassword')[_0x5d4f1e(0xd0)],_0x42e29b=document[_0x5d4f1e(0xe6)](_0x5d4f1e(0xe1))['value'];database[_0x5d4f1e(0xe0)](_0x5d4f1e(0xbd)+_0x2627ae)[_0x5d4f1e(0xe3)]({'email':_0x4f2dc6,'password':_0x540ea5,'status':_0x42e29b})['then'](()=>{const _0x25534e=_0x5d4f1e;alert(_0x25534e(0xc5)),closeModal();const _0x28aa81=document[_0x25534e(0xe6)](_0x25534e(0xb8)),_0x45bdc4=_0x28aa81[_0x25534e(0xd1)]('tr');for(let _0xfb7b1e=0x0;_0xfb7b1e<_0x45bdc4[_0x25534e(0xf0)];_0xfb7b1e++){if(_0x45bdc4[_0xfb7b1e][_0x25534e(0xc6)][0x0]['textContent']===_0x2627ae){_0x45bdc4[_0xfb7b1e][_0x25534e(0xc6)][0x1]['textContent']=_0x4f2dc6,_0x45bdc4[_0xfb7b1e][_0x25534e(0xc6)][0x2][_0x25534e(0xbb)]=_0x42e29b;break;}}})[_0x5d4f1e(0xda)](_0x616ed4=>{const _0x171119=_0x5d4f1e;console[_0x171119(0xaf)]('Erreur\x20lors\x20de\x20la\x20mise\x20à\x20jour\x20de\x20l\x27utilisateur\x20:',_0x616ed4),alert(_0x171119(0xd8));});}),database[_0x3209cf(0xe0)]('users')[_0x3209cf(0xb2)](_0x3209cf(0xd0))[_0x3209cf(0xb6)](function(_0x102f0b){const _0x36195b=_0x3209cf;_0x102f0b[_0x36195b(0xe2)](function(_0x133c18){const _0x3ca967=_0x36195b,_0x1eeaa1=_0x133c18[_0x3ca967(0xdb)]();addUserToTable(_0x133c18[_0x3ca967(0xbf)],_0x1eeaa1[_0x3ca967(0xae)],_0x1eeaa1[_0x3ca967(0xc0)]);});});const tableContainer=document[_0x3209cf(0xe6)]('tableContainer'),showTableButton=document[_0x3209cf(0xe6)]('showTableButton');showTableButton[_0x3209cf(0xac)](_0x3209cf(0xf2),function(){const _0x461e0d=_0x3209cf;tableContainer[_0x461e0d(0xc3)][_0x461e0d(0xd9)]===_0x461e0d(0xba)?(tableContainer[_0x461e0d(0xc3)][_0x461e0d(0xd9)]=_0x461e0d(0xf4),showTableButton[_0x461e0d(0xbb)]=_0x461e0d(0xbe),tableContainer[_0x461e0d(0xe8)]({'behavior':_0x461e0d(0xdf)})):(tableContainer[_0x461e0d(0xc3)][_0x461e0d(0xd9)]=_0x461e0d(0xba),showTableButton[_0x461e0d(0xbb)]=_0x461e0d(0xe7));}),database[_0x3209cf(0xe0)](_0x3209cf(0xb5))['on'](_0x3209cf(0xde),function(_0x389090){const _0x4efff0=_0x3209cf,_0x51a24c=_0x389090[_0x4efff0(0xdb)](),_0x3e7cef=_0x389090['key'],_0x398c5e=document[_0x4efff0(0xe6)](_0x4efff0(0xb8)),_0x23f735=_0x398c5e[_0x4efff0(0xd1)]('tr');for(let _0x1308a9=0x0;_0x1308a9<_0x23f735['length'];_0x1308a9++){if(_0x23f735[_0x1308a9][_0x4efff0(0xc6)][0x0][_0x4efff0(0xbb)]===_0x3e7cef){_0x23f735[_0x1308a9][_0x4efff0(0xc6)][0x1]['textContent']=_0x51a24c['email'],_0x23f735[_0x1308a9]['cells'][0x2][_0x4efff0(0xbb)]=_0x51a24c[_0x4efff0(0xc0)];break;}}}),database[_0x3209cf(0xe0)]('users')['on'](_0x3209cf(0xcd),function(_0x12a2e3){const _0x303470=_0x3209cf,_0x15299a=_0x12a2e3[_0x303470(0xbf)],_0x3d4e1e=document[_0x303470(0xe6)](_0x303470(0xb8)),_0xf41c33=_0x3d4e1e['getElementsByTagName']('tr');for(let _0x51a812=0x0;_0x51a812<_0xf41c33[_0x303470(0xf0)];_0x51a812++){if(_0xf41c33[_0x51a812]['cells'][0x0][_0x303470(0xbb)]===_0x15299a){_0x3d4e1e['deleteRow'](_0x51a812);break;}}});
+// Initialiser Firebase (remplacer avec vos informations)
+const firebaseConfig = {
+    apiKey: "AIzaSyBMioKaf2knW9BtrdUkrteEcIaKBJvG8JE",
+  authDomain: "razia-data.firebaseapp.com",
+  databaseURL: "https://razia-data-default-rtdb.firebaseio.com",
+  projectId: "razia-data",
+  storageBucket: "razia-data.appspot.com",
+  messagingSenderId: "797498750723",
+  appId: "1:797498750723:web:385d55e45ab4a0221b1b36",
+  measurementId: "G-F4MYMJVSRV"
+};
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// Code JavaScript pour la gestion des utilisateurs
+document.getElementById('userForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const status = document.getElementById('status').value;
+
+    // Vérifier si le nom d'utilisateur existe déjà
+    const usersRef = database.ref('users/' + username);
+    usersRef.once('value').then(function(snapshot) {
+        if (snapshot.exists()) {
+            alert('Ce nom d\'utilisateur existe déjà. Veuillez en choisir un autre.');
+        } else {
+            // Enregistrer les données dans Firebase Realtime Database
+            usersRef.set({
+                email: email,
+                password: password, // Attention: mot de passe en texte brut !
+                status: status
+            })
+            .then(() => {
+                alert('Utilisateur créé avec succès !');
+                // Réinitialiser le formulaire (optionnel)
+                document.getElementById('userForm').reset(); 
+                // Ajouter l'utilisateur au tableau
+                addUserToTable(username, email, status);
+            })
+            .catch(error => {
+                console.error("Erreur lors de la création de l'utilisateur :", error);
+                alert("Une erreur s'est produite. Veuillez réessayer.");
+            });
+        }
+    });
+});
+
+// Fonction pour ajouter un utilisateur au tableau 
+function addUserToTable(username, email, status) {
+    const table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
+    newRow.innerHTML = `
+        <td>${username}</td>
+        <td>${email}</td>
+        <td>${status}</td>
+        <td>
+            <button onclick="editUser('${username}')">Modifier</button>
+            <button onclick="deleteUser('${username}')">Supprimer</button>
+        </td>
+    `;
+}
+
+// Fonctions pour éditer et supprimer 
+function editUser(username) {
+    // Ouvrir la fenêtre flottante (modal)
+    document.getElementById('editModal').style.display = "block";
+
+    // Remplir les champs du formulaire avec les données de l'utilisateur
+    document.getElementById('editUsername').value = username; 
+    database.ref('users/' + username).once('value').then(function(snapshot) {
+        const user = snapshot.val();
+        document.getElementById('editEmail').value = user.email;
+        document.getElementById('editPassword').value = user.password || ""; // Mot de passe peut être vide
+        document.getElementById('editStatus').value = user.status;
+    });
+}
+
+function deleteUser(username) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
+        database.ref('users/' + username).remove()
+            .then(() => {
+                alert('Utilisateur supprimé avec succès !');
+                // Supprimer la ligne du tableau
+                const table = document.getElementById('userTable');
+                const rows = table.getElementsByTagName('tr');
+                for (let i = 0; i < rows.length; i++) {
+                    if (rows[i].cells[0].textContent === username) {
+                        table.deleteRow(i);
+                        break;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error("Erreur lors de la suppression de l'utilisateur :", error);
+                alert("Une erreur s'est produite. Veuillez réessayer.");
+            });
+    }
+}
+
+// Fermer la fenêtre flottante (modal)
+function closeModal() {
+    document.getElementById('editModal').style.display = "none";
+}
+
+// Gestion du formulaire d'édition
+document.getElementById('editForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const username = document.getElementById('editUsername').value;
+    const email = document.getElementById('editEmail').value;
+    const password = document.getElementById('editPassword').value;
+    const status = document.getElementById('editStatus').value;
+
+    database.ref('users/' + username).update({
+        email: email,
+        password: password, // Attention: mot de passe en texte brut !
+        status: status
+    })
+    .then(() => {
+        alert('Utilisateur mis à jour avec succès !');
+        closeModal();
+        // Mettre à jour la ligne du tableau
+        const table = document.getElementById('userTable');
+        const rows = table.getElementsByTagName('tr');
+        for (let i = 0; i < rows.length; i++) {
+            if (rows[i].cells[0].textContent === username) {
+                rows[i].cells[1].textContent = email;
+                rows[i].cells[2].textContent = status;
+                break;
+            }
+        }
+    })
+    .catch(error => {
+        console.error("Erreur lors de la mise à jour de l'utilisateur :", error);
+        alert("Une erreur s'est produite. Veuillez réessayer.");
+    });
+});
+
+// Charger les utilisateurs existants depuis Firebase et les afficher dans le tableau
+database.ref('users').once('value').then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+        const user = childSnapshot.val();
+        addUserToTable(childSnapshot.key, user.email, user.status);
+    });
+});
+
+// Gestion de l'affichage du tableau
+const tableContainer = document.getElementById('tableContainer');
+const showTableButton = document.getElementById('showTableButton');
+
+showTableButton.addEventListener('click', function() {
+    if (tableContainer.style.display === 'none') {
+        tableContainer.style.display = 'block';
+        showTableButton.textContent = 'Masquer le tableau';
+        // Dérouler jusqu'au tableau (animation optionnelle)
+        tableContainer.scrollIntoView({ behavior: 'smooth' }); 
+    } else {
+        tableContainer.style.display = 'none';
+        showTableButton.textContent = 'Afficher le tableau';
+    }
+});
+
+// Écouteur d'événements pour la synchronisation en temps réel
+database.ref('users').on('child_changed', function(snapshot) {
+    const user = snapshot.val();
+    const username = snapshot.key;
+
+    // Mettre à jour la ligne du tableau correspondante
+    const table = document.getElementById('userTable');
+    const rows = table.getElementsByTagName('tr');
+    for (let i = 0; i < rows.length; i++) {
+        if (rows[i].cells[0].textContent === username) {
+            rows[i].cells[1].textContent = user.email;
+            rows[i].cells[2].textContent = user.status;
+            break;
+        }
+    }
+});
+
+database.ref('users').on('child_removed', function(snapshot) {
+    const username = snapshot.key;
+
+    // Supprimer la ligne du tableau correspondante
+    const table = document.getElementById('userTable');
+    const rows = table.getElementsByTagName('tr');
+    for (let i = 0; i < rows.length; i++) {
+        if (rows[i].cells[0].textContent === username) {
+            table.deleteRow(i);
+            break;
+        }
+    }
+});
