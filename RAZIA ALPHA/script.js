@@ -1,13 +1,13 @@
 // Initialisez Firebase (remplacez les valeurs par vos propres identifiants)
 var firebaseConfig = {
-  apiKey: "AIzaSyDTxa2nD-EVgmSRrHWciqs7xdOkp12t5yA",
-  authDomain: "razia-sarl.firebaseapp.com",
-  databaseURL: "https://razia-sarl-default-rtdb.firebaseio.com",
+  apiKey: "xxxxxxxxxx",
+  authDomain: "xxxxxx",
+  databaseURL: "xxxxxxxxx",
   projectId: "razia-sarl",
   storageBucket: "razia-sarl.appspot.com",
-  messagingSenderId: "490482635351",
-  appId: "1:490482635351:web:fc82421e1907576a090912",
-  measurementId: "G-Q2EWH7HJ8T"
+  messagingSenderId: "1232633666",
+  appId: "00525656565565656",
+  measurementId: "G-fdvfdvmlsdfklkfjkrf"
 };
 firebase.initializeApp(firebaseConfig);
 
